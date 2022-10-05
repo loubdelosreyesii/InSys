@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +35,32 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\App.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\Resources\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\Resources\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +72,198 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckedItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckedItems.Designer.cs">
+      <DependentUpon>CheckedItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerSearch.Designer.cs">
+      <DependentUpon>frmCustomerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParticipantDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParticipantDetail.Designer.cs">
+      <DependentUpon>frmParticipantDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventorySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventorySearch.Designer.cs">
+      <DependentUpon>frmInventorySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOSDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOSDashboard.Designer.cs">
+      <DependentUpon>frmPOSDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParticipant.Designer.cs">
+      <DependentUpon>frmParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParticipantEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParticipantEntry.Designer.cs">
+      <DependentUpon>frmParticipantEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLuckyDrawPrizeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLuckyDrawPrizeDetail.Designer.cs">
+      <DependentUpon>frmLuckyDrawPrizeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRafflePrizeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRafflePrizeDetail.Designer.cs">
+      <DependentUpon>frmRafflePrizeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRafflePrize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRafflePrize.Designer.cs">
+      <DependentUpon>frmRafflePrize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRaffleDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaffleDetail.Designer.cs">
+      <DependentUpon>frmRaffleDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInSys.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInSys.Designer.cs">
       <DependentUpon>frmInSys.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDealer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDealer.Designer.cs">
+      <DependentUpon>frmDealer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDealerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDealerDetail.Designer.cs">
+      <DependentUpon>frmDealerDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventoryDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventoryDetail.Designer.cs">
+      <DependentUpon>frmInventoryDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRaffle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaffle.Designer.cs">
+      <DependentUpon>frmRaffle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReference.Designer.cs">
+      <DependentUpon>frmReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLuckyDrawNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLuckyDrawNumber.Designer.cs">
+      <DependentUpon>frmLuckyDrawNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReferenceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReferenceDetail.Designer.cs">
+      <DependentUpon>frmReferenceDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalMethods.cs" />
+    <Compile Include="GlobalVariables.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CheckedItems.resx">
+      <DependentUpon>CheckedItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerSearch.resx">
+      <DependentUpon>frmCustomerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParticipantDetail.resx">
+      <DependentUpon>frmParticipantDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventorySearch.resx">
+      <DependentUpon>frmInventorySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOSDashboard.resx">
+      <DependentUpon>frmPOSDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParticipant.resx">
+      <DependentUpon>frmParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParticipantEntry.resx">
+      <DependentUpon>frmParticipantEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLuckyDrawPrizeDetail.resx">
+      <DependentUpon>frmLuckyDrawPrizeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRafflePrizeDetail.resx">
+      <DependentUpon>frmRafflePrizeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRafflePrize.resx">
+      <DependentUpon>frmRafflePrize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaffleDetail.resx">
+      <DependentUpon>frmRaffleDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInSys.resx">
       <DependentUpon>frmInSys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDealer.resx">
+      <DependentUpon>frmDealer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDealerDetail.resx">
+      <DependentUpon>frmDealerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventoryDetail.resx">
+      <DependentUpon>frmInventoryDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOS.resx">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaffle.resx">
+      <DependentUpon>frmRaffle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReference.resx">
+      <DependentUpon>frmReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLuckyDrawNumber.resx">
+      <DependentUpon>frmLuckyDrawNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReferenceDetail.resx">
+      <DependentUpon>frmReferenceDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +274,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,5 +288,49 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLibrary\DataAccessLibrary.csproj">
+      <Project>{5d9169ee-6fa0-4bdc-be7f-5a49ae550f99}</Project>
+      <Name>DataAccessLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RaffleUI\RaffleUI.csproj">
+      <Project>{e2063b82-cb40-48c4-b777-431bc731013f}</Project>
+      <Name>RaffleUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ResultHelper\ResultHelper.csproj">
+      <Project>{98c948c0-3589-4b86-9b86-406c00c91b9d}</Project>
+      <Name>ResultHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserMan\UserMan.csproj">
+      <Project>{4d36556c-d91d-44d3-ac5e-1d631a3ae5d3}</Project>
+      <Name>UserMan</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\005-team-management-2.png" />
+    <Content Include="Resources\006-inventory-1.png" />
+    <Content Include="Resources\006-salesman-1.png" />
+    <Content Include="Resources\007-tickets-1.png" />
+    <Content Include="Resources\008-point-of-sale-1.png" />
+    <Content Include="Resources\App.ico" />
+    <Content Include="Resources\89603182.mp3" />
+    <Content Include="Resources\SelectProduct.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SelectProduct.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>
