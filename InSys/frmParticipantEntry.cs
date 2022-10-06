@@ -44,11 +44,10 @@ namespace InSys
         }
 
         private void btnCancel_Click(object sender, EventArgs e){
-            if (dgvwRecords.Rows.Count > 0)
-                if (MessageBox.Show("Are you sure you want to cancel?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes){
-                    RaffleEntries = new List<RaffleEntry>();
-                    this.Close();
-                }
+            if (MessageBox.Show("Are you sure you want to cancel?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes){
+                RaffleEntries = new List<RaffleEntry>();
+                this.Close();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e){
@@ -88,7 +87,7 @@ namespace InSys
                else if (Record.LuckyNumber1 != 0 && Record.LuckyNumber2 != 0 && Record.LuckyNumber3 != 0){
                     
                     var innerValidation = newRaffleEntries.Where(p => p.LuckyNumber1 == Record.LuckyNumber1 && p.LuckyNumber2 == Record.LuckyNumber2 && p.LuckyNumber3 == Record.LuckyNumber3).ToList();
-
+                    //ToCode : validate the picked number if already exist in the RafflEntries table.
                     if (innerValidation.Count==0){
                         newRaffleEntries.Add(Record);
                     }
@@ -99,20 +98,17 @@ namespace InSys
 
                     if (Record.LuckyNumber1 != Record.LuckyNumber2 &&
                        Record.LuckyNumber1 != Record.LuckyNumber3 &&
-                       Record.LuckyNumber2 != Record.LuckyNumber3)
-                    {
+                       Record.LuckyNumber2 != Record.LuckyNumber3){
                         newRaffleEntries.Add(Record);
                         continue;
                     }
-                    else
-                    {
+                    else{
                         MessageBox.Show($"Lucky Numbers are should pick unique numbers for :{Record.RaffleReferenceNumber}.");
                         return;
-
                     }
 
                 }
-                else  { 
+                else{ 
                     MessageBox.Show($"Complete all Lucky Numbers for  Raffle Reference # :{Record.RaffleReferenceNumber}.");
                     return;
                 }
@@ -137,6 +133,11 @@ namespace InSys
             cboxPaymentMethod.DisplayMember = "Name";
             cboxPaymentMethod.ValueMember = "Id";
 
+            if (cboxPaymentMethod.Items.Count <= 0) {
+                MessageBox.Show("No Payment Methods record yet.", APP_NAME,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                this.Close();
+                return;
+            }
             if (RecordRaffle != null)
                 cboxRaffleEntries.SelectedValue = RecordRaffle.Id;
 

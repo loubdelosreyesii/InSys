@@ -46,11 +46,13 @@ namespace InSys
         {
             record = new Dealer();
             frmDetail = new frmDealerDetail();
-            
 
-            if (dgvwRecords.Rows.Count == 0)
+
+            if (dgvwRecords.Rows.Count == 0){
                 MessageBox.Show("No Records to edit.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+             
+                return;
+            }
             dynamic selectedRow = dgvwRecords.CurrentRow.DataBoundItem;
 
             record.Id = selectedRow.Id;
@@ -93,8 +95,10 @@ namespace InSys
             record = new Dealer();
 
             if (dgvwRecords.Rows.Count == 0)
+            {
                 MessageBox.Show("No Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                return;
+            }
             if (MessageBox.Show("Are you sure you want to delete the selected row?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                 return;
 

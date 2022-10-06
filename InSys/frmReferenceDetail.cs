@@ -29,6 +29,11 @@ namespace InSys
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtName.Text.Trim().Length <= 0)
+            {
+                MessageBox.Show("No Reference Name provided. Please try again.",APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (IsAddTransaction){
                 Record = new Reference();
                 
@@ -56,9 +61,8 @@ namespace InSys
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Length > 0)
-                if(MessageBox.Show("Are you sure you want to cancel?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) 
-                    this.Close();
+            if(MessageBox.Show("Are you sure you want to cancel?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) 
+                this.Close();
 
         }
 

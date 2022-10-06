@@ -123,6 +123,11 @@
             this.nudQuantity.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.nudQuantity.Location = new System.Drawing.Point(30, 93);
+            this.nudQuantity.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nudQuantity.Name = "nudQuantity";
             this.nudQuantity.ShadowDecoration.Parent = this.nudQuantity;
             this.nudQuantity.Size = new System.Drawing.Size(100, 36);

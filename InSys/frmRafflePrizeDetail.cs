@@ -37,6 +37,19 @@ namespace InSys
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtProductName.Tag == null || txtProductName.Tag.ToString().Length <= 0)
+            {
+                MessageBox.Show("Please select Product in the Inventory first.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (nudQuantity.Value == 0) {
+                MessageBox.Show("Set the Quantity before saving this prize record.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (nudQuantity.Value > selectedProduct.Quantity) {
+                MessageBox.Show($"You can only set the Maximum Number of Prizes to : {selectedProduct.Quantity}", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (IsAddTransaction){
                 Record = new RafflePrize();
 

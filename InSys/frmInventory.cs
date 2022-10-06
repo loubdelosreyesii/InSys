@@ -51,10 +51,13 @@ namespace InSys
         {
             record = new Inventory();
             frmDetail = new frmInventoryDetail();
-            
 
-            if (dgvwRecords.Rows.Count == 0)
+
+            if (dgvwRecords.RowCount == 0)
+            {
                 MessageBox.Show("No Records to edit.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             dynamic selectedRow = dgvwRecords.CurrentRow.DataBoundItem;
 
@@ -76,9 +79,8 @@ namespace InSys
 
         private void frmInventory_Load(object sender, EventArgs e)
         {
-            RefreshGridBindings();
             dgvwRecords.DataSource = listSource;
-
+            RefreshGridBindings();
         }
 
         private void RefreshGridBindings()
@@ -86,6 +88,8 @@ namespace InSys
             dgvwRecords.ScrollBars = ScrollBars.Both;
 
             list = inventoryController.SelectAll();
+
+            
             listSource.DataSource = from listInventories in list
                                     join listRefType in references
                                     on listInventories.TypeID equals listRefType.Id
@@ -109,7 +113,10 @@ namespace InSys
                                         DealerName = listDealers.Name
                                     };
 
-            listSource.ResetBindings(false);
+            if (list.Count > 0)
+                listSource.ResetBindings(false);
+            else
+                listSource.Clear();
 
         }
 
@@ -122,8 +129,11 @@ namespace InSys
         {
             record = new Inventory();
 
-            if (dgvwRecords.Rows.Count == 0)
+            if (dgvwRecords.RowCount == 0)
+            {
                 MessageBox.Show("No Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (MessageBox.Show("Are you sure you want to delete the selected row?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                 return;

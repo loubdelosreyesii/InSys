@@ -110,15 +110,14 @@ namespace DataAccessLibrary.Controller
             }
             return result;
         }
-        public Result Delete()
+        public Result Delete(int Id)
         {
             IParticipant service = new ParticipantRepository();
-            service.Record = record;
 
             result = new Result();
             try
             {
-                result = service.Delete();
+                result = service.Delete(Id);
 
             }
             catch (Exception ex)

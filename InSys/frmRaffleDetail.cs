@@ -38,22 +38,33 @@ namespace InSys
         List<Reference> references = new List<Reference>();
         List<RaffleLuckyDrawPrize> raffleLuckyDrawPrizes = new List<RaffleLuckyDrawPrize>();
 
-        public frmRaffleDetail()
-        {
+        Inventory recordInventory = new Inventory();
+        public frmRaffleDetail(){
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
+        private void btnCancel_Click(object sender, EventArgs e){
             this.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e){
+
+            if (txtNName.Text.Trim().Length <= 0)
+            {
+                MessageBox.Show("No Raffle Name provided. Please try again.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             DateTime dtDrawDateToSave = new DateTime(dtpDrawDate.Value.Year, dtpDrawDate.Value.Month, dtpDrawDate.Value.Day);
             TimeSpan dtDrawTimeToSave = dtpDrawTime.Value.TimeOfDay;
 
             DateTime dtFormattedDrawDateTime = dtDrawDateToSave + dtDrawTimeToSave;
 
+            decimal decEntryPrice = 0.00m;
+
+            if (!decimal.TryParse(txtEntryPrice.Text, out decEntryPrice)) {
+                MessageBox.Show("Invalid Raffle Entry Price Amount.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (IsAddTransaction)
             {
@@ -189,7 +200,8 @@ namespace InSys
         private void btnDelete_Click(object sender, EventArgs e)
         {
             RecordPrize = new RafflePrize();
-
+            recordInventory = new Inventory();
+            
             if (dgvwRecords.Rows.Count == 0)
                 MessageBox.Show("No Raffle Prize Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -199,11 +211,22 @@ namespace InSys
             dynamic selectedRow = dgvwRecords.CurrentRow.DataBoundItem;
 
             RecordPrize.Id = selectedRow.Id;
+            recordInventory.Id = selectedRow.ProductId;
 
+            inventoryController.record = recordInventory;
+            recordInventory = inventoryController.Select();
+            
+            recordInventory.Quantity += selectedRow.Quantity;
+            inventoryController.record = recordInventory;
+            result = inventoryController.Edit();
+
+            if (!result.Code) {
+                MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             rafflePrizeController.record = RecordPrize;
-
             result = rafflePrizeController.Delete();
-
+            
             MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             RefreshGridBindings();
@@ -278,6 +301,7 @@ namespace InSys
         private void btnDeleteLuckyPrize_Click(object sender, EventArgs e)
         {
             RecordPrizeLuckyDraw = new RaffleLuckyDrawPrize();
+            recordInventory = new Inventory();
 
             if (dgvRecordsLuckyDraw.Rows.Count == 0)
                 MessageBox.Show("No Lucky Draw Prize Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -288,7 +312,20 @@ namespace InSys
             dynamic selectedRow = dgvRecordsLuckyDraw.CurrentRow.DataBoundItem;
 
             RecordPrizeLuckyDraw.Id = selectedRow.Id;
+            recordInventory.Id = selectedRow.ProductId;
 
+            inventoryController.record = recordInventory;
+            recordInventory = inventoryController.Select();
+
+            recordInventory.Quantity += selectedRow.Quantity;
+            inventoryController.record = recordInventory;
+            result = inventoryController.Edit();
+
+            if (!result.Code)
+            {
+                MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             raffleLuckyDrawPrizeController.record = RecordPrizeLuckyDraw;
 
             result = raffleLuckyDrawPrizeController.Delete();

@@ -52,13 +52,17 @@ namespace DataAccessLibrary.Repository
             return result;
         }
 
-        public Result Delete()
+        public Result Delete(int Id)
         {
             result = new Result();
             using (var db = new X2MO_InSysEntities())
             {
-                db.Entry(_record).State = System.Data.Entity.EntityState.Deleted;
-                db.SaveChanges();
+                var record = db.Participants.Where(p => p.Id == Id).SingleOrDefault();
+
+                if (record != null) {
+                    db.Participants.Remove(record);
+                    db.SaveChanges();
+                }
 
                 result.Code = true;
                 result.Message = "Deleted a Participant Record successfully.";

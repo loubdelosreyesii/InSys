@@ -36,6 +36,13 @@ namespace RaffleUI
             cboxRaffleEvents.DataSource = raffleController.SelectAll();
             cboxRaffleEvents.DisplayMember = "Name";
             cboxRaffleEvents.ValueMember = "ID";
+
+            if (this.cboxRaffleEvents.Items.Count <= 0)
+            {
+                MessageBox.Show("No Raffle Events Record yet.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
         }
 
         private void cboxRaffleEvents_SelectionChangeCommitted(object sender, EventArgs e){
@@ -46,6 +53,7 @@ namespace RaffleUI
             RecordRaffle = raffleController.SelectById(selectedRaffleId);
         }
         private void btnChoose_Click(object sender, EventArgs e){
+            
             GetSelectedRaffleEvent();
             this.Close();
         }

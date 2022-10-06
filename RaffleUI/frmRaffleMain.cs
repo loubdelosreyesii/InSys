@@ -42,6 +42,7 @@ namespace RaffleUI
                 lblRaffleEvent.Text = "No Raffle Event selected yet.";
                 lblRaffleDescription.Text = "Choose Raffle Event first.";
                 panelRaffleShuffle.Enabled = false;
+                this.Close();
             }
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -101,80 +102,124 @@ namespace RaffleUI
         }
         
         private void ShuffleWinnerInvoke() {
-            Random r = new Random();
-            DateTime dtStart = DateTime.Now;
-            DateTime dtEnd = DateTime.Now;
-            int intProductIdSelected = 0, intLuckyPrizeIdSelected = 0;
-            double diffInSeconds;
-
-            listOfRafflePrizes = rafflePrizeController.SelectProducts(RecordRaffle.Id);
-            listOfRaffleQualifiedParticipants = participantController.SelectRaffleParticipants(RecordRaffle.Id);
-            
-            if (listOfRafflePrizes.Count == 0)
+            try
             {
-                if (lblReturnMessage.InvokeRequired)
+                Random r = new Random();
+                DateTime dtStart = DateTime.Now;
+                DateTime dtEnd = DateTime.Now;
+                int intProductIdSelected = 0, intLuckyPrizeIdSelected = 0;
+                double diffInSeconds;
+
+                listOfRafflePrizes = rafflePrizeController.SelectProducts(RecordRaffle.Id);
+                listOfRaffleQualifiedParticipants = participantController.SelectRaffleParticipants(RecordRaffle.Id);
+
+                if (listOfRafflePrizes.Count == 0)
                 {
-                    this.lblReturnMessage.Invoke(new InvokeOnReturnMessage(DisplayErrorMessage), "No more Lucky Prizes left.");
+                    if (lblReturnMessage.InvokeRequired)
+                    {
+                        this.lblReturnMessage.Invoke(new InvokeOnReturnMessage(DisplayErrorMessage), "No more Lucky Prizes left.");
+                    }
+                    else
+                        lblReturnMessage.Text = "No more Lucky Prizes left.";
+                    return;
+
                 }
-                else
-                    lblReturnMessage.Text = "No more Lucky Prizes left.";
-                return;
-
-            }
-            while (!stopShuffle)
-            {
-                dtEnd = DateTime.Now;
-                int rIntForPrizes = r.Next(0, listOfRafflePrizes.Count);
-                intProductIdSelected = listOfRafflePrizes[rIntForPrizes].InventoryId;
-                intLuckyPrizeIdSelected = listOfRafflePrizes[rIntForPrizes].RafflePrizeId;
-
-                Console.WriteLine(rIntForPrizes);
-
-                if (lblProductToRaffle.InvokeRequired){
-                    this.lblProductToRaffle.Invoke(new InvokeOnRaffleWinnerLabels(ShuffleAll), rIntForPrizes);
+                if (listOfRaffleQualifiedParticipants.Count == 0)
+                {
+                    if (lblReturnMessage.InvokeRequired)
+                    {
+                        this.lblReturnMessage.Invoke(new InvokeOnReturnMessage(DisplayErrorMessage), "No more Qualified Participants left.");
+                    }
+                    else
+                        lblReturnMessage.Text = "No more Lucky Prizes left.";
+                    return;
                 }
-                else{
-                    ShuffleAll(rIntForPrizes);
-                }
+                while (!stopShuffle)
+                {
+                    dtEnd = DateTime.Now;
+                    int rIntForPrizes = r.Next(0, listOfRafflePrizes.Count);
+                    intProductIdSelected = listOfRafflePrizes[rIntForPrizes].InventoryId;
+                    intLuckyPrizeIdSelected = listOfRafflePrizes[rIntForPrizes].RafflePrizeId;
 
-                diffInSeconds = (dtEnd - dtStart).TotalSeconds;
-                string strPhoto = $"{Environment.CurrentDirectory}\\Products\\{intProductIdSelected}.jpg";
+                    Console.WriteLine(rIntForPrizes);
 
-                pboxProductToRaffle.Image = new Bitmap(strPhoto);
+                    if (lblProductToRaffle.InvokeRequired)
+                    {
+                        this.lblProductToRaffle.Invoke(new InvokeOnRaffleWinnerLabels(ShuffleAll), rIntForPrizes);
+                    }
+                    else
+                    {
+                        ShuffleAll(rIntForPrizes);
+                    }
 
-                ThreadSleep(diffInSeconds);
+                    diffInSeconds = (dtEnd - dtStart).TotalSeconds;
+                    string strPhoto = $"{Environment.CurrentDirectory}\\Products\\{intProductIdSelected}.jpg";
 
-                if (diffInSeconds >= ShuffleTime){
-                    SoundPlayer player = new SoundPlayer($"{Path.GetDirectoryName(Application.ExecutablePath) + $"\\Resources\\SelectProduct.wav"}");
-                    player.Play();
-
-                    stopShuffle = true;
-
-                    strPhoto = $"{Environment.CurrentDirectory}\\Products\\{intProductIdSelected}.jpg";
                     pboxProductToRaffle.Image = new Bitmap(strPhoto);
 
-                    Thread.Sleep(600);
-                    player.Stop();
+                    ThreadSleep(diffInSeconds);
 
+                    if (diffInSeconds >= ShuffleTime)
+                    {
+                        SoundPlayer player = new SoundPlayer($"{Path.GetDirectoryName(Application.ExecutablePath) + $"\\Resources\\SelectProduct.wav"}");
+                        player.Play();
+
+                        stopShuffle = true;
+
+                        strPhoto = $"{Environment.CurrentDirectory}\\Products\\{intProductIdSelected}.jpg";
+                        pboxProductToRaffle.Image = new Bitmap(strPhoto);
+
+                        Thread.Sleep(600);
+                        player.Stop();
+
+                    }
+                    Thread.Sleep(100);
                 }
-                Thread.Sleep(100);
-            }
-            
-            dtStart = DateTime.Now;
-            dtEnd = DateTime.Now;
 
-            bool stopRaffleParticipantShuffle = false;
-            int intRaffleWinner=0;
-
-            while (!stopRaffleParticipantShuffle)
-            {
-                intRaffleWinner = r.Next(0, listOfRaffleQualifiedParticipants.Count);
+                dtStart = DateTime.Now;
                 dtEnd = DateTime.Now;
 
-                if (lblParticipantName.InvokeRequired){
+                bool stopRaffleParticipantShuffle = false;
+                int intRaffleWinner = 0;
+
+                while (!stopRaffleParticipantShuffle)
+                {
+                    intRaffleWinner = r.Next(0, listOfRaffleQualifiedParticipants.Count);
+                    dtEnd = DateTime.Now;
+
+                    if (lblParticipantName.InvokeRequired)
+                    {
+                        this.lblParticipantName.Invoke(new InvokeOnRaffleWinnerLabels(ShuffleWinner), intRaffleWinner);
+                    }
+                    else
+                    {
+                        ShuffleWinner(intRaffleWinner);
+                    }
+
+                    if (lblParticipantName.InvokeRequired)
+                    {
+                        this.lblParticipantName.Invoke(new InvokeOnRaffleWinnerRaffleReferenceNo(ShuffleWinnerRaffleReferenceNo), intRaffleWinner);
+                    }
+                    else
+                    {
+                        ShuffleWinnerRaffleReferenceNo(intRaffleWinner);
+                    }
+
+
+                    diffInSeconds = (dtEnd - dtStart).TotalSeconds;
+
+                    ThreadSleep(diffInSeconds);
+
+                    if (diffInSeconds >= ShuffleTime)
+                        stopRaffleParticipantShuffle = true;
+                }
+
+                if (lblParticipantName.InvokeRequired)
+                {
                     this.lblParticipantName.Invoke(new InvokeOnRaffleWinnerLabels(ShuffleWinner), intRaffleWinner);
                 }
-                else{
+                else
+                {
                     ShuffleWinner(intRaffleWinner);
                 }
 
@@ -187,62 +232,39 @@ namespace RaffleUI
                     ShuffleWinnerRaffleReferenceNo(intRaffleWinner);
                 }
 
-                
-                diffInSeconds = (dtEnd - dtStart).TotalSeconds;
+                if (gifBox1.InvokeRequired)
+                {
+                    this.gifBox1.Invoke(new InvokeOnGif1(DisplayGif1));
+                }
+                else
+                    DisplayGif1();
+                if (gifBox2.InvokeRequired)
+                {
+                    this.gifBox2.Invoke(new InvokeOnGif2(DisplayGif2));
+                }
+                else
+                {
+                    DisplayGif2();
+                }
 
-                ThreadSleep(diffInSeconds);
+                recordRaffleWinner = new RaffleWinner();
 
-                if (diffInSeconds >= ShuffleTime)
-                    stopRaffleParticipantShuffle = true;
+                recordRaffleWinner.RaffleReferenceNumber = currentParticipantPick.RaffleReferenceNumber;
+                recordRaffleWinner.RaffleId = RecordRaffle.Id;
+                recordRaffleWinner.PrizeId = intLuckyPrizeIdSelected;
+                recordRaffleWinner.ParticipantId = currentParticipantPick.Id;
+                recordRaffleWinner.ProductId = intProductIdSelected;
+
+                raffleWinnerController.record = recordRaffleWinner;
+                raffleWinnerController.Add();
+
+                rafflePrizeController.SubtractWinnerPrize(recordRaffleWinner.PrizeId);
             }
-
-            if (lblParticipantName.InvokeRequired)
+            catch (Exception ex)
             {
-                this.lblParticipantName.Invoke(new InvokeOnRaffleWinnerLabels(ShuffleWinner), intRaffleWinner);
+                MessageBox.Show(ex.ToString());
             }
-            else
-            {
-                ShuffleWinner(intRaffleWinner);
-            }
-
-            if (lblParticipantName.InvokeRequired)
-            {
-                this.lblParticipantName.Invoke(new InvokeOnRaffleWinnerRaffleReferenceNo(ShuffleWinnerRaffleReferenceNo), intRaffleWinner);
-            }
-            else
-            {
-                ShuffleWinnerRaffleReferenceNo(intRaffleWinner);
-            }
-
-            if (gifBox1.InvokeRequired)
-            {
-                this.gifBox1.Invoke(new InvokeOnGif1(DisplayGif1));
-            }
-            else
-                DisplayGif1();
-            if (gifBox2.InvokeRequired)
-            {
-                this.gifBox2.Invoke(new InvokeOnGif2(DisplayGif2));
-            }
-            else
-            {
-                DisplayGif2();
-            }
-
-            recordRaffleWinner = new RaffleWinner();
-
-            recordRaffleWinner.RaffleReferenceNumber = currentParticipantPick.RaffleReferenceNumber;
-            recordRaffleWinner.RaffleId = RecordRaffle.Id;
-            recordRaffleWinner.PrizeId = intLuckyPrizeIdSelected;
-            recordRaffleWinner.ParticipantId = currentParticipantPick.Id;
-            recordRaffleWinner.ProductId = intProductIdSelected;
-
-            raffleWinnerController.record = recordRaffleWinner;
-            raffleWinnerController.Add();
-
-            rafflePrizeController.SubtractWinnerPrize(recordRaffleWinner.PrizeId);
-
-        }
+}
         private void DisplayErrorMessage(string paramMessage)
         {
             this.lblReturnMessage.Text = $"{paramMessage}";
@@ -285,6 +307,7 @@ namespace RaffleUI
 
         List<sp_RaffleDraw_SelectForView_Result> listOfRafflePrizes = new List<sp_RaffleDraw_SelectForView_Result>();
         List<sp_Raffle_PickupWinner_Result> listOfRaffleQualifiedParticipants = new List<sp_Raffle_PickupWinner_Result>();
+        List<RaffleWinner> listOfRaffleWinners = new List<RaffleWinner>();
 
         List<RaffleEntry> listOfRaffleEntries = new List<RaffleEntry>();
         List<Participant> listOfParticipants = new List<Participant>();

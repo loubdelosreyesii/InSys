@@ -57,7 +57,10 @@ namespace InSys
                                         CategoryName = listCategories.Name
                                     };
 
-            listSource.ResetBindings(false);
+            if (list.Count > 0)
+                listSource.ResetBindings(false);
+            else
+                listSource.Clear();
 
             dcolCategoryID.Visible = false;
         }
@@ -74,10 +77,13 @@ namespace InSys
         private void btnEdit_Click(object sender, EventArgs e)
         {
             record = new Reference();
-            frmDetail = new frmReferenceDetail();   
+            frmDetail = new frmReferenceDetail();
 
-            if (dgvRecords.Rows.Count == 0)
+            if (dgvRecords.RowCount == 0)
+            {
                 MessageBox.Show("No Records to edit.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             dynamic selectedRow = dgvRecords.CurrentRow.DataBoundItem;
 
@@ -99,8 +105,11 @@ namespace InSys
         {
             record = new Reference();
 
-            if (dgvRecords.Rows.Count == 0) 
-                MessageBox.Show("No Records to be deleted.", APP_NAME,MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if (dgvRecords.Rows.Count == 0)
+            {
+                MessageBox.Show("No Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (MessageBox.Show("Are you sure you want to delete the selected row?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                 return;

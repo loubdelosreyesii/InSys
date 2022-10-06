@@ -114,60 +114,54 @@ namespace InSys
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            record = new Participant();
-            frmDetail = new frmParticipantDetail();
-
-            if (dgvwRecords.Rows.Count == 0)
-            {
-                MessageBox.Show("No Records to edit.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            dynamic selectedRow = dgvwRecords.CurrentRow.DataBoundItem;
-
-            record.Id = selectedRow.ParticipantId;
-            record.FirstName = selectedRow.FirstName;
-            record.LastName = selectedRow.LastName;
-            record.MiddleName = selectedRow.MiddleName;
-            record.FacebookLink = selectedRow.FacebookLink;
-            record.EmailAddress = selectedRow.EmailAddress;
-            record.ContactNumber = selectedRow.ContactNumber;
-
-            frmDetail.Record = record;
-            frmDetail.RecordRaffle = (Raffle)cboxRaffleEvents.SelectedItem;
-            frmDetail.IsAddTransaction = false;
-            frmDetail.ShowDialog();
-
-            RefreshGridBindings(iRaffleId);
-
-            updateProgressBar(dgvwRecords.Rows.Count, raffleEvent.MaxEntries);
-
-            //RaffleEntryController raffleEntryController = new RaffleEntryController();
-
             //record = new Participant();
+            //frmDetail = new frmParticipantDetail();
 
             //if (dgvwRecords.Rows.Count == 0)
             //{
-            //    MessageBox.Show("No Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    MessageBox.Show("No Records to edit.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
             //    return;
             //}
 
-            //if (MessageBox.Show($"Are you sure you want to delete the selected row?{Environment.NewLine} This action will also delete the Participant Raffle Entry records. {Environment.NewLine} Press Yes to proceed this action.", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
-            //    return;
-
             //dynamic selectedRow = dgvwRecords.CurrentRow.DataBoundItem;
 
-            //record.Id = selectedRow.Id;
-            //participantController.record = record;
-            //raffleEntryController.record = new RaffleEntry {  ParticipantId = record.Id};
+            //record.Id = selectedRow.ParticipantId;
+            //record.FirstName = selectedRow.FirstName;
+            //record.LastName = selectedRow.LastName;
+            //record.MiddleName = selectedRow.MiddleName;
+            //record.FacebookLink = selectedRow.FacebookLink;
+            //record.EmailAddress = selectedRow.EmailAddress;
+            //record.ContactNumber = selectedRow.ContactNumber;
 
-            //participantController.Delete();
-            //result = raffleEntryController.DeleteBulk(record.Id);
-
-            //MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //frmDetail.Record = record;
+            //frmDetail.RecordRaffle = (Raffle)cboxRaffleEvents.SelectedItem;
+            //frmDetail.IsAddTransaction = false;
+            //frmDetail.ShowDialog();
 
             //RefreshGridBindings(iRaffleId);
+
             //updateProgressBar(dgvwRecords.Rows.Count, raffleEvent.MaxEntries);
+
+            RaffleEntryController raffleEntryController = new RaffleEntryController();
+
+            if (dgvwRecords.Rows.Count == 0)
+            {
+                MessageBox.Show("No Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (MessageBox.Show($"Are you sure you want to delete the selected row?{Environment.NewLine} {Environment.NewLine} This action will also delete the Participant Raffle Entry records. {Environment.NewLine} {Environment.NewLine} Press Yes to proceed this action.", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                return;
+
+            dynamic selectedRow = dgvwRecords.CurrentRow.DataBoundItem;
+
+            participantController.Delete(selectedRow.ParticipantId);
+            result = raffleEntryController.DeleteBulk(selectedRow.ParticipantId);
+
+            MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            RefreshGridBindings(iRaffleId);
+            updateProgressBar(dgvwRecords.Rows.Count, raffleEvent.MaxEntries);
         }
 
         private void cboxRaffleEvents_SelectionChangeCommitted(object sender, EventArgs e)

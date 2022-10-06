@@ -32,13 +32,16 @@ namespace InSys
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (txtNName.Text.Length > 0)
-                if (MessageBox.Show("Are you sure you want to cancel?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                    this.Close();
+            if (MessageBox.Show("Are you sure you want to cancel?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                this.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtNName.Text.Trim().Length <= 0) {
+                MessageBox.Show("No Dealer Name provided. ",APP_NAME,MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
             if (IsAddTransaction)
             {
                 Record = new Dealer();

@@ -12,6 +12,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static InSys.GlobalVariables;
 
 namespace InSys{
@@ -50,6 +51,12 @@ namespace InSys{
             GlobalMethods.dealers = dealers;
 
             GlobalMethods.RefreshGridBindings(string.Empty);
+
+            if (dgvwRecords.RowCount<= 0)
+            {
+                MessageBox.Show("No Inventory Record yet.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
         }
         private void btnAdd_Click(object sender, EventArgs e){
             GlobalMethods.POSTotalAmountScreen = this.lblTotalPrice;
@@ -107,6 +114,12 @@ namespace InSys{
         }
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            if (txtFirstName.Text.Trim().Length <= 0)
+            {
+                MessageBox.Show("No Customer Name provided. Please try again.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             Customer customer = new Customer {
                 FirstName = txtFirstName.Text,
                 LastName = txtLastName.Text,
@@ -125,6 +138,7 @@ namespace InSys{
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            int recordCount = 0;
             DateTime dtNow = DateTime.Now;
             recordPOS = new PointOfSale();
 
@@ -157,7 +171,7 @@ namespace InSys{
                         MessageBox.Show($"{result.Message}", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-
+                    recordCount += 1;
                     record.Id = recordPOSDetail.ProductId;
                     inventoryController.record = record;
                     
@@ -175,8 +189,14 @@ namespace InSys{
                     }
                 }
             }
-            MessageBox.Show("POS Transaction Record saved successfully.",APP_NAME,MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ResetVariables();
+            if (recordCount > 0)
+            {
+                MessageBox.Show("POS Transaction Record saved successfully.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ResetVariables();
+            }
+            else {
+                MessageBox.Show("No items in the cart found. Please try again.", APP_NAME, MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
         private void ResetVariables() {
             checkedProducts.Clear();
@@ -204,6 +224,11 @@ namespace InSys{
                 txtFirstName.Text = recordCustomer.FirstName;
                 txtContactNumber.Text = recordCustomer.ContactNumber;
             }
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

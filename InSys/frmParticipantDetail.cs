@@ -46,9 +46,8 @@ namespace InSys
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (txtFirstName.Text.Length > 0)
-                if (MessageBox.Show("Are you sure you want to cancel?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                    this.Close();
+            if (MessageBox.Show("Are you sure you want to cancel?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                this.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -163,6 +162,8 @@ namespace InSys
 
         private void frmParticipantDetail_Load(object sender, EventArgs e)
         {
+            pnlSaveCancel.Enabled = false;
+
             if (Record != null)
             {
                 txtFirstName.Text = Record.FirstName;
@@ -222,9 +223,12 @@ namespace InSys
                                             PaymentReceipt = entry.PaymentReceipt,
                                             RaffleName = RecordRaffle.Name
                                         };
+
+                pnlSaveCancel.Enabled = true;
             }
             else
             {
+                pnlSaveCancel.Enabled = false;
                 dgvwRecords.Rows.Clear();
             }
             listSource.ResetBindings(false);

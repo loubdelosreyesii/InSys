@@ -86,6 +86,7 @@ namespace RaffleUI
                     lblReturnMessage.Text = "No more Lucky Prizes left.";
                 return;
             }
+
             while (!stopShuffle){
 
                 dtEnd = DateTime.Now;

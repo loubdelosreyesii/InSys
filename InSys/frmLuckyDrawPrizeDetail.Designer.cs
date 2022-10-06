@@ -127,20 +127,10 @@
             0,
             0,
             0});
-            this.nudQuantity.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudQuantity.Name = "nudQuantity";
             this.nudQuantity.ShadowDecoration.Parent = this.nudQuantity;
             this.nudQuantity.Size = new System.Drawing.Size(100, 36);
             this.nudQuantity.TabIndex = 44;
-            this.nudQuantity.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label4
             // 

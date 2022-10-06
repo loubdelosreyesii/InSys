@@ -46,10 +46,48 @@ namespace InSys
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            decimal decSuggestedRetailPrice = 0.00m;
+            decimal decDistributorPrice = 0.00m;
+            int intQuantity = 0;
             if (picProductPhoto.Image == null) {
                 MessageBox.Show("Please select an image for this inventory record.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (txtModel.Text.Trim().Length<=0)
+            {
+                MessageBox.Show("No Model provided.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (!decimal.TryParse(txtSuggestedRetailPrice.Text, out decSuggestedRetailPrice)) {
+                MessageBox.Show("Invalid Suggested Retail Price Amount.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (!decimal.TryParse(txtDistributorPrice.Text, out decDistributorPrice))
+            {
+                MessageBox.Show("Invalid Distributor Price Amount.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (!int.TryParse(txtQuantity.Text, out intQuantity))
+            {
+                MessageBox.Show("Invalid Quantity Value.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (decDistributorPrice < 0)
+            {
+                MessageBox.Show("Negative value for Distributor Price  is not allowed.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (decSuggestedRetailPrice < 0)
+            {
+                MessageBox.Show("Negative value for Suggested Retail Price is not allowed.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            
+            if (intQuantity < 0) {
+                MessageBox.Show("Negative value for Quantity is not allowed.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (IsAddTransaction)
             {
                 Record = new Inventory();
@@ -59,11 +97,19 @@ namespace InSys
                 Record.BrandID = Convert.ToInt32(cboxBrands.SelectedValue);
                 Record.DealerID = Convert.ToInt32(cboxDealers.SelectedValue);
                 Record.Quantity = Convert.ToInt32(txtQuantity.Text);
-                Record.DistributorPrice = Convert.ToDecimal(txtDistributorPrice.Text);
-                Record.SuggestedRetailPrice = Convert.ToDecimal(txtSuggestedRetailPrice.Text);
+                Record.DistributorPrice = Convert.ToDecimal(decDistributorPrice);
+                Record.SuggestedRetailPrice = Convert.ToDecimal(decSuggestedRetailPrice);
 
                 inventoryController.record = Record;
                 result = inventoryController.Add();
+
+                string strImgFolder = Path.GetDirectoryName(Application.ExecutablePath) + $"\\Products";
+
+                if (strPhotoName.Length > 0 && !Directory.Exists(strImgFolder))
+                {
+                    Directory.CreateDirectory(strImgFolder);
+                }
+                File.Copy(strPhotoName, strImgFolder + $"\\" + Record.Id + ".jpg", true);
 
                 MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -74,8 +120,8 @@ namespace InSys
                 Record.BrandID = Convert.ToInt32(cboxBrands.SelectedValue);
                 Record.DealerID = Convert.ToInt32(cboxDealers.SelectedValue);
                 Record.Quantity = Convert.ToInt32(txtQuantity.Text);
-                Record.DistributorPrice = Convert.ToDecimal(txtDistributorPrice.Text);
-                Record.SuggestedRetailPrice = Convert.ToDecimal(txtSuggestedRetailPrice.Text);
+                Record.DistributorPrice = Convert.ToDecimal(decDistributorPrice);
+                Record.SuggestedRetailPrice = Convert.ToDecimal(decSuggestedRetailPrice);
 
                 inventoryController.record = Record;
                 result = inventoryController.Edit();
@@ -83,15 +129,7 @@ namespace InSys
                 MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
-            string strImgFolder = Path.GetDirectoryName(Application.ExecutablePath) + $"\\Products";
-
-            if (strPhotoName.Length > 0 && !Directory.Exists(strImgFolder))
-            {
-                Directory.CreateDirectory(strImgFolder);
-            }
            
-          
-            File.Copy(strPhotoName, strImgFolder + $"\\" + Record.Id +".jpg",  true);
 
             this.Close();
         }
@@ -112,6 +150,24 @@ namespace InSys
             cboxDealers.DataSource = dealers;
             cboxDealers.DisplayMember = "Name";
             cboxDealers.ValueMember = "ID";
+
+            if (cboxBrands.Items.Count <= 0) {
+                MessageBox.Show("No Brands in the Reference Module found yet.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                return;
+            }
+            if (cboxTypes.Items.Count <= 0)
+            {
+                MessageBox.Show("No Types in the Reference Module found yet.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                return;
+            }
+            if (cboxDealers.Items.Count <= 0)
+            {
+                MessageBox.Show("No Dealers in the Dealers Module found yet.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                return;
+            }
 
             if (Record != null)
             {

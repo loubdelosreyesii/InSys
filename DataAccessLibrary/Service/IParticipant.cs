@@ -18,6 +18,6 @@ namespace DataAccessLibrary.Service
 
         Result Add();
         Result Edit();
-        Result Delete();
+        Result Delete(int Id);
     }
 }

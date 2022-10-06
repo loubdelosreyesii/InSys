@@ -164,6 +164,7 @@ namespace InSys
             frmDetail.ShowDialog();
 
             RefreshGridBindings();
+            GetCurrentRowDetail();
         }
 
         private void btnManagePrizes_Click(object sender, EventArgs e)
@@ -191,6 +192,7 @@ namespace InSys
             frmDetail.ShowDialog();
 
             RefreshGridBindings();
+            GetCurrentRowDetail();
         }
 
         private void btnManageParticipant_Click(object sender, EventArgs e)
@@ -214,6 +216,9 @@ namespace InSys
             frmParticipant frm = new frmParticipant();
             frm.RaffleSource = record;
             frm.ShowDialog();
+
+            RefreshGridBindings();
+            GetCurrentRowDetail();
         }
         private void GetCurrentRowDetail() {
             txtTotalPrizeAlloted.Text = string.Empty;

@@ -54,10 +54,6 @@
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.dgvwRecords = new System.Windows.Forms.DataGridView();
-            this.txtEmailAddress = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.dcolRaffleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolPaymentReferenceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolRaffleReferenceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,10 +63,16 @@
             this.dcolModeOfPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolRaffleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtEmailAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.pnlSaveCancel = new System.Windows.Forms.Panel();
             this.pnlHeader.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpListOfPrizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).BeginInit();
+            this.pnlSaveCancel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -109,11 +111,11 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(1000, 118);
+            this.btnCancel.Location = new System.Drawing.Point(82, 1);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
             this.btnCancel.Size = new System.Drawing.Size(70, 36);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -128,11 +130,11 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Location = new System.Drawing.Point(924, 118);
+            this.btnSave.Location = new System.Drawing.Point(6, 1);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
             this.btnSave.Size = new System.Drawing.Size(70, 36);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -181,7 +183,7 @@
             this.txtFirstName.SelectedText = "";
             this.txtFirstName.ShadowDecoration.Parent = this.txtFirstName;
             this.txtFirstName.Size = new System.Drawing.Size(367, 36);
-            this.txtFirstName.TabIndex = 2;
+            this.txtFirstName.TabIndex = 1;
             // 
             // txtLastName
             // 
@@ -276,7 +278,7 @@
             this.txtFacebookLink.SelectedText = "";
             this.txtFacebookLink.ShadowDecoration.Parent = this.txtFacebookLink;
             this.txtFacebookLink.Size = new System.Drawing.Size(210, 36);
-            this.txtFacebookLink.TabIndex = 5;
+            this.txtFacebookLink.TabIndex = 3;
             // 
             // txtContactNumber
             // 
@@ -300,7 +302,7 @@
             this.txtContactNumber.SelectedText = "";
             this.txtContactNumber.ShadowDecoration.Parent = this.txtContactNumber;
             this.txtContactNumber.Size = new System.Drawing.Size(209, 36);
-            this.txtContactNumber.TabIndex = 7;
+            this.txtContactNumber.TabIndex = 2;
             // 
             // label10
             // 
@@ -355,7 +357,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
             this.btnDelete.Size = new System.Drawing.Size(70, 36);
-            this.btnDelete.TabIndex = 12;
+            this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -374,7 +376,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(70, 36);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -432,51 +434,8 @@
             this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvwRecords.Size = new System.Drawing.Size(1100, 310);
-            this.dgvwRecords.TabIndex = 30;
+            this.dgvwRecords.TabIndex = 10;
             this.dgvwRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_CellContentClick);
-            // 
-            // txtEmailAddress
-            // 
-            this.txtEmailAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmailAddress.DefaultText = "";
-            this.txtEmailAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEmailAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEmailAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmailAddress.DisabledState.Parent = this.txtEmailAddress;
-            this.txtEmailAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmailAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmailAddress.FocusedState.Parent = this.txtEmailAddress;
-            this.txtEmailAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtEmailAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmailAddress.HoverState.Parent = this.txtEmailAddress;
-            this.txtEmailAddress.Location = new System.Drawing.Point(840, 75);
-            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmailAddress.Name = "txtEmailAddress";
-            this.txtEmailAddress.PasswordChar = '\0';
-            this.txtEmailAddress.PlaceholderText = "Enter Email Address Here...";
-            this.txtEmailAddress.SelectedText = "";
-            this.txtEmailAddress.ShadowDecoration.Parent = this.txtEmailAddress;
-            this.txtEmailAddress.Size = new System.Drawing.Size(230, 36);
-            this.txtEmailAddress.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(837, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Email Address";
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.TargetControl = this;
-            // 
-            // guna2DragControl2
-            // 
-            this.guna2DragControl2.TargetControl = this.pnlHeader;
             // 
             // dcolRaffleName
             // 
@@ -551,6 +510,7 @@
             this.dcolRaffleId.MinimumWidth = 6;
             this.dcolRaffleId.Name = "dcolRaffleId";
             this.dcolRaffleId.ReadOnly = true;
+            this.dcolRaffleId.Visible = false;
             this.dcolRaffleId.Width = 160;
             // 
             // dcolID
@@ -560,15 +520,67 @@
             this.dcolID.MinimumWidth = 6;
             this.dcolID.Name = "dcolID";
             this.dcolID.ReadOnly = true;
+            this.dcolID.Visible = false;
             this.dcolID.Width = 46;
+            // 
+            // txtEmailAddress
+            // 
+            this.txtEmailAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmailAddress.DefaultText = "";
+            this.txtEmailAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmailAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmailAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmailAddress.DisabledState.Parent = this.txtEmailAddress;
+            this.txtEmailAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmailAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmailAddress.FocusedState.Parent = this.txtEmailAddress;
+            this.txtEmailAddress.ForeColor = System.Drawing.Color.Black;
+            this.txtEmailAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmailAddress.HoverState.Parent = this.txtEmailAddress;
+            this.txtEmailAddress.Location = new System.Drawing.Point(840, 75);
+            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmailAddress.Name = "txtEmailAddress";
+            this.txtEmailAddress.PasswordChar = '\0';
+            this.txtEmailAddress.PlaceholderText = "Enter Email Address Here...";
+            this.txtEmailAddress.SelectedText = "";
+            this.txtEmailAddress.ShadowDecoration.Parent = this.txtEmailAddress;
+            this.txtEmailAddress.Size = new System.Drawing.Size(230, 36);
+            this.txtEmailAddress.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(837, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Email Address";
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.TargetControl = this;
+            // 
+            // guna2DragControl2
+            // 
+            this.guna2DragControl2.TargetControl = this.pnlHeader;
+            // 
+            // pnlSaveCancel
+            // 
+            this.pnlSaveCancel.Controls.Add(this.btnCancel);
+            this.pnlSaveCancel.Controls.Add(this.btnSave);
+            this.pnlSaveCancel.Location = new System.Drawing.Point(918, 118);
+            this.pnlSaveCancel.Name = "pnlSaveCancel";
+            this.pnlSaveCancel.Size = new System.Drawing.Size(157, 38);
+            this.pnlSaveCancel.TabIndex = 52;
             // 
             // frmParticipantDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 542);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.pnlSaveCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEmailAddress);
             this.Controls.Add(this.tabControl1);
@@ -588,10 +600,12 @@
             this.MaximizeBox = false;
             this.Name = "frmParticipantDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmParticipantDetail_Load);
             this.pnlHeader.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tpListOfPrizes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).EndInit();
+            this.pnlSaveCancel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,5 +645,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolModeOfPayment;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolRaffleId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolID;
+        private System.Windows.Forms.Panel pnlSaveCancel;
     }
 }

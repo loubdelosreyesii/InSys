@@ -46,7 +46,7 @@ namespace InSys
         {
             List<Inventory> inventories = new List<Inventory>();    
 
-            list = inventoryController.SelectAll();
+            list = inventoryController.SelectAll().Where(p => p.Quantity > 0).ToList();
 
             listSource.DataSource = null;
             var query = from listInventories in list
