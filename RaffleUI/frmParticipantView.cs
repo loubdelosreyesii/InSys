@@ -67,13 +67,13 @@ namespace RaffleUI
 
             dgvwRecords.ScrollBars = ScrollBars.Both;
 
-            int[] listOfAlreadyWinnerIds = raffleWinnerController.SelectAll(RaffleSource.Id).Select(p => p.ParticipantId).ToArray();
-            int[] lisOfAlreadLuckyDrawWinnerIds = luckyDrawWinnerController.SelectAll(RaffleSource.Id).Select(p => p.ParticipantId).ToArray();
+            string[] listOfAlreadyWinnerRaffleNumbers = raffleWinnerController.SelectAll(RaffleSource.Id).Select(p => p.RaffleReferenceNumber).ToArray();
+            string[] lisOfAlreadLuckyDrawWinnerRaffleNumbers = luckyDrawWinnerController.SelectAll(RaffleSource.Id).Select(p => p.RaffleReferenceNumber).ToArray();
 
             if (IsFromLuckyDraw)
-                raffleEntries = raffleEntriesController.SelectAll(RaffleId).Where(p=>p.LuckyNumber1 >=1 && p.LuckyNumber2>=1 && p.LuckyNumber3>=1 && !lisOfAlreadLuckyDrawWinnerIds.Contains(p.ParticipantId)).ToList();
+                raffleEntries = raffleEntriesController.SelectAll(RaffleId).Where(p=>p.LuckyNumber1 >=1 && p.LuckyNumber2>=1 && p.LuckyNumber3>=1 && !lisOfAlreadLuckyDrawWinnerRaffleNumbers.Contains(p.RaffleReferenceNumber)).ToList();
             else
-                raffleEntries = raffleEntriesController.SelectAll(RaffleId).Where(p=>!listOfAlreadyWinnerIds.Contains(p.ParticipantId)).ToList();
+                raffleEntries = raffleEntriesController.SelectAll(RaffleId).Where(p=>!listOfAlreadyWinnerRaffleNumbers.Contains(p.RaffleReferenceNumber)).ToList();
 
 
             participants = participantController.SelectAllByRaffleId(RaffleId);

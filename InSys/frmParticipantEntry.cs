@@ -273,5 +273,10 @@ namespace InSys
         {
 
         }
+
+        private void dgvwRecords_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

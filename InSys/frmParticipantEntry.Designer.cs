@@ -83,7 +83,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.ShadowDecoration.Parent = this.pnlHeader;
-            this.pnlHeader.Size = new System.Drawing.Size(843, 45);
+            this.pnlHeader.Size = new System.Drawing.Size(842, 45);
             this.pnlHeader.TabIndex = 18;
             // 
             // guna2Chip1
@@ -400,6 +400,7 @@
             this.dgvwRecords.Size = new System.Drawing.Size(453, 161);
             this.dgvwRecords.TabIndex = 61;
             this.dgvwRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_CellContentClick);
+            this.dgvwRecords.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_CellContentDoubleClick);
             this.dgvwRecords.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_CellDoubleClick);
             this.dgvwRecords.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_RowLeave);
             // 
@@ -575,7 +576,7 @@
             this.txtRaffleDrawDate.PlaceholderText = "";
             this.txtRaffleDrawDate.SelectedText = "";
             this.txtRaffleDrawDate.ShadowDecoration.Parent = this.txtRaffleDrawDate;
-            this.txtRaffleDrawDate.Size = new System.Drawing.Size(174, 36);
+            this.txtRaffleDrawDate.Size = new System.Drawing.Size(272, 36);
             this.txtRaffleDrawDate.TabIndex = 65;
             this.txtRaffleDrawDate.TextChanged += new System.EventHandler(this.txtRaffleDrawDate_TextChanged);
             // 
@@ -594,7 +595,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 383);
+            this.ClientSize = new System.Drawing.Size(842, 375);
             this.Controls.Add(this.txtRaffleDrawDate);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtRafflePrice);
