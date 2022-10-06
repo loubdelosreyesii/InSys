@@ -73,6 +73,9 @@ namespace InSys
                 int previousQuantity = 0;
                 int QuantityToUpdate = 0;
 
+                previousQuantity = Record.Quantity;
+                QuantityToUpdate = previousQuantity - Convert.ToInt32(nudQuantity.Value);
+                
                 Record.RaffleId = Convert.ToInt32(RecordRaffle.Id);
                 Record.ProductId = Convert.ToInt32(txtProductName.Tag);
                 Record.Quantity = Convert.ToInt32(nudQuantity.Value);
@@ -80,7 +83,6 @@ namespace InSys
                 
                 result = RafflePrizeController.Edit();
 
-                QuantityToUpdate = previousQuantity - Record.Quantity;
                 if (QuantityToUpdate > 0)
                 {
                     //Add to Inventory back
@@ -99,12 +101,21 @@ namespace InSys
 
         private void frmInventoryDetail_Load(object sender, EventArgs e)
         {
+            InventoryController inventoryController = new InventoryController();
+
             if (Record != null && !IsAddTransaction)
             {
                 nudQuantity.Value = Record.Quantity;
                 txtProductName.Text = $"{ProductToUpdate}";
                 txtProductName.Tag = Record.ProductId;
                 btnSearchProduct.Visible = false;
+
+                selectedProduct = new Inventory();
+                selectedProduct.Id = Record.ProductId;
+                inventoryController.record = selectedProduct;
+                
+                selectedProduct = inventoryController.Select();
+
             }
             else
                 btnSearchProduct.Visible = true;

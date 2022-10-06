@@ -201,9 +201,12 @@ namespace InSys
         {
             RecordPrize = new RafflePrize();
             recordInventory = new Inventory();
-            
+
             if (dgvwRecords.Rows.Count == 0)
+            {
                 MessageBox.Show("No Raffle Prize Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (MessageBox.Show("Are you sure you want to delete the selected row?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                 return;
@@ -273,7 +276,7 @@ namespace InSys
 
         private void btnEditLuckyPrize_Click(object sender, EventArgs e)
         {
-            if (dgvwRecords.RowCount <= 0)
+            if (dgvRecordsLuckyDraw.RowCount <= 0)
             {
                 MessageBox.Show("Please select a prize record first.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -304,8 +307,10 @@ namespace InSys
             recordInventory = new Inventory();
 
             if (dgvRecordsLuckyDraw.Rows.Count == 0)
+            {
                 MessageBox.Show("No Lucky Draw Prize Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                return;
+            }
             if (MessageBox.Show("Are you sure you want to delete the selected row?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                 return;
 
