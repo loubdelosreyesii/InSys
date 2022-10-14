@@ -102,6 +102,8 @@
           <Property Name="LuckyNumber1" Type="int" />
           <Property Name="LuckyNumber2" Type="int" />
           <Property Name="LuckyNumber3" Type="int" />
+          <Property Name="RafflePrizeId" Type="int" />
+          <Property Name="ProductId" Type="int" />
         </EntityType>
         <EntityType Name="RaffleLuckyDrawPrizes">
           <Key>
@@ -364,6 +366,8 @@
           <Property Name="LuckyNumber1" Type="Int32" />
           <Property Name="LuckyNumber2" Type="Int32" />
           <Property Name="LuckyNumber3" Type="Int32" />
+          <Property Name="RafflePrizeId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -448,6 +452,8 @@
           <Property Type="String" Name="ContactNumber" Nullable="false" />
           <Property Type="String" Name="FacebookLink" Nullable="false" />
           <Property Type="String" Name="RaffleReferenceNumber" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="ProductId" Nullable="true" />
+          <Property Type="Int32" Name="RafflePrizeId" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -558,7 +564,9 @@
     <EntitySetMapping Name="RaffleEntries">
       <EntityTypeMapping TypeName="IsTypeOf(X2MO_InSysModel.RaffleEntry)">
         <MappingFragment StoreEntitySet="RaffleEntries">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="RafflePrizeId" ColumnName="RafflePrizeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RaffleId" ColumnName="RaffleId" />
           <ScalarProperty Name="ParticipantId" ColumnName="ParticipantId" />
           <ScalarProperty Name="TransactionDateTime" ColumnName="TransactionDateTime" />
@@ -678,6 +686,8 @@
                 <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
                 <ScalarProperty Name="FacebookLink" ColumnName="FacebookLink" />
                 <ScalarProperty Name="RaffleReferenceNumber" ColumnName="RaffleReferenceNumber" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="RafflePrizeId" ColumnName="RafflePrizeId" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

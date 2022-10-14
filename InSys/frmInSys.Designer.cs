@@ -77,7 +77,7 @@
             this.guna2Chip1.ShadowDecoration.Parent = this.guna2Chip1;
             this.guna2Chip1.Size = new System.Drawing.Size(80, 23);
             this.guna2Chip1.TabIndex = 21;
-            this.guna2Chip1.Text = "InSys v1.0";
+            this.guna2Chip1.Text = "InSys v1.0.0.4";
             this.guna2Chip1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // guna2ControlBox3

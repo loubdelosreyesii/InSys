@@ -22,5 +22,7 @@ namespace DataAccessLibrary.Model
         public string ContactNumber { get; set; }
         public string FacebookLink { get; set; }
         public string RaffleReferenceNumber { get; set; }
+        public Nullable<int> ProductId { get; set; }
+        public Nullable<int> RafflePrizeId { get; set; }
     }
 }

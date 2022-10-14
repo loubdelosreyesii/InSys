@@ -78,6 +78,12 @@
     <Compile Include="CheckedItems.Designer.cs">
       <DependentUpon>CheckedItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChoosePrizes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChoosePrizes.Designer.cs">
+      <DependentUpon>frmChoosePrizes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomerSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CheckedItems.resx">
       <DependentUpon>CheckedItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChoosePrizes.resx">
+      <DependentUpon>frmChoosePrizes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerSearch.resx">
       <DependentUpon>frmCustomerSearch.cs</DependentUpon>

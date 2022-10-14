@@ -41,7 +41,7 @@ namespace InSys
         {
             InitializeComponent();
             dgvwRecords.AutoGenerateColumns = false;
-            references = referenceController.SelectByCategoryId(3); //Payment Methods
+            references = referenceController.SelectAll(); //Payment Methods
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -162,6 +162,7 @@ namespace InSys
 
         private void frmParticipantDetail_Load(object sender, EventArgs e)
         {
+            listOfInventories = inventoryController.SelectAll();
             pnlSaveCancel.Enabled = false;
 
             if (Record != null)
@@ -210,6 +211,10 @@ namespace InSys
             {
                 listSource.DataSource = from entry in raffleEntries
                                         join refer in references on entry.PaymentMethod equals refer.Id
+                                        join invent in listOfInventories on  entry.ProductId equals  invent.Id into temp
+                                        from tempRecord in temp.DefaultIfEmpty()
+                                        join refBrand in references on  tempRecord==null?0:tempRecord.BrandID equals refBrand.Id into tempRef
+                                        from tempRecordRef in tempRef.DefaultIfEmpty()
                                         select new
                                         {
                                             Id = entry.Id,
@@ -221,7 +226,10 @@ namespace InSys
                                             PaymentMethodId = entry.Id,
                                             PaidAmount = $"{string.Format(new CultureInfo(APP_CURRENCY), "{0:C}", RecordRaffle.EntryPrice)}",//$"{string.Format(new CultureInfo(APP_CURRENCY), "{0:C}", entry.PaidAmount)}",
                                             PaymentReceipt = entry.PaymentReceipt,
-                                            RaffleName = RecordRaffle.Name
+                                            RaffleName = RecordRaffle.Name,
+                                            RafflePrizeId = entry.RafflePrizeId,
+                                            ProductId = tempRecord == null ? 0:tempRecord.Id,
+                                            PrizeName = tempRecord == null ? string.Empty : tempRecordRef == null ? string.Empty : $"{tempRecordRef.Name}-{tempRecord.Model}"
                                         };
 
                 pnlSaveCancel.Enabled = true;
@@ -252,6 +260,9 @@ namespace InSys
             RefreshGridBindings(true);
         }
         List<RaffleEntry> listEntriesForRemoval = new List<RaffleEntry>();
+        List<Inventory> listOfInventories = new List<Inventory>();
+
+        InventoryController inventoryController = new InventoryController();
 
         private void dgvwRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

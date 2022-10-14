@@ -75,13 +75,10 @@ namespace RaffleUI
             else
                 raffleEntries = raffleEntriesController.SelectAll(RaffleId).Where(p=>!listOfAlreadyWinnerRaffleNumbers.Contains(p.RaffleReferenceNumber)).ToList();
 
-
             participants = participantController.SelectAllByRaffleId(RaffleId);
-           
 
             var itemToDisplay = from entry in raffleEntries
                                 join part in participants on entry.ParticipantId equals part.Id
-
                                 select new {
                                     Id = entry.Id,
                                     ParticipantId = part.Id,
@@ -97,13 +94,14 @@ namespace RaffleUI
                                 };
 
             if(strKeyword.Length== 0)
-                listSource.DataSource = itemToDisplay.ToList();
+                listSource.DataSource = itemToDisplay.OrderBy(p=>p.FirstName).ToList();
             else
                 listSource.DataSource = itemToDisplay.Where(p=>p.FirstName.ToUpper().Contains(strKeyword.ToUpper()) || 
                                                                 p.LastName.ToUpper().Contains(strKeyword.ToUpper()) || 
                                                                 p.MiddleName.ToUpper().Contains(strKeyword.ToUpper()) ||
                                                                 p.RaffleReferenceNumber.ToUpper().Contains(strKeyword.ToUpper()) ||
-                                                                p.EmailAddress.ToUpper().Contains(strKeyword.ToUpper())).ToList();
+                                                                p.EmailAddress.ToUpper().Contains(strKeyword.ToUpper()))
+                                                     .OrderBy(p => p.FirstName).ToList();
             listSource.ResetBindings(false);
         }
 

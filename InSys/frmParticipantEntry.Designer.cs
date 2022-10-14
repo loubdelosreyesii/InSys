@@ -52,6 +52,11 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.dgvwRecords = new System.Windows.Forms.DataGridView();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.txtRafflePrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtRaffleDrawDate = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.dcolID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolParticipantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolPaymentReferenceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,11 +69,9 @@
             this.dcolNumber1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolNumber2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolNumber3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtRafflePrice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtRaffleDrawDate = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.dcolRafflePrizeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dcolProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dcolProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRaffleEntriesCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).BeginInit();
@@ -83,7 +86,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.ShadowDecoration.Parent = this.pnlHeader;
-            this.pnlHeader.Size = new System.Drawing.Size(842, 45);
+            this.pnlHeader.Size = new System.Drawing.Size(1097, 45);
             this.pnlHeader.TabIndex = 18;
             // 
             // guna2Chip1
@@ -111,7 +114,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(758, 331);
+            this.btnCancel.Location = new System.Drawing.Point(1013, 331);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
             this.btnCancel.Size = new System.Drawing.Size(70, 36);
@@ -130,7 +133,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Location = new System.Drawing.Point(682, 331);
+            this.btnSave.Location = new System.Drawing.Point(937, 331);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
             this.btnSave.Size = new System.Drawing.Size(70, 36);
@@ -326,7 +329,7 @@
             // 
             this.guna2Separator1.Location = new System.Drawing.Point(16, 315);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(812, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(1067, 10);
             this.guna2Separator1.TabIndex = 57;
             // 
             // guna2DragControl1
@@ -342,7 +345,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(373, 121);
+            this.label3.Location = new System.Drawing.Point(375, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 16);
             this.label3.TabIndex = 60;
@@ -378,9 +381,12 @@
             this.dcolRaffleId,
             this.dcolNumber1,
             this.dcolNumber2,
-            this.dcolNumber3});
+            this.dcolNumber3,
+            this.dcolRafflePrizeId,
+            this.dcolProductId,
+            this.dcolProductName});
             this.dgvwRecords.EnableHeadersVisualStyles = false;
-            this.dgvwRecords.Location = new System.Drawing.Point(376, 140);
+            this.dgvwRecords.Location = new System.Drawing.Point(378, 140);
             this.dgvwRecords.Name = "dgvwRecords";
             this.dgvwRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -397,12 +403,103 @@
             this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvwRecords.RowTemplate.Height = 20;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(453, 161);
+            this.dgvwRecords.Size = new System.Drawing.Size(707, 161);
             this.dgvwRecords.TabIndex = 61;
             this.dgvwRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_CellContentClick);
             this.dgvwRecords.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_CellContentDoubleClick);
             this.dgvwRecords.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_CellDoubleClick);
             this.dgvwRecords.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_RowLeave);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(162, 265);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(208, 36);
+            this.guna2Button1.TabIndex = 62;
+            this.guna2Button1.Text = "Generate Raffle Reference Number";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // txtRafflePrice
+            // 
+            this.txtRafflePrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRafflePrice.DefaultText = "";
+            this.txtRafflePrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRafflePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRafflePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRafflePrice.DisabledState.Parent = this.txtRafflePrice;
+            this.txtRafflePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRafflePrice.Enabled = false;
+            this.txtRafflePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRafflePrice.FocusedState.Parent = this.txtRafflePrice;
+            this.txtRafflePrice.ForeColor = System.Drawing.Color.Black;
+            this.txtRafflePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRafflePrice.HoverState.Parent = this.txtRafflePrice;
+            this.txtRafflePrice.Location = new System.Drawing.Point(650, 78);
+            this.txtRafflePrice.Name = "txtRafflePrice";
+            this.txtRafflePrice.PasswordChar = '\0';
+            this.txtRafflePrice.PlaceholderText = "";
+            this.txtRafflePrice.SelectedText = "";
+            this.txtRafflePrice.ShadowDecoration.Parent = this.txtRafflePrice;
+            this.txtRafflePrice.Size = new System.Drawing.Size(174, 36);
+            this.txtRafflePrice.TabIndex = 63;
+            this.txtRafflePrice.TextChanged += new System.EventHandler(this.txtRafflePrice_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(647, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 16);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Entry Price";
+            // 
+            // txtRaffleDrawDate
+            // 
+            this.txtRaffleDrawDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRaffleDrawDate.DefaultText = "";
+            this.txtRaffleDrawDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRaffleDrawDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRaffleDrawDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRaffleDrawDate.DisabledState.Parent = this.txtRaffleDrawDate;
+            this.txtRaffleDrawDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRaffleDrawDate.Enabled = false;
+            this.txtRaffleDrawDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRaffleDrawDate.FocusedState.Parent = this.txtRaffleDrawDate;
+            this.txtRaffleDrawDate.ForeColor = System.Drawing.Color.Black;
+            this.txtRaffleDrawDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRaffleDrawDate.HoverState.Parent = this.txtRaffleDrawDate;
+            this.txtRaffleDrawDate.Location = new System.Drawing.Point(830, 78);
+            this.txtRaffleDrawDate.Name = "txtRaffleDrawDate";
+            this.txtRaffleDrawDate.PasswordChar = '\0';
+            this.txtRaffleDrawDate.PlaceholderText = "";
+            this.txtRaffleDrawDate.SelectedText = "";
+            this.txtRaffleDrawDate.ShadowDecoration.Parent = this.txtRaffleDrawDate;
+            this.txtRaffleDrawDate.Size = new System.Drawing.Size(253, 36);
+            this.txtRaffleDrawDate.TabIndex = 65;
+            this.txtRaffleDrawDate.TextChanged += new System.EventHandler(this.txtRaffleDrawDate_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(827, 59);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 16);
+            this.label8.TabIndex = 66;
+            this.label8.Text = "Raffle Draw Date";
             // 
             // dcolID
             // 
@@ -500,102 +597,32 @@
             this.dcolNumber3.Name = "dcolNumber3";
             this.dcolNumber3.Width = 80;
             // 
-            // guna2Button1
+            // dcolRafflePrizeId
             // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(162, 265);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(208, 36);
-            this.guna2Button1.TabIndex = 62;
-            this.guna2Button1.Text = "Generate Raffle Reference Number";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.dcolRafflePrizeId.DataPropertyName = "RafflePrizeId";
+            this.dcolRafflePrizeId.HeaderText = "Raffle Prize Id";
+            this.dcolRafflePrizeId.Name = "dcolRafflePrizeId";
+            this.dcolRafflePrizeId.Visible = false;
             // 
-            // txtRafflePrice
+            // dcolProductId
             // 
-            this.txtRafflePrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRafflePrice.DefaultText = "";
-            this.txtRafflePrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRafflePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRafflePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRafflePrice.DisabledState.Parent = this.txtRafflePrice;
-            this.txtRafflePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRafflePrice.Enabled = false;
-            this.txtRafflePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRafflePrice.FocusedState.Parent = this.txtRafflePrice;
-            this.txtRafflePrice.ForeColor = System.Drawing.Color.Black;
-            this.txtRafflePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRafflePrice.HoverState.Parent = this.txtRafflePrice;
-            this.txtRafflePrice.Location = new System.Drawing.Point(376, 78);
-            this.txtRafflePrice.Name = "txtRafflePrice";
-            this.txtRafflePrice.PasswordChar = '\0';
-            this.txtRafflePrice.PlaceholderText = "";
-            this.txtRafflePrice.SelectedText = "";
-            this.txtRafflePrice.ShadowDecoration.Parent = this.txtRafflePrice;
-            this.txtRafflePrice.Size = new System.Drawing.Size(174, 36);
-            this.txtRafflePrice.TabIndex = 63;
-            this.txtRafflePrice.TextChanged += new System.EventHandler(this.txtRafflePrice_TextChanged);
+            this.dcolProductId.DataPropertyName = "ProductId";
+            this.dcolProductId.HeaderText = "Product Id";
+            this.dcolProductId.Name = "dcolProductId";
+            this.dcolProductId.Visible = false;
             // 
-            // label6
+            // dcolProductName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(373, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 16);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "Entry Price";
-            // 
-            // txtRaffleDrawDate
-            // 
-            this.txtRaffleDrawDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRaffleDrawDate.DefaultText = "";
-            this.txtRaffleDrawDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRaffleDrawDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRaffleDrawDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRaffleDrawDate.DisabledState.Parent = this.txtRaffleDrawDate;
-            this.txtRaffleDrawDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRaffleDrawDate.Enabled = false;
-            this.txtRaffleDrawDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRaffleDrawDate.FocusedState.Parent = this.txtRaffleDrawDate;
-            this.txtRaffleDrawDate.ForeColor = System.Drawing.Color.Black;
-            this.txtRaffleDrawDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRaffleDrawDate.HoverState.Parent = this.txtRaffleDrawDate;
-            this.txtRaffleDrawDate.Location = new System.Drawing.Point(556, 78);
-            this.txtRaffleDrawDate.Name = "txtRaffleDrawDate";
-            this.txtRaffleDrawDate.PasswordChar = '\0';
-            this.txtRaffleDrawDate.PlaceholderText = "";
-            this.txtRaffleDrawDate.SelectedText = "";
-            this.txtRaffleDrawDate.ShadowDecoration.Parent = this.txtRaffleDrawDate;
-            this.txtRaffleDrawDate.Size = new System.Drawing.Size(272, 36);
-            this.txtRaffleDrawDate.TabIndex = 65;
-            this.txtRaffleDrawDate.TextChanged += new System.EventHandler(this.txtRaffleDrawDate_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(553, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 16);
-            this.label8.TabIndex = 66;
-            this.label8.Text = "Raffle Draw Date";
+            this.dcolProductName.DataPropertyName = "ProductName";
+            this.dcolProductName.HeaderText = "Product Name";
+            this.dcolProductName.Name = "dcolProductName";
+            this.dcolProductName.Width = 200;
             // 
             // frmParticipantEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 375);
+            this.ClientSize = new System.Drawing.Size(1097, 375);
             this.Controls.Add(this.txtRaffleDrawDate);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtRafflePrice);
@@ -670,5 +697,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolNumber1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolNumber2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolNumber3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dcolRafflePrizeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dcolProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dcolProductName;
     }
 }

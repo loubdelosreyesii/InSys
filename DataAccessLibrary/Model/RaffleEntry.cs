@@ -25,5 +25,7 @@ namespace DataAccessLibrary.Model
         public Nullable<int> LuckyNumber1 { get; set; }
         public Nullable<int> LuckyNumber2 { get; set; }
         public Nullable<int> LuckyNumber3 { get; set; }
+        public Nullable<int> RafflePrizeId { get; set; }
+        public Nullable<int> ProductId { get; set; }
     }
 }

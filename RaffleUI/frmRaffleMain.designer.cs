@@ -39,7 +39,7 @@
             this.btnSelectRaffle = new Guna.UI2.WinForms.Guna2Button();
             this.lblRaffleDescription = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGotoLuckyDraw = new Guna.UI2.WinForms.Guna2Button();
             this.panelRaffleShuffle = new Guna.UI.WinForms.GunaGradientPanel();
             this.lblProductToRaffle = new System.Windows.Forms.Label();
             this.lblParticipantName = new System.Windows.Forms.Label();
@@ -50,17 +50,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnNumber1 = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.gifBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.gifBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.gifGirl = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.gifCongratulations = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lblReturnMessage = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panelRaffleShuffle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxProductToRaffle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gifBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gifBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifGirl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifCongratulations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -117,16 +118,16 @@
             this.btnStartShuffle.BorderRadius = 5;
             this.btnStartShuffle.CheckedState.Parent = this.btnStartShuffle;
             this.btnStartShuffle.CustomImages.Parent = this.btnStartShuffle;
-            this.btnStartShuffle.FillColor = System.Drawing.Color.Red;
+            this.btnStartShuffle.FillColor = System.Drawing.Color.Firebrick;
             this.btnStartShuffle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnStartShuffle.ForeColor = System.Drawing.Color.White;
             this.btnStartShuffle.HoverState.Parent = this.btnStartShuffle;
-            this.btnStartShuffle.Location = new System.Drawing.Point(25, 565);
+            this.btnStartShuffle.Location = new System.Drawing.Point(26, 565);
             this.btnStartShuffle.Name = "btnStartShuffle";
             this.btnStartShuffle.ShadowDecoration.Parent = this.btnStartShuffle;
-            this.btnStartShuffle.Size = new System.Drawing.Size(147, 38);
+            this.btnStartShuffle.Size = new System.Drawing.Size(196, 38);
             this.btnStartShuffle.TabIndex = 35;
-            this.btnStartShuffle.Text = "Start Shuffle";
+            this.btnStartShuffle.Text = "Start Shuffle Prizes";
             this.btnStartShuffle.Click += new System.EventHandler(this.btnStartShuffle_Click);
             // 
             // btnSelectRaffle
@@ -163,35 +164,35 @@
             this.guna2Button4.BorderRadius = 5;
             this.guna2Button4.CheckedState.Parent = this.guna2Button4;
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.Red;
+            this.guna2Button4.FillColor = System.Drawing.Color.Firebrick;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(178, 565);
+            this.guna2Button4.Location = new System.Drawing.Point(430, 565);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(147, 38);
+            this.guna2Button4.Size = new System.Drawing.Size(196, 38);
             this.guna2Button4.TabIndex = 48;
             this.guna2Button4.Text = "View Participants";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click_1);
             // 
-            // guna2Button1
+            // btnGotoLuckyDraw
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Red;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(331, 565);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(196, 38);
-            this.guna2Button1.TabIndex = 46;
-            this.guna2Button1.Text = "Go to Lucky Draw";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_3);
+            this.btnGotoLuckyDraw.BackColor = System.Drawing.Color.Transparent;
+            this.btnGotoLuckyDraw.BorderRadius = 5;
+            this.btnGotoLuckyDraw.CheckedState.Parent = this.btnGotoLuckyDraw;
+            this.btnGotoLuckyDraw.CustomImages.Parent = this.btnGotoLuckyDraw;
+            this.btnGotoLuckyDraw.FillColor = System.Drawing.Color.Firebrick;
+            this.btnGotoLuckyDraw.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGotoLuckyDraw.ForeColor = System.Drawing.Color.White;
+            this.btnGotoLuckyDraw.HoverState.Parent = this.btnGotoLuckyDraw;
+            this.btnGotoLuckyDraw.Location = new System.Drawing.Point(632, 565);
+            this.btnGotoLuckyDraw.Name = "btnGotoLuckyDraw";
+            this.btnGotoLuckyDraw.ShadowDecoration.Parent = this.btnGotoLuckyDraw;
+            this.btnGotoLuckyDraw.Size = new System.Drawing.Size(196, 38);
+            this.btnGotoLuckyDraw.TabIndex = 46;
+            this.btnGotoLuckyDraw.Text = "Go to Lucky Draw";
+            this.btnGotoLuckyDraw.Click += new System.EventHandler(this.guna2Button1_Click_3);
             // 
             // panelRaffleShuffle
             // 
@@ -206,8 +207,8 @@
             this.panelRaffleShuffle.Controls.Add(this.label3);
             this.panelRaffleShuffle.Controls.Add(this.btnNumber1);
             this.panelRaffleShuffle.Controls.Add(this.guna2TileButton1);
-            this.panelRaffleShuffle.Controls.Add(this.gifBox2);
-            this.panelRaffleShuffle.Controls.Add(this.gifBox1);
+            this.panelRaffleShuffle.Controls.Add(this.gifGirl);
+            this.panelRaffleShuffle.Controls.Add(this.gifCongratulations);
             this.panelRaffleShuffle.Controls.Add(this.pictureBox1);
             this.panelRaffleShuffle.ForeColor = System.Drawing.Color.Red;
             this.panelRaffleShuffle.GradientColor1 = System.Drawing.Color.White;
@@ -338,29 +339,29 @@
             this.guna2TileButton1.TabIndex = 48;
             this.guna2TileButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             // 
-            // gifBox2
+            // gifGirl
             // 
-            this.gifBox2.BackColor = System.Drawing.Color.Transparent;
-            this.gifBox2.Image = ((System.Drawing.Image)(resources.GetObject("gifBox2.Image")));
-            this.gifBox2.Location = new System.Drawing.Point(767, -33);
-            this.gifBox2.Name = "gifBox2";
-            this.gifBox2.ShadowDecoration.Parent = this.gifBox2;
-            this.gifBox2.Size = new System.Drawing.Size(160, 170);
-            this.gifBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gifBox2.TabIndex = 49;
-            this.gifBox2.TabStop = false;
+            this.gifGirl.BackColor = System.Drawing.Color.Transparent;
+            this.gifGirl.Image = ((System.Drawing.Image)(resources.GetObject("gifGirl.Image")));
+            this.gifGirl.Location = new System.Drawing.Point(767, -33);
+            this.gifGirl.Name = "gifGirl";
+            this.gifGirl.ShadowDecoration.Parent = this.gifGirl;
+            this.gifGirl.Size = new System.Drawing.Size(160, 170);
+            this.gifGirl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gifGirl.TabIndex = 49;
+            this.gifGirl.TabStop = false;
             // 
-            // gifBox1
+            // gifCongratulations
             // 
-            this.gifBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gifBox1.Image = ((System.Drawing.Image)(resources.GetObject("gifBox1.Image")));
-            this.gifBox1.Location = new System.Drawing.Point(306, -62);
-            this.gifBox1.Name = "gifBox1";
-            this.gifBox1.ShadowDecoration.Parent = this.gifBox1;
-            this.gifBox1.Size = new System.Drawing.Size(460, 268);
-            this.gifBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gifBox1.TabIndex = 50;
-            this.gifBox1.TabStop = false;
+            this.gifCongratulations.BackColor = System.Drawing.Color.Transparent;
+            this.gifCongratulations.Image = ((System.Drawing.Image)(resources.GetObject("gifCongratulations.Image")));
+            this.gifCongratulations.Location = new System.Drawing.Point(306, -62);
+            this.gifCongratulations.Name = "gifCongratulations";
+            this.gifCongratulations.ShadowDecoration.Parent = this.gifCongratulations;
+            this.gifCongratulations.Size = new System.Drawing.Size(460, 268);
+            this.gifCongratulations.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gifCongratulations.TabIndex = 50;
+            this.gifCongratulations.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -405,15 +406,34 @@
             this.guna2PictureBox1.TabIndex = 63;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Firebrick;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(228, 565);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(196, 38);
+            this.guna2Button1.TabIndex = 64;
+            this.guna2Button1.Text = "Start Shuffle Participants";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // frmRaffleMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(55)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(973, 648);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.lblReturnMessage);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.btnGotoLuckyDraw);
             this.Controls.Add(this.guna2Button4);
             this.Controls.Add(this.lblRaffleDescription);
             this.Controls.Add(this.btnSelectRaffle);
@@ -432,8 +452,8 @@
             this.panelRaffleShuffle.ResumeLayout(false);
             this.panelRaffleShuffle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxProductToRaffle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gifBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gifBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifGirl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gifCongratulations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -460,16 +480,17 @@
         private System.Windows.Forms.Label lblRaffleDescription;
         private System.Windows.Forms.Label lblProductToRaffle;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnGotoLuckyDraw;
         private Guna.UI2.WinForms.Guna2TileButton btnNumber1;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
-        private Guna.UI2.WinForms.Guna2PictureBox gifBox2;
-        private Guna.UI2.WinForms.Guna2PictureBox gifBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox gifGirl;
+        private Guna.UI2.WinForms.Guna2PictureBox gifCongratulations;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private System.Windows.Forms.Label lblReturnMessage;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
 

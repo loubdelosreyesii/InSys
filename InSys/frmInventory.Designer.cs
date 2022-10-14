@@ -68,7 +68,7 @@ namespace InSys
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(1085, 45);
+            this.guna2Panel1.Size = new System.Drawing.Size(1188, 45);
             this.guna2Panel1.TabIndex = 12;
             // 
             // guna2Chip1
@@ -195,7 +195,7 @@ namespace InSys
             this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvwRecords.RowTemplate.Height = 60;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(1047, 321);
+            this.dgvwRecords.Size = new System.Drawing.Size(1150, 321);
             this.dgvwRecords.TabIndex = 24;
             // 
             // dcolProductPhoto
@@ -305,7 +305,7 @@ namespace InSys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 434);
+            this.ClientSize = new System.Drawing.Size(1188, 434);
             this.Controls.Add(this.dgvwRecords);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);

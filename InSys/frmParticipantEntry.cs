@@ -41,6 +41,7 @@ namespace InSys
 
         public frmParticipantEntry(){
             InitializeComponent();
+            dgvwRecords.AutoGenerateColumns = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e){
@@ -71,7 +72,6 @@ namespace InSys
                     Record.PaidAmount = 0.00m;
                 else
                     Record.PaidAmount = Convert.ToDecimal(txtPaidAmount.Text);
-
 
                 Record.PaymentMethod = Convert.ToInt32(item.Cells["dcolModeOfPayment"].Value);
 
@@ -119,6 +119,7 @@ namespace InSys
 
         private void frmInventoryDetail_Load(object sender, EventArgs e)
         {
+            
             if (RaffleEntries == null)
                 RaffleEntries = new List<RaffleEntry>();
 
@@ -276,7 +277,27 @@ namespace InSys
 
         private void dgvwRecords_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvwRecords.RowCount == 0) {
+                return;
+            }
+            DataGridViewRow currentRecordRaffle = dgvwRecords.CurrentRow;
 
+            Console.WriteLine($"{currentRecordRaffle.Cells["dcolRaffleReferenceNumber"].Value}");
+
+            frmChooseRafflePrize.RecordRaffle = RecordRaffle;
+            frmChooseRafflePrize.ShowDialog();
+
+            dynamic varSelectedProductPrize = frmChooseRafflePrize.SelectedProductPrize;
+
+            currentRecordRaffle.Cells["dcolRafflePrizeId"].Value = varSelectedProductPrize.Id;
+
+            currentRecordRaffle.Cells["dcolProductId"].Value = varSelectedProductPrize.ProductId;
+
+            currentRecordRaffle.Cells["dcolProductName"].Value = varSelectedProductPrize.ProductName;
+
+            dgvwRecords.Refresh();
         }
+        frmChoosePrizes frmChooseRafflePrize = new frmChoosePrizes();
+
     }
 }
