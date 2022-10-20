@@ -35,6 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRaffleDetail));
             this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
@@ -65,8 +68,19 @@
             this.dcolPrizeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolPrizeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolPrizeProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dcolPrizeLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbListOfLuckyDrawPrizes = new System.Windows.Forms.TabPage();
             this.dgvRecordsLuckyDraw = new System.Windows.Forms.DataGridView();
+            this.btnEditLuckyPrize = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteLuckyPrize = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddLuckyPrize = new Guna.UI2.WinForms.Guna2Button();
+            this.tbListOfPeraOPingPongPrizes = new System.Windows.Forms.TabPage();
+            this.dgvPingPongPrizes = new System.Windows.Forms.DataGridView();
+            this.btnEditPingPongPrize = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeletePingPongPrize = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddPingPongPrize = new Guna.UI2.WinForms.Guna2Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpDrawTime = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,11 +88,15 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditLuckyPrize = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDeleteLuckyPrize = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddLuckyPrize = new Guna.UI2.WinForms.Guna2Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpDrawTime = new System.Windows.Forms.DateTimePicker();
+            this.dcolShuffleLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxEntries)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -86,6 +104,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).BeginInit();
             this.tbListOfLuckyDrawPrizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecordsLuckyDraw)).BeginInit();
+            this.tbListOfPeraOPingPongPrizes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPingPongPrizes)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -98,7 +118,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.ShadowDecoration.Parent = this.pnlHeader;
-            this.pnlHeader.Size = new System.Drawing.Size(743, 45);
+            this.pnlHeader.Size = new System.Drawing.Size(830, 45);
             this.pnlHeader.TabIndex = 18;
             // 
             // guna2Chip1
@@ -126,7 +146,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(651, 186);
+            this.btnCancel.Location = new System.Drawing.Point(738, 186);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
             this.btnCancel.Size = new System.Drawing.Size(70, 36);
@@ -145,7 +165,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Location = new System.Drawing.Point(575, 186);
+            this.btnSave.Location = new System.Drawing.Point(662, 186);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
             this.btnSave.Size = new System.Drawing.Size(70, 36);
@@ -158,7 +178,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(32, 52);
+            this.label1.Location = new System.Drawing.Point(18, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 23;
@@ -178,13 +198,13 @@
             this.txtNName.ForeColor = System.Drawing.Color.Black;
             this.txtNName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNName.HoverState.Parent = this.txtNName;
-            this.txtNName.Location = new System.Drawing.Point(35, 71);
+            this.txtNName.Location = new System.Drawing.Point(21, 71);
             this.txtNName.Name = "txtNName";
             this.txtNName.PasswordChar = '\0';
             this.txtNName.PlaceholderText = "Enter Raffle Name Here...";
             this.txtNName.SelectedText = "";
             this.txtNName.ShadowDecoration.Parent = this.txtNName;
-            this.txtNName.Size = new System.Drawing.Size(335, 36);
+            this.txtNName.Size = new System.Drawing.Size(456, 36);
             this.txtNName.TabIndex = 20;
             // 
             // txtDescription
@@ -201,13 +221,13 @@
             this.txtDescription.ForeColor = System.Drawing.Color.Black;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(35, 134);
+            this.txtDescription.Location = new System.Drawing.Point(21, 134);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderText = "Enter Description Here...";
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
-            this.txtDescription.Size = new System.Drawing.Size(335, 36);
+            this.txtDescription.Size = new System.Drawing.Size(456, 36);
             this.txtDescription.TabIndex = 39;
             // 
             // label7
@@ -215,7 +235,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(32, 115);
+            this.label7.Location = new System.Drawing.Point(18, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 16);
             this.label7.TabIndex = 38;
@@ -235,7 +255,7 @@
             this.txtEntryPrice.ForeColor = System.Drawing.Color.Black;
             this.txtEntryPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEntryPrice.HoverState.Parent = this.txtEntryPrice;
-            this.txtEntryPrice.Location = new System.Drawing.Point(584, 134);
+            this.txtEntryPrice.Location = new System.Drawing.Point(671, 134);
             this.txtEntryPrice.Name = "txtEntryPrice";
             this.txtEntryPrice.PasswordChar = '\0';
             this.txtEntryPrice.PlaceholderText = "Enter the Price Here...";
@@ -249,7 +269,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(581, 110);
+            this.label2.Location = new System.Drawing.Point(668, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 16);
             this.label2.TabIndex = 40;
@@ -262,7 +282,7 @@
             this.dtpDrawDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDrawDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpDrawDate.HoverState.Parent = this.dtpDrawDate;
-            this.dtpDrawDate.Location = new System.Drawing.Point(396, 71);
+            this.dtpDrawDate.Location = new System.Drawing.Point(483, 71);
             this.dtpDrawDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDrawDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDrawDate.Name = "dtpDrawDate";
@@ -276,7 +296,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(393, 52);
+            this.label3.Location = new System.Drawing.Point(480, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 43;
@@ -330,16 +350,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tpListOfPrizes);
             this.tabControl1.Controls.Add(this.tbListOfLuckyDrawPrizes);
+            this.tabControl1.Controls.Add(this.tbListOfPeraOPingPongPrizes);
             this.tabControl1.Font = new System.Drawing.Font("Mada", 11.25F);
-            this.tabControl1.Location = new System.Drawing.Point(31, 202);
+            this.tabControl1.Location = new System.Drawing.Point(17, 202);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(700, 381);
+            this.tabControl1.Size = new System.Drawing.Size(801, 381);
             this.tabControl1.TabIndex = 48;
             // 
             // tpListOfPrizes
             // 
-            this.tpListOfPrizes.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tpListOfPrizes.BackColor = System.Drawing.Color.White;
             this.tpListOfPrizes.Controls.Add(this.guna2Button3);
             this.tpListOfPrizes.Controls.Add(this.btnDelete);
             this.tpListOfPrizes.Controls.Add(this.btnAdd);
@@ -348,7 +369,7 @@
             this.tpListOfPrizes.Location = new System.Drawing.Point(4, 26);
             this.tpListOfPrizes.Name = "tpListOfPrizes";
             this.tpListOfPrizes.Padding = new System.Windows.Forms.Padding(3);
-            this.tpListOfPrizes.Size = new System.Drawing.Size(692, 351);
+            this.tpListOfPrizes.Size = new System.Drawing.Size(793, 351);
             this.tpListOfPrizes.TabIndex = 0;
             this.tpListOfPrizes.Text = "List Of Raffle Prizes";
             // 
@@ -437,7 +458,8 @@
             this.dcolPrizeProductName,
             this.dcolPrizeProduct,
             this.dcolPrizeAmount,
-            this.dcolPrizeProductQuantity});
+            this.dcolPrizeProductQuantity,
+            this.dcolPrizeLevel});
             this.dgvwRecords.EnableHeadersVisualStyles = false;
             this.dgvwRecords.Location = new System.Drawing.Point(6, 48);
             this.dgvwRecords.Name = "dgvwRecords";
@@ -457,7 +479,7 @@
             this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvwRecords.RowTemplate.Height = 60;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(680, 284);
+            this.dgvwRecords.Size = new System.Drawing.Size(781, 284);
             this.dgvwRecords.TabIndex = 30;
             // 
             // dcolID
@@ -520,8 +542,16 @@
             this.dcolPrizeProductQuantity.ReadOnly = true;
             this.dcolPrizeProductQuantity.Width = 190;
             // 
+            // dcolPrizeLevel
+            // 
+            this.dcolPrizeLevel.DataPropertyName = "ShuffleLevel";
+            this.dcolPrizeLevel.HeaderText = "Prize Level";
+            this.dcolPrizeLevel.Name = "dcolPrizeLevel";
+            this.dcolPrizeLevel.ReadOnly = true;
+            // 
             // tbListOfLuckyDrawPrizes
             // 
+            this.tbListOfLuckyDrawPrizes.BackColor = System.Drawing.Color.White;
             this.tbListOfLuckyDrawPrizes.Controls.Add(this.dgvRecordsLuckyDraw);
             this.tbListOfLuckyDrawPrizes.Controls.Add(this.btnEditLuckyPrize);
             this.tbListOfLuckyDrawPrizes.Controls.Add(this.btnDeleteLuckyPrize);
@@ -529,10 +559,9 @@
             this.tbListOfLuckyDrawPrizes.Font = new System.Drawing.Font("Mada", 9.75F);
             this.tbListOfLuckyDrawPrizes.Location = new System.Drawing.Point(4, 26);
             this.tbListOfLuckyDrawPrizes.Name = "tbListOfLuckyDrawPrizes";
-            this.tbListOfLuckyDrawPrizes.Size = new System.Drawing.Size(692, 351);
+            this.tbListOfLuckyDrawPrizes.Size = new System.Drawing.Size(793, 351);
             this.tbListOfLuckyDrawPrizes.TabIndex = 1;
             this.tbListOfLuckyDrawPrizes.Text = "List of Lucky Draw Prizes";
-            this.tbListOfLuckyDrawPrizes.UseVisualStyleBackColor = true;
             // 
             // dgvRecordsLuckyDraw
             // 
@@ -562,7 +591,8 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.dataGridViewTextBoxColumn7,
+            this.dcolShuffleLevel});
             this.dgvRecordsLuckyDraw.EnableHeadersVisualStyles = false;
             this.dgvRecordsLuckyDraw.Location = new System.Drawing.Point(6, 48);
             this.dgvRecordsLuckyDraw.Name = "dgvRecordsLuckyDraw";
@@ -582,68 +612,8 @@
             this.dgvRecordsLuckyDraw.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvRecordsLuckyDraw.RowTemplate.Height = 60;
             this.dgvRecordsLuckyDraw.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecordsLuckyDraw.Size = new System.Drawing.Size(680, 284);
+            this.dgvRecordsLuckyDraw.Size = new System.Drawing.Size(781, 284);
             this.dgvRecordsLuckyDraw.TabIndex = 38;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            this.dataGridViewTextBoxColumn3.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ProductId";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Product Id";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "SuggestedRetailPrice";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Prize Amount";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Quantity";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Product Quantity";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 150;
             // 
             // btnEditLuckyPrize
             // 
@@ -702,12 +672,136 @@
             this.btnAddLuckyPrize.Text = "Add";
             this.btnAddLuckyPrize.Click += new System.EventHandler(this.btnAddLuckyPrize_Click);
             // 
+            // tbListOfPeraOPingPongPrizes
+            // 
+            this.tbListOfPeraOPingPongPrizes.Controls.Add(this.dgvPingPongPrizes);
+            this.tbListOfPeraOPingPongPrizes.Controls.Add(this.btnEditPingPongPrize);
+            this.tbListOfPeraOPingPongPrizes.Controls.Add(this.btnDeletePingPongPrize);
+            this.tbListOfPeraOPingPongPrizes.Controls.Add(this.btnAddPingPongPrize);
+            this.tbListOfPeraOPingPongPrizes.Font = new System.Drawing.Font("Mada", 9.75F);
+            this.tbListOfPeraOPingPongPrizes.Location = new System.Drawing.Point(4, 26);
+            this.tbListOfPeraOPingPongPrizes.Name = "tbListOfPeraOPingPongPrizes";
+            this.tbListOfPeraOPingPongPrizes.Padding = new System.Windows.Forms.Padding(3);
+            this.tbListOfPeraOPingPongPrizes.Size = new System.Drawing.Size(793, 351);
+            this.tbListOfPeraOPingPongPrizes.TabIndex = 2;
+            this.tbListOfPeraOPingPongPrizes.Text = "List Of Pera O Ping Pong Prizes";
+            this.tbListOfPeraOPingPongPrizes.UseVisualStyleBackColor = true;
+            // 
+            // dgvPingPongPrizes
+            // 
+            this.dgvPingPongPrizes.AllowUserToAddRows = false;
+            this.dgvPingPongPrizes.AllowUserToDeleteRows = false;
+            this.dgvPingPongPrizes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPingPongPrizes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPingPongPrizes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvPingPongPrizes.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvPingPongPrizes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Mada", 9.75F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPingPongPrizes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPingPongPrizes.ColumnHeadersHeight = 50;
+            this.dgvPingPongPrizes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPingPongPrizes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15});
+            this.dgvPingPongPrizes.EnableHeadersVisualStyles = false;
+            this.dgvPingPongPrizes.Location = new System.Drawing.Point(6, 48);
+            this.dgvPingPongPrizes.Name = "dgvPingPongPrizes";
+            this.dgvPingPongPrizes.ReadOnly = true;
+            this.dgvPingPongPrizes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Mada", 9.75F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPingPongPrizes.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvPingPongPrizes.RowHeadersVisible = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPingPongPrizes.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPingPongPrizes.RowTemplate.Height = 60;
+            this.dgvPingPongPrizes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPingPongPrizes.Size = new System.Drawing.Size(781, 284);
+            this.dgvPingPongPrizes.TabIndex = 42;
+            // 
+            // btnEditPingPongPrize
+            // 
+            this.btnEditPingPongPrize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnEditPingPongPrize.BorderRadius = 5;
+            this.btnEditPingPongPrize.BorderThickness = 1;
+            this.btnEditPingPongPrize.CheckedState.Parent = this.btnEditPingPongPrize;
+            this.btnEditPingPongPrize.CustomImages.Parent = this.btnEditPingPongPrize;
+            this.btnEditPingPongPrize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnEditPingPongPrize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEditPingPongPrize.ForeColor = System.Drawing.Color.White;
+            this.btnEditPingPongPrize.HoverState.Parent = this.btnEditPingPongPrize;
+            this.btnEditPingPongPrize.Location = new System.Drawing.Point(82, 6);
+            this.btnEditPingPongPrize.Name = "btnEditPingPongPrize";
+            this.btnEditPingPongPrize.ShadowDecoration.Parent = this.btnEditPingPongPrize;
+            this.btnEditPingPongPrize.Size = new System.Drawing.Size(70, 36);
+            this.btnEditPingPongPrize.TabIndex = 41;
+            this.btnEditPingPongPrize.Text = "Edit";
+            this.btnEditPingPongPrize.Click += new System.EventHandler(this.btnEditPingPongPrize_Click);
+            // 
+            // btnDeletePingPongPrize
+            // 
+            this.btnDeletePingPongPrize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnDeletePingPongPrize.BorderRadius = 5;
+            this.btnDeletePingPongPrize.BorderThickness = 1;
+            this.btnDeletePingPongPrize.CheckedState.Parent = this.btnDeletePingPongPrize;
+            this.btnDeletePingPongPrize.CustomImages.Parent = this.btnDeletePingPongPrize;
+            this.btnDeletePingPongPrize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnDeletePingPongPrize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDeletePingPongPrize.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePingPongPrize.HoverState.Parent = this.btnDeletePingPongPrize;
+            this.btnDeletePingPongPrize.Location = new System.Drawing.Point(158, 6);
+            this.btnDeletePingPongPrize.Name = "btnDeletePingPongPrize";
+            this.btnDeletePingPongPrize.ShadowDecoration.Parent = this.btnDeletePingPongPrize;
+            this.btnDeletePingPongPrize.Size = new System.Drawing.Size(70, 36);
+            this.btnDeletePingPongPrize.TabIndex = 40;
+            this.btnDeletePingPongPrize.Text = "Delete";
+            this.btnDeletePingPongPrize.Click += new System.EventHandler(this.btnDeletePingPongPrize_Click);
+            // 
+            // btnAddPingPongPrize
+            // 
+            this.btnAddPingPongPrize.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAddPingPongPrize.BorderRadius = 5;
+            this.btnAddPingPongPrize.BorderThickness = 1;
+            this.btnAddPingPongPrize.CheckedState.Parent = this.btnAddPingPongPrize;
+            this.btnAddPingPongPrize.CustomImages.Parent = this.btnAddPingPongPrize;
+            this.btnAddPingPongPrize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnAddPingPongPrize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddPingPongPrize.ForeColor = System.Drawing.Color.White;
+            this.btnAddPingPongPrize.HoverState.Parent = this.btnAddPingPongPrize;
+            this.btnAddPingPongPrize.Location = new System.Drawing.Point(6, 6);
+            this.btnAddPingPongPrize.Name = "btnAddPingPongPrize";
+            this.btnAddPingPongPrize.ShadowDecoration.Parent = this.btnAddPingPongPrize;
+            this.btnAddPingPongPrize.Size = new System.Drawing.Size(70, 36);
+            this.btnAddPingPongPrize.TabIndex = 39;
+            this.btnAddPingPongPrize.Text = "Add";
+            this.btnAddPingPongPrize.Click += new System.EventHandler(this.btnAddPingPongPrize_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(393, 115);
+            this.label5.Location = new System.Drawing.Point(480, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 16);
             this.label5.TabIndex = 50;
@@ -717,7 +811,7 @@
             // 
             this.dtpDrawTime.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDrawTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpDrawTime.Location = new System.Drawing.Point(396, 134);
+            this.dtpDrawTime.Location = new System.Drawing.Point(483, 134);
             this.dtpDrawTime.MaximumSize = new System.Drawing.Size(500, 42);
             this.dtpDrawTime.MinimumSize = new System.Drawing.Size(4, 36);
             this.dtpDrawTime.Name = "dtpDrawTime";
@@ -725,11 +819,147 @@
             this.dtpDrawTime.Size = new System.Drawing.Size(182, 36);
             this.dtpDrawTime.TabIndex = 51;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ProductId";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Product Id";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "SuggestedRetailPrice";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Prize Amount";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 190;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Product Quantity";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 190;
+            // 
+            // dcolShuffleLevel
+            // 
+            this.dcolShuffleLevel.DataPropertyName = "ShuffleLevel";
+            this.dcolShuffleLevel.HeaderText = "Prize Level";
+            this.dcolShuffleLevel.Name = "dcolShuffleLevel";
+            this.dcolShuffleLevel.ReadOnly = true;
+            this.dcolShuffleLevel.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn8.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            this.dataGridViewTextBoxColumn8.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            this.dataGridViewTextBoxColumn9.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            this.dataGridViewTextBoxColumn10.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "ProductId";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Product Id";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Visible = false;
+            this.dataGridViewTextBoxColumn12.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "SuggestedRetailPrice";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Prize Amount";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 190;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Product Quantity";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 190;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "ShuffleLevel";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Prize Level";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Visible = false;
+            // 
             // frmRaffleDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 595);
+            this.ClientSize = new System.Drawing.Size(830, 595);
             this.Controls.Add(this.dtpDrawTime);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancel);
@@ -759,6 +989,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).EndInit();
             this.tbListOfLuckyDrawPrizes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecordsLuckyDraw)).EndInit();
+            this.tbListOfPeraOPingPongPrizes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPingPongPrizes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -794,6 +1026,7 @@
         private Guna.UI2.WinForms.Guna2Button btnEditLuckyPrize;
         private System.Windows.Forms.DataGridView dgvRecordsLuckyDraw;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtpDrawTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolDescription;
@@ -801,7 +1034,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolPrizeProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolPrizeAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolPrizeProductQuantity;
-        private System.Windows.Forms.DateTimePicker dtpDrawTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dcolPrizeLevel;
+        private System.Windows.Forms.TabPage tbListOfPeraOPingPongPrizes;
+        private Guna.UI2.WinForms.Guna2Button btnEditPingPongPrize;
+        private Guna.UI2.WinForms.Guna2Button btnDeletePingPongPrize;
+        private Guna.UI2.WinForms.Guna2Button btnAddPingPongPrize;
+        private System.Windows.Forms.DataGridView dgvPingPongPrizes;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -809,5 +1047,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dcolShuffleLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
     }
 }

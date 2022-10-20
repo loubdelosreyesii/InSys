@@ -42,6 +42,8 @@ namespace DataAccessLibrary.Model
         public virtual DbSet<RaffleWinner> RaffleWinners { get; set; }
         public virtual DbSet<RaffleLuckyDrawPrize> RaffleLuckyDrawPrizes { get; set; }
         public virtual DbSet<LuckyDrawWinner> LuckyDrawWinners { get; set; }
+        public virtual DbSet<PingPongPrize> PingPongPrizes { get; set; }
+        public virtual DbSet<PingPongWinner> PingPongWinners { get; set; }
     
         public virtual ObjectResult<PointOfSalesViewModel> PointOfSaleViewModel()
         {
@@ -111,6 +113,15 @@ namespace DataAccessLibrary.Model
                 new ObjectParameter("RaffleId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Raffle_PickupWinner_Result>("sp_Raffle_PickupWinner", raffleIdParameter);
+        }
+    
+        public virtual ObjectResult<sp_PingPongDraw_SelectForView_Result> sp_PingPongDraw_SelectForView(Nullable<int> raffleId)
+        {
+            var raffleIdParameter = raffleId.HasValue ?
+                new ObjectParameter("RaffleId", raffleId) :
+                new ObjectParameter("RaffleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_PingPongDraw_SelectForView_Result>("sp_PingPongDraw_SelectForView", raffleIdParameter);
         }
     }
 }

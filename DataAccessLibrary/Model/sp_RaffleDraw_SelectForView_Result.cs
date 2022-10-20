@@ -17,5 +17,6 @@ namespace DataAccessLibrary.Model
         public string BrandModel { get; set; }
         public int Quantity { get; set; }
         public int RafflePrizeId { get; set; }
+        public int ShuffleLevel { get; set; }
     }
 }

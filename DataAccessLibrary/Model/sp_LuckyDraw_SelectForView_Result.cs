@@ -17,5 +17,6 @@ namespace DataAccessLibrary.Model
         public int LuckyPrizeId { get; set; }
         public string BrandModel { get; set; }
         public int Quantity { get; set; }
+        public int ShuffleLevel { get; set; }
     }
 }

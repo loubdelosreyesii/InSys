@@ -10,14 +10,12 @@
 namespace DataAccessLibrary.Model
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class RafflePrize
+    public partial class sp_PingPongDraw_SelectForView_Result
     {
-        public int Id { get; set; }
-        public int RaffleId { get; set; }
-        public int ProductId { get; set; }
+        public int InventoryId { get; set; }
+        public int RafflePrizeId { get; set; }
+        public string BrandModel { get; set; }
         public int Quantity { get; set; }
-        public int ShuffleLevel { get; set; }
     }
 }

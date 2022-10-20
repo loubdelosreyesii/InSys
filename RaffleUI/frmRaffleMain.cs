@@ -19,16 +19,10 @@ using static System.Net.Mime.MediaTypeNames;
 using Application = System.Windows.Forms.Application;
 using Image = System.Drawing.Image;
 
-namespace RaffleUI
-{
-    public partial class frmRaffleMain : Form
-    {
-        public string SourceFolder { get; set; }
-        public Raffle RecordRaffle{ get; set; }
-
-        private const double ShuffleTime = 7;
-        public frmRaffleMain()
-        {
+namespace RaffleUI{
+    public partial class frmRaffleMain : Form{
+        
+        public frmRaffleMain(){
             InitializeComponent();
         }
         private void LoadRaffleInformation() {
@@ -45,8 +39,7 @@ namespace RaffleUI
                 this.Close();
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        private void Form1_Load(object sender, EventArgs e){
             frmChooseEvent = new frmChooseRaffleEvent();
 
             frmChooseEvent.ShowDialog(this);
@@ -55,16 +48,20 @@ namespace RaffleUI
 
             gifGirl.Visible = false;
             gifCongratulations.Visible = false;
+
+            isPrizeShuffled = false;
+            isParticipantShuffled = false;  
+
+            btnClaimPrize.Visible = false;
+            btnNoShow.Visible = false;
         }
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
+        private void guna2Button1_Click_1(object sender, EventArgs e){
             frmChooseEvent = new frmChooseRaffleEvent();
             frmChooseEvent.ShowDialog(this);
             RecordRaffle = frmChooseEvent.RecordRaffle;
             LoadRaffleInformation();
         }
-        private void ThreadSleep(double diffInSeconds)
-        {
+        private void ThreadSleep(double diffInSeconds){
             if (diffInSeconds < 4)
                 Thread.Sleep(300);
             else if (diffInSeconds < 6)
@@ -72,10 +69,25 @@ namespace RaffleUI
             else
                 Thread.Sleep(300);
         }
-        frmChooseRaffleEvent frmChooseEvent = new frmChooseRaffleEvent();
+        private void InitializeScreen() {
+            gifGirl.Visible = false;
+            gifCongratulations.Visible = false;
+            lblRaffleReferenceNumber.Text = string.Empty;
+            lblParticipantName.Text = string.Empty;
+            pboxProductToRaffle.Image = null;
+            intLuckyPrizeIdSelected = 0;
+            intProductIdSelected = 0;
+            lblProductToRaffle.Text = "Prize to Raffle";
 
-        private void btnStartShuffle_Click(object sender, EventArgs e)
-        {
+            isBetterLuckNextActivated = false;
+            isPrizeShuffled = false;
+            isParticipantShuffled = false;
+        }
+        private void btnStartShuffle_Click(object sender, EventArgs e){
+            if (isPrizeClaimed) {
+                InitializeScreen();
+                isPrizeClaimed = false;
+            }
             if (RecordRaffle == null) {
                 MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -84,50 +96,57 @@ namespace RaffleUI
                 MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-            gifGirl.Visible = false;
-            gifCongratulations.Visible = false;
-
-            lblParticipantName.Text = String.Empty;
-            lblRaffleReferenceNumber.Text = String.Empty;
-
+            
             stopShuffle = false;
 
             listOfRaffleEntries = raffleEntryController.SelectAll(RecordRaffle.Id);
             
-            btnStartShuffle.Enabled = false;
-            btnGotoLuckyDraw.Enabled = false;
-
             threadStartShuffleForPrize = new Thread(new ThreadStart(ShufflePrizeInvoke));
             threadStartShuffleForPrize.IsBackground = true;
             threadStartShuffleForPrize.Start();
         }
+        private void ToggleControlPanel(bool toggle) {
+            pnlControls.Enabled = toggle;
+        }
+
 
         private void ShufflePrizeInvoke() {
-            try
-            {
+            try{
                 Random r = new Random();
                 DateTime dtStart = DateTime.Now;
                 DateTime dtEnd = DateTime.Now;
-                int intProductIdSelected = 0, intLuckyPrizeIdSelected = 0;
                 double diffInSeconds;
 
+                intProductIdSelected = 0;
+                intLuckyPrizeIdSelected = 0;
+
                 listOfRafflePrizes = rafflePrizeController.SelectProducts(RecordRaffle.Id);
-                
-                if (listOfRafflePrizes.Count == 0)
-                {
-                    if (lblReturnMessage.InvokeRequired)
-                    {
+
+                int intShuffleLevel = listOfRafflePrizes.Select(p => p.ShuffleLevel).OrderBy(p => p).Take(1).SingleOrDefault() ;
+
+                listOfRafflePrizes = listOfRafflePrizes.Where(p => p.ShuffleLevel == intShuffleLevel).ToList();
+
+                if (pnlControls.InvokeRequired)
+                    this.pnlControls.Invoke(new InvokeOnControlPanel(ToggleControlPanel), false);
+                else
+                    ToggleControlPanel(false);
+
+                if (listOfRafflePrizes.Count == 0){
+                    if (lblReturnMessage.InvokeRequired){
                         this.lblReturnMessage.Invoke(new InvokeOnReturnMessage(DisplayErrorMessage), "No more Lucky Prizes left.");
                     }
                     else
                         lblReturnMessage.Text = "No more Lucky Prizes left.";
-                    return;
+                    
+                    if (pnlControls.InvokeRequired)
+                        this.pnlControls.Invoke(new InvokeOnControlPanel(ToggleControlPanel), true);
+                    else
+                        ToggleControlPanel(true);
 
+                    return;
                 }
 
-                while (!stopShuffle)
-                {
+                while (!stopShuffle){
                     dtEnd = DateTime.Now;
                     int rIntForPrizes = r.Next(0, listOfRafflePrizes.Count);
                     intProductIdSelected = listOfRafflePrizes[rIntForPrizes].InventoryId;
@@ -135,12 +154,10 @@ namespace RaffleUI
 
                     Console.WriteLine(rIntForPrizes);
 
-                    if (lblProductToRaffle.InvokeRequired)
-                    {
+                    if (lblProductToRaffle.InvokeRequired){
                         this.lblProductToRaffle.Invoke(new InvokeOnRaffleWinnerLabels(ShuffleAll), rIntForPrizes);
                     }
-                    else
-                    {
+                    else{
                         ShuffleAll(rIntForPrizes);
                     }
 
@@ -151,8 +168,7 @@ namespace RaffleUI
 
                     ThreadSleep(diffInSeconds);
 
-                    if (diffInSeconds >= ShuffleTime)
-                    {
+                    if (diffInSeconds >= ShuffleTime){
                         SoundPlayer player = new SoundPlayer($"{Path.GetDirectoryName(Application.ExecutablePath) + $"\\Resources\\SelectProduct.wav"}");
                         player.Play();
 
@@ -167,25 +183,57 @@ namespace RaffleUI
                     Thread.Sleep(100);
                 }
 
+                if (pnlControls.InvokeRequired)
+                    this.pnlControls.Invoke(new InvokeOnControlPanel(ToggleControlPanel), true);
+                else
+                    ToggleControlPanel(true);
 
+                isPrizeShuffled = true;
+                isBetterLuckNextActivated = false;
+
+                if (isParticipantShuffled)
+                {
+                    Console.WriteLine("You can now save the winner in the database.");
+
+                    if (btnClaimPrize.InvokeRequired)
+                        this.btnClaimPrize.Invoke((MethodInvoker)delegate
+                        {
+                            this.btnClaimPrize.Visible = true;
+                        });
+                    else
+                        this.btnClaimPrize.Visible = true;
+
+                    if (btnNoShow.InvokeRequired)
+                        this.btnNoShow.Invoke((MethodInvoker)delegate
+                        {
+                            this.btnNoShow.Visible = true;
+                        });
+                    else
+                        this.btnNoShow.Visible = true;
+                }
+                else {
+                    Console.WriteLine("Please select Participants");
+                }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 MessageBox.Show(ex.ToString());
             }
         }
+        sp_Raffle_PickupWinner_Result vPreDeterminedRaffleWinner;
         private void ShuffleWinnerInvoke() {
-            try{
+            try
+            {
                 Random r = new Random();
                 DateTime dtStart = DateTime.Now;
                 DateTime dtEnd = DateTime.Now;
-                int intProductIdSelected = 0, intLuckyPrizeIdSelected = 0;
                 double diffInSeconds;
 
                 listOfRaffleQualifiedParticipants = participantController.SelectRaffleParticipants(RecordRaffle.Id);
 
-                if (listOfRaffleQualifiedParticipants.Count == 0){
-                    if (lblReturnMessage.InvokeRequired){
+                if (listOfRaffleQualifiedParticipants.Count == 0)
+                {
+                    if (lblReturnMessage.InvokeRequired)
+                    {
                         this.lblReturnMessage.Invoke(new InvokeOnReturnMessage(DisplayErrorMessage), "No more Qualified Participants left.");
                     }
                     else
@@ -193,33 +241,41 @@ namespace RaffleUI
                     return;
                 }
 
+                if (pnlControls.InvokeRequired)
+                    this.pnlControls.Invoke(new InvokeOnControlPanel(ToggleControlPanel), false);
+                else
+                    ToggleControlPanel(false);
+
                 dtStart = DateTime.Now;
                 dtEnd = DateTime.Now;
 
                 bool stopRaffleParticipantShuffle = false;
                 int intRaffleWinner = 0;
 
-                sp_Raffle_PickupWinner_Result vPreDeterminedRaffleWinner = listOfRaffleQualifiedParticipants.Where(p => p.RafflePrizeId == intLuckyPrizeIdSelected && p.ProductId == intProductIdSelected).Take(1).SingleOrDefault();
+                vPreDeterminedRaffleWinner = listOfRaffleQualifiedParticipants.Where(p => p.RafflePrizeId == intLuckyPrizeIdSelected && p.ProductId == intProductIdSelected).Take(1).SingleOrDefault();
 
-
-                while (!stopRaffleParticipantShuffle){
-
+                while (!stopRaffleParticipantShuffle)
+                {
                     listOfNoProductIdsParticipants = listOfRaffleQualifiedParticipants.Where(p => (p.RafflePrizeId == null || p.RafflePrizeId == 0) && (p.ProductId == null || p.RafflePrizeId == 0)).ToList();
 
                     intRaffleWinner = r.Next(0, listOfRaffleQualifiedParticipants.Count);
                     dtEnd = DateTime.Now;
-                    
-                    if (lblParticipantName.InvokeRequired){
+
+                    if (lblParticipantName.InvokeRequired)
+                    {
                         this.lblParticipantName.Invoke(new InvokeOnRaffleWinnerLabels(ShuffleWinner), intRaffleWinner);
                     }
-                    else{
+                    else
+                    {
                         ShuffleWinner(intRaffleWinner);
                     }
 
-                    if (lblRaffleReferenceNumber.InvokeRequired){
+                    if (lblRaffleReferenceNumber.InvokeRequired)
+                    {
                         this.lblRaffleReferenceNumber.Invoke(new InvokeOnRaffleWinnerRaffleReferenceNo(ShuffleWinnerRaffleReferenceNo), intRaffleWinner);
                     }
-                    else{
+                    else
+                    {
                         ShuffleWinnerRaffleReferenceNo(intRaffleWinner);
                     }
                     diffInSeconds = (dtEnd - dtStart).TotalSeconds;
@@ -268,7 +324,6 @@ namespace RaffleUI
                     {
                         ShufflePreDeterminedWinner(vPreDeterminedRaffleWinner);
                     }
-
                     if (lblRaffleReferenceNumber.InvokeRequired)
                     {
                         this.lblRaffleReferenceNumber.Invoke(new InvokeOnPreDefinedRaffleWinnerRaffleReferenceNo(ShuffleWinnerPreDeterminedRaffleReferenceNo), vPreDeterminedRaffleWinner);
@@ -278,62 +333,46 @@ namespace RaffleUI
                         ShuffleWinnerPreDeterminedRaffleReferenceNo(vPreDeterminedRaffleWinner);
                     }
                 }
-                if (gifCongratulations.InvokeRequired){
-                    this.gifCongratulations.Invoke(new InvokeOnGif1(DisplayGif1));
+                
+                isParticipantShuffled = true;
+
+                if (isPrizeShuffled || isBetterLuckNextActivated)
+                {
+                    Console.WriteLine("You can now save the winner in the database.");
+                    
+                    if (btnClaimPrize.InvokeRequired)
+                        this.btnClaimPrize.Invoke((MethodInvoker)delegate
+                        {
+                            this.btnClaimPrize.Visible = true;
+                        });
+                    else
+                        this.btnClaimPrize.Visible = true;
+
+                    if (btnNoShow.InvokeRequired)
+                        this.btnNoShow.Invoke((MethodInvoker)delegate
+                        {
+                            this.btnNoShow.Visible = true;
+                        });
+                    else
+                        this.btnNoShow.Visible = true;
+
                 }
                 else
-                    DisplayGif1();
-                if (gifGirl.InvokeRequired){
-                    this.gifGirl.Invoke(new InvokeOnGif2(DisplayGif2));
-                }
-                else{
-                    DisplayGif2();
+                {
+                    Console.WriteLine("Please select Participants");
                 }
 
-                //if (vPreDeterminedRaffleWinner == null)
-                //{
-                //    recordRaffleWinner = new RaffleWinner();
-
-                //    recordRaffleWinner.RaffleReferenceNumber = currentParticipantPick.RaffleReferenceNumber;
-                //    recordRaffleWinner.RaffleId = RecordRaffle.Id;
-                //    recordRaffleWinner.PrizeId = intLuckyPrizeIdSelected;
-                //    recordRaffleWinner.ParticipantId = currentParticipantPick.Id;
-                //    recordRaffleWinner.ProductId = intProductIdSelected;
-
-                //    raffleWinnerController.record = recordRaffleWinner;
-                //    raffleWinnerController.Add();
-
-                //    rafflePrizeController.SubtractWinnerPrize(recordRaffleWinner.PrizeId);
-                //}
-                //else {
-                //    recordRaffleWinner = new RaffleWinner();
-
-                //    recordRaffleWinner.RaffleReferenceNumber = vPreDeterminedRaffleWinner.RaffleReferenceNumber;
-                //    recordRaffleWinner.RaffleId = RecordRaffle.Id;
-                //    recordRaffleWinner.PrizeId = intLuckyPrizeIdSelected;
-                //    recordRaffleWinner.ParticipantId = vPreDeterminedRaffleWinner.Id;
-                //    recordRaffleWinner.ProductId = intProductIdSelected;
-                //    raffleWinnerController.record = recordRaffleWinner;
-                //    raffleWinnerController.Add();
-
-                //    rafflePrizeController.SubtractWinnerPrize(recordRaffleWinner.PrizeId);
-                //}
-
-                if (btnStartShuffle.InvokeRequired)
-                    this.btnStartShuffle.Invoke(new InvokeOnButtonShuffle(DisplayButtonShuffle), true);
+                if (pnlControls.InvokeRequired)
+                    this.pnlControls.Invoke(new InvokeOnControlPanel(ToggleControlPanel), true);
                 else
-                    DisplayButtonShuffle(true);
-                if (btnGotoLuckyDraw.InvokeRequired)
-                    this.btnGotoLuckyDraw.Invoke(new InvokeOnButtonGoto(DisplayButtonGoto),true);
-                else
-                    DisplayButtonGoto(true);
+
+                    ToggleControlPanel(true);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-}
-
+        }
         private void DisplayErrorMessage(string paramMessage)
         {
             this.lblReturnMessage.Text = $"{paramMessage}";
@@ -354,27 +393,52 @@ namespace RaffleUI
             btnGotoLuckyDraw.Enabled = toggle;
         }
 
-        private void ShuffleAll(int intIndex)
-        {
+        private void SaveWinnerToDatabase(){
+            if (vPreDeterminedRaffleWinner == null){
+                recordRaffleWinner = new RaffleWinner();
+
+                recordRaffleWinner.RaffleReferenceNumber = currentParticipantPick.RaffleReferenceNumber;
+                recordRaffleWinner.RaffleId = RecordRaffle.Id;
+                recordRaffleWinner.PrizeId = intLuckyPrizeIdSelected;
+                recordRaffleWinner.ParticipantId = currentParticipantPick.Id;
+                recordRaffleWinner.ProductId = intProductIdSelected;
+
+                raffleWinnerController.record = recordRaffleWinner;
+                raffleWinnerController.Add();
+
+                rafflePrizeController.SubtractWinnerPrize(recordRaffleWinner.PrizeId);
+            }
+            else{
+                recordRaffleWinner = new RaffleWinner();
+
+                recordRaffleWinner.RaffleReferenceNumber = vPreDeterminedRaffleWinner.RaffleReferenceNumber;
+                recordRaffleWinner.RaffleId = RecordRaffle.Id;
+                recordRaffleWinner.PrizeId = intLuckyPrizeIdSelected;
+                recordRaffleWinner.ParticipantId = vPreDeterminedRaffleWinner.Id;
+                recordRaffleWinner.ProductId = intProductIdSelected;
+
+                raffleWinnerController.record = recordRaffleWinner;
+                raffleWinnerController.Add();
+
+                rafflePrizeController.SubtractWinnerPrize(recordRaffleWinner.PrizeId);
+            }
+        }
+        private void ShuffleAll(int intIndex){
             itemRafflePrize = listOfRafflePrizes[intIndex];
 
             this.lblProductToRaffle.Text = $"{itemRafflePrize.BrandModel}";
             this.lblProductToRaffle.Refresh();
         }
-        private void ShuffleWinner(int intIndex)
-        {
+        private void ShuffleWinner(int intIndex){
             currentParticipantPick = listOfRaffleQualifiedParticipants[intIndex];
             this.lblParticipantName.Text = $"{currentParticipantPick.FirstName}";
             Console.WriteLine($"{currentParticipantPick.FirstName}");
         }
-            
-        private void ShuffleWinnerRaffleReferenceNo(int intIndex)
-        {
+        private void ShuffleWinnerRaffleReferenceNo(int intIndex){
             currentParticipantPick = listOfRaffleQualifiedParticipants[intIndex];
             this.lblRaffleReferenceNumber.Text = $"{currentParticipantPick.RaffleReferenceNumber}";
             Console.WriteLine($"{currentParticipantPick.RaffleReferenceNumber}");
         }
-
         private void ShufflePreDeterminedWinner(sp_Raffle_PickupWinner_Result paramWinner){
             this.lblParticipantName.Text = $"{paramWinner.FirstName}";
             Console.WriteLine($"{paramWinner.FirstName}");
@@ -383,72 +447,12 @@ namespace RaffleUI
             this.lblRaffleReferenceNumber.Text = $"{paramWinner.RaffleReferenceNumber}";
             Console.WriteLine($"{paramWinner.RaffleReferenceNumber}");
         }
-        
-
-        private delegate void InvokeOnReturnMessage(string paramMessage);
-
-        RaffleEntryController raffleEntryController = new RaffleEntryController();
-        ParticipantController participantController = new ParticipantController();
-        RaffleWinnerController raffleWinnerController = new RaffleWinnerController();
-        RafflePrizeController rafflePrizeController = new RafflePrizeController();
-
-        sp_RaffleDraw_SelectForView_Result itemRafflePrize = new sp_RaffleDraw_SelectForView_Result();
-
-        List<sp_RaffleDraw_SelectForView_Result> listOfRafflePrizes = new List<sp_RaffleDraw_SelectForView_Result>();
-        List<sp_Raffle_PickupWinner_Result> listOfRaffleQualifiedParticipants = new List<sp_Raffle_PickupWinner_Result>();
-        List<sp_Raffle_PickupWinner_Result> listOfNoProductIdsParticipants = new List<sp_Raffle_PickupWinner_Result>(); 
-        List<RaffleWinner> listOfRaffleWinners = new List<RaffleWinner>();
-
-        List<RaffleEntry> listOfRaffleEntries = new List<RaffleEntry>();
-        List<Participant> listOfParticipants = new List<Participant>();
-        
-        sp_Raffle_PickupWinner_Result currentParticipantPick;
-        RaffleWinner recordRaffleWinner;
-
-        private Thread threadStartShuffleForWinner;
-        private Thread threadStartShuffleForPrize;
-
-        private delegate void InvokeOnGif1();
-        private delegate void InvokeOnGif2();
-        private delegate void InvokeOnButtonShuffle(bool toggle);
-        private delegate void InvokeOnButtonGoto(bool toggle);
-        private delegate void InvokeOnRaffleWinnerLabels(int intIndex);
-        private delegate void InvokeOnPreDefinedRaffleWinnerLabels(sp_Raffle_PickupWinner_Result paramWinner);
-        private delegate void InvokeOnRaffleWinnerRaffleReferenceNo(int intIndex);
-        private delegate void InvokeOnPreDefinedRaffleWinnerRaffleReferenceNo(sp_Raffle_PickupWinner_Result paramWinner);
-        private bool stopShuffle=false;
-
-        private void guna2Button4_Click_1(object sender, EventArgs e)
-        {
+        private void guna2Button4_Click_1(object sender, EventArgs e){
             frmParticipantView frm = new frmParticipantView();
             frm.RaffleSource = RecordRaffle;
             frm.ShowDialog();
         }
-
-        private void guna2Button1_Click_3(object sender, EventArgs e)
-        {
-            if (RecordRaffle == null)
-            {
-                MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (RecordRaffle.Id == 0)
-            {
-                MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            frmLuckyDrawMain frmLuckyDraw = new frmLuckyDrawMain();
-            frmLuckyDraw.RecordRaffle = RecordRaffle;
-            frmLuckyDraw.MaxLuckyDrawNumber = 75;
-            frmLuckyDraw.ShuffleTime = 7;
-            frmLuckyDraw.Show() ;
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            listOfParticipants = participantController.SelectAllByRaffleId(RecordRaffle.Id);
-
+        private void guna2Button1_Click_3(object sender, EventArgs e){
             if (RecordRaffle == null){
                 MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -457,7 +461,28 @@ namespace RaffleUI
                 MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            frmLuckyDrawMain frmLuckyDraw = new frmLuckyDrawMain();
+            frmLuckyDraw.RecordRaffle = RecordRaffle;
+            frmLuckyDraw.MaxLuckyDrawNumber = 33;
+            frmLuckyDraw.ShuffleTime = 7;
+            frmLuckyDraw.Show() ;
+        }
+        private void btnShuffleParticipants_Click(object sender, EventArgs e){
+            if (isPrizeClaimed){
+                InitializeScreen();
+                isPrizeClaimed = false;
+            }
 
+            listOfParticipants = participantController.SelectAllByRaffleId(RecordRaffle.Id);
+
+            if (RecordRaffle == null){
+                MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0.0.5", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (RecordRaffle.Id == 0){
+                MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0.0.5", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             gifGirl.Visible = false;
             gifCongratulations.Visible = false;
 
@@ -468,12 +493,129 @@ namespace RaffleUI
 
             listOfRaffleEntries = raffleEntryController.SelectAll(RecordRaffle.Id);
 
-            btnStartShuffle.Enabled = false;
-            btnGotoLuckyDraw.Enabled = false;
-
             threadStartShuffleForWinner = new Thread(new ThreadStart(ShuffleWinnerInvoke));
             threadStartShuffleForWinner.IsBackground = true;
             threadStartShuffleForWinner.Start();
         }
+
+        private void guna2Button1_Click_2(object sender, EventArgs e){
+            string strPhoto = $"{Environment.CurrentDirectory}\\Resources\\Photos\\BetterLuck.jpg";
+
+            pboxProductToRaffle.Image = new Bitmap(strPhoto);
+            intLuckyPrizeIdSelected = 0;
+            intProductIdSelected = 0;
+
+            isPrizeShuffled = false;    
+            isBetterLuckNextActivated = true;
+        }
+        PingPongPrizeController _pingPongPrizeController = new PingPongPrizeController();
+        List<sp_PingPongDraw_SelectForView_Result> _pingPongDrawList;
+        private void btnPeraOPingPong_Click(object sender, EventArgs e){
+            if (RecordRaffle == null)
+            {
+                MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0.0.5", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            
+            if (RecordRaffle.Id == 0)
+            {
+                MessageBox.Show("Select a Raffle Event first.", "Raffle v1.0.0.5", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            _pingPongDrawList = _pingPongPrizeController.SelectProducts(RecordRaffle.Id);
+
+            if (_pingPongDrawList.Count != 5)
+            {
+                MessageBox.Show("Select 5 Prizes for this game first.", "Raffle v1.0.0.5", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            frmPeraPingPong frmPingPong = new frmPeraPingPong();
+            frmPingPong.RecordRaffle = RecordRaffle;
+            frmPingPong.ShuffleTime = 7;
+            frmPingPong.Show();
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e){
+            frmRaffleWinnerView frm = new frmRaffleWinnerView();
+            frm.RaffleSource = RecordRaffle;
+            frm.ShowDialog();
+        }
+        private void guna2Button3_Click(object sender, EventArgs e){
+            if (isPrizeShuffled && isParticipantShuffled){
+                intProductIdSelected = -1;
+                intLuckyPrizeIdSelected = -1;
+
+                SaveWinnerToDatabase();
+                isPrizeClaimed = true;
+                btnClaimPrize.Visible = false;
+                btnNoShow.Visible = false;
+            }
+        }
+        private void btnClaimPrize_Click(object sender, EventArgs e){
+            if ((isBetterLuckNextActivated || isPrizeShuffled) && isParticipantShuffled){
+                SaveWinnerToDatabase();
+                //if (gifCongratulations.InvokeRequired)
+                //{
+                //    this.gifCongratulations.Invoke(new InvokeOnGif1(DisplayGif1));
+                //}
+                //else
+                DisplayGif1();
+                //if (gifGirl.InvokeRequired)
+                //{
+                //    this.gifGirl.Invoke(new InvokeOnGif2(DisplayGif2));
+                //}
+                //else
+                //{
+                DisplayGif2();
+                //}
+                isPrizeClaimed = true;
+                btnClaimPrize.Visible = false;
+                btnNoShow.Visible = false;
+            }
+        }
+        ParticipantController participantController = new ParticipantController();
+        RafflePrizeController rafflePrizeController = new RafflePrizeController();
+        RaffleEntryController raffleEntryController = new RaffleEntryController();
+        RaffleWinnerController raffleWinnerController = new RaffleWinnerController();
+
+        sp_RaffleDraw_SelectForView_Result itemRafflePrize = new sp_RaffleDraw_SelectForView_Result();
+
+        List<sp_RaffleDraw_SelectForView_Result> listOfRafflePrizes = new List<sp_RaffleDraw_SelectForView_Result>();
+        List<sp_Raffle_PickupWinner_Result> listOfRaffleQualifiedParticipants = new List<sp_Raffle_PickupWinner_Result>();
+        List<sp_Raffle_PickupWinner_Result> listOfNoProductIdsParticipants = new List<sp_Raffle_PickupWinner_Result>();
+        List<RaffleWinner> listOfRaffleWinners = new List<RaffleWinner>();
+        List<Participant> listOfParticipants = new List<Participant>();
+        List<RaffleEntry> listOfRaffleEntries = new List<RaffleEntry>();
+
+        RaffleWinner recordRaffleWinner;
+        sp_Raffle_PickupWinner_Result currentParticipantPick;
+
+        private Thread threadStartShuffleForPrize;
+
+        private Thread threadStartShuffleForWinner;
+
+        private delegate void InvokeOnClaimButton();
+        private delegate void InvokeOnControlPanel(bool toggle);
+        private delegate void InvokeOnRaffleWinnerLabels(int intIndex);
+        private delegate void InvokeOnReturnMessage(string paramMessage);
+        private delegate void InvokeOnRaffleWinnerRaffleReferenceNo(int intIndex);
+        private delegate void InvokeOnPreDefinedRaffleWinnerLabels(sp_Raffle_PickupWinner_Result paramWinner);
+        private delegate void InvokeOnPreDefinedRaffleWinnerRaffleReferenceNo(sp_Raffle_PickupWinner_Result paramWinner);
+        private bool stopShuffle = false;
+
+        frmChooseRaffleEvent frmChooseEvent = new frmChooseRaffleEvent();
+        public string SourceFolder { get; set; }
+        public Raffle RecordRaffle { get; set; }
+
+        private const double ShuffleTime = 7;
+        private bool isPrizeShuffled = false;
+        private bool isParticipantShuffled = false;
+        private bool isBetterLuckNextActivated = false;
+        private bool isPrizeClaimed = false;
+
+        int intProductIdSelected = 0, intLuckyPrizeIdSelected = 0;
+
+        
     }
 }

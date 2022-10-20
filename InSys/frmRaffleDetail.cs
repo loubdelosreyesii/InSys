@@ -21,22 +21,26 @@ namespace InSys
         RaffleController raffleController = new RaffleController();
         RafflePrizeController rafflePrizeController = new RafflePrizeController();
         RaffleLuckyDrawPrizeController raffleLuckyDrawPrizeController = new RaffleLuckyDrawPrizeController();
+        PingPongPrizeController pingPongPrizeController = new PingPongPrizeController();
         InventoryController inventoryController = new InventoryController();
         ReferenceController referenceController = new ReferenceController();
 
         public Raffle Record { get; set; }
         public RafflePrize RecordPrize { get; set; }
         public RaffleLuckyDrawPrize RecordPrizeLuckyDraw { get; set; }
+        public PingPongPrize RecordPrizePingPong { get; set; }
         public bool IsAddTransaction { get; set; }
         public Result result { get; set; }
 
         frmRafflePrizeDetail frmDetail;
         frmLuckyDrawPrizeDetail frmDetailLuckyDraw;
+        frmPingPongPrizeDetail frmDetailPingPong;
 
-        List<RafflePrize> rafflePrizes = new List<RafflePrize>();
         List<Inventory> inventories = new List<Inventory>();
         List<Reference> references = new List<Reference>();
+        List<RafflePrize> rafflePrizes = new List<RafflePrize>();
         List<RaffleLuckyDrawPrize> raffleLuckyDrawPrizes = new List<RaffleLuckyDrawPrize>();
+        List<PingPongPrize> pingPongPrizes = new List<PingPongPrize>(); 
 
         Inventory recordInventory = new Inventory();
         public frmRaffleDetail(){
@@ -109,12 +113,13 @@ namespace InSys
                 txtDescription.Text = Record.Description;
                 dtpDrawDate.Value = Record.DrawDate.Date;
                 dtpDrawTime.Value = Record.DrawDate;
-                nudMaxEntries.Value= Record.MaxEntries;  
+                //nudMaxEntries.Value= Record.MaxEntries;  
             }
             RefreshGridBindings();
 
             dgvwRecords.DataSource = listSource;
             dgvRecordsLuckyDraw.DataSource = listSourceLuckyDraw;
+            dgvPingPongPrizes.DataSource = listSourcePingPong;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -137,6 +142,7 @@ namespace InSys
             
             rafflePrizes = rafflePrizeController.SelectAll().Where(p => p.RaffleId == Record.Id).ToList();
             raffleLuckyDrawPrizes = raffleLuckyDrawPrizeController.SelectAll().Where(p=>p.RaffleId== Record.Id).ToList();
+            pingPongPrizes = pingPongPrizeController.SelectAll().Where(p=>p.RaffleId == Record.Id).ToList();
 
             inventories = inventoryController.SelectAll();
             references = referenceController.SelectAll();
@@ -150,30 +156,47 @@ namespace InSys
                                 ProductName = $"{refe.Name}-{invent.Model}",
                                 ProductId = invent.Id,
                                 SuggestedRetailPrice = invent.SuggestedRetailPrice,
-                                Quantity = prize.Quantity
+                                Quantity = prize.Quantity,
+                               ShuffleLevel =  prize.ShuffleLevel
                            };
 
             var viewListLuckyDraw = from invent in inventories
-                           join prize in raffleLuckyDrawPrizes on invent.Id equals prize.ProductId
-                           join refe in references on invent.TypeID equals refe.Id
-                           select new
-                           {
-                               Id = prize.Id,
-                               ProductName = $"{refe.Name}-{invent.Model}",
-                               ProductId = invent.Id,
-                               SuggestedRetailPrice = invent.SuggestedRetailPrice,
-                               Quantity = prize.Quantity
-                           };
+                                    join prize in raffleLuckyDrawPrizes on invent.Id equals prize.ProductId
+                                    join refe in references on invent.TypeID equals refe.Id
+                                    select new
+                                    {
+                                        Id = prize.Id,
+                                        ProductName = $"{refe.Name}-{invent.Model}",
+                                        ProductId = invent.Id,
+                                        SuggestedRetailPrice = invent.SuggestedRetailPrice,
+                                        Quantity = prize.Quantity,
+                                        ShuffleLevel = prize.ShuffleLevel
+                                    };
+
+            var viewListPingPong = from invent in inventories
+                                    join prize in pingPongPrizes on invent.Id equals prize.ProductId
+                                    join refe in references on invent.TypeID equals refe.Id
+                                    select new
+                                    {
+                                        Id = prize.Id,
+                                        ProductName = $"{refe.Name}-{invent.Model}",
+                                        ProductId = invent.Id,
+                                        SuggestedRetailPrice = invent.SuggestedRetailPrice,
+                                        Quantity = prize.Quantity
+                                    };
 
             listSource.DataSource = viewList.ToList();
             listSourceLuckyDraw.DataSource = viewListLuckyDraw.ToList();
+            listSourcePingPong.DataSource = viewListPingPong.ToList();
 
             listSource.ResetBindings(false);
             listSourceLuckyDraw.ResetBindings(false);
+            listSourcePingPong.ResetBindings(false);
 
         }
         BindingSource listSource = new BindingSource();
         BindingSource listSourceLuckyDraw = new BindingSource();
+        BindingSource listSourcePingPong = new BindingSource();
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -262,7 +285,9 @@ namespace InSys
             RecordPrize = new RafflePrize { 
                                 Id = selectedPrizeRecord.Id,
                                 Quantity = selectedPrizeRecord.Quantity,
-                                ProductId = selectedPrizeRecord.ProductId };
+                                ProductId = selectedPrizeRecord.ProductId,
+                                ShuffleLevel = selectedPrizeRecord.ShuffleLevel
+            };
 
             frmDetail = new frmRafflePrizeDetail();
             frmDetail.ProductToUpdate = selectedPrizeRecord.ProductName;
@@ -287,7 +312,8 @@ namespace InSys
             {
                 Id = selectedPrizeRecord.Id,
                 Quantity = selectedPrizeRecord.Quantity,
-                ProductId = selectedPrizeRecord.ProductId
+                ProductId = selectedPrizeRecord.ProductId,
+                ShuffleLevel = selectedPrizeRecord.ShuffleLevel
             };
 
             frmDetailLuckyDraw = new frmLuckyDrawPrizeDetail();
@@ -337,6 +363,87 @@ namespace InSys
 
             MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            RefreshGridBindings();
+        }
+
+        private void btnAddPingPongPrize_Click(object sender, EventArgs e)
+        {
+            if (Record.Id == 0)
+            {
+                MessageBox.Show("The Raffle record needs to be added in the system first before managing the Prizes.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            frmDetailPingPong = new frmPingPongPrizeDetail();
+            frmDetailPingPong.RecordRaffle = Record;
+            frmDetailPingPong.IsAddTransaction = true;
+
+            frmDetailPingPong.ShowDialog();
+            RefreshGridBindings();
+        }
+
+        private void btnEditPingPongPrize_Click(object sender, EventArgs e)
+        {
+            if (dgvPingPongPrizes.RowCount <= 0)
+            {
+                MessageBox.Show("Please select a prize record first.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            dynamic selectedPrizeRecord = dgvPingPongPrizes.CurrentRow.DataBoundItem;
+
+            RecordPrizePingPong = new PingPongPrize
+            {
+                Id = selectedPrizeRecord.Id,
+                Quantity = selectedPrizeRecord.Quantity,
+                ProductId = selectedPrizeRecord.ProductId
+            };
+
+            frmDetailPingPong = new frmPingPongPrizeDetail();
+
+            frmDetailPingPong.ProductToUpdate = selectedPrizeRecord.ProductName;
+            frmDetailPingPong.RecordRaffle = Record;
+            frmDetailPingPong.Record = RecordPrizePingPong;
+            frmDetailPingPong.IsAddTransaction = false;
+
+            frmDetailPingPong.ShowDialog();
+            RefreshGridBindings();
+        }
+
+        private void btnDeletePingPongPrize_Click(object sender, EventArgs e)
+        {
+            RecordPrizePingPong = new PingPongPrize();
+            recordInventory = new Inventory();
+
+            if (dgvPingPongPrizes.Rows.Count == 0)
+            {
+                MessageBox.Show("No Ping Pong Records to be deleted.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Are you sure you want to delete the selected row?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                return;
+
+            dynamic selectedRow = dgvPingPongPrizes.CurrentRow.DataBoundItem;
+
+            RecordPrizePingPong.Id = selectedRow.Id;
+            recordInventory.Id = selectedRow.ProductId;
+
+            inventoryController.record = recordInventory;
+            recordInventory = inventoryController.Select();
+
+            recordInventory.Quantity += selectedRow.Quantity;
+            inventoryController.record = recordInventory;
+            result = inventoryController.Edit();
+
+            if (!result.Code)
+            {
+                MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            pingPongPrizeController.record = RecordPrizePingPong;
+
+            result = pingPongPrizeController.Delete();
+
+            MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
             RefreshGridBindings();
         }
     }

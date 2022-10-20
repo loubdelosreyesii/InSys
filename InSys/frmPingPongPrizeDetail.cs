@@ -16,11 +16,11 @@ using System.Xml.Linq;
 using static InSys.GlobalVariables;
 namespace InSys
 {
-    public partial class frmLuckyDrawPrizeDetail : Form
+    public partial class frmPingPongPrizeDetail : Form
     {
-        RaffleLuckyDrawPrizeController RaffleLuckyDrawPrizeController = new RaffleLuckyDrawPrizeController();
-
-        public RaffleLuckyDrawPrize Record { get; set; }
+        PingPongPrizeController pingPongPrizeController = new PingPongPrizeController();
+        
+        public PingPongPrize Record { get; set; }
         public Raffle RecordRaffle { get; set; }
         public bool IsAddTransaction { get; set; }
         public string ProductToUpdate { get; set; }
@@ -28,7 +28,7 @@ namespace InSys
 
         private Inventory selectedProduct;
 
-        public frmLuckyDrawPrizeDetail(){
+        public frmPingPongPrizeDetail(){
             InitializeComponent();
         }
 
@@ -54,7 +54,7 @@ namespace InSys
                 return;
             }
             if (IsAddTransaction){
-                Record = new RaffleLuckyDrawPrize();
+                Record = new PingPongPrize();
 
                 Record.RaffleId = RecordRaffle.Id;
 
@@ -64,11 +64,11 @@ namespace InSys
                 if (nudQuantity.Value > 0)
                     Record.Quantity = Convert.ToInt32(nudQuantity.Value);
 
-                Record.ShuffleLevel = Convert.ToInt32(nudShuffleLevel.Value);
-                RaffleLuckyDrawPrizeController.record = Record;
-                result = RaffleLuckyDrawPrizeController.Add();
+                //Record.ShuffleLevel = Convert.ToInt32(nudShuffleLevel.Value);
+                pingPongPrizeController.record = Record;
+                result = pingPongPrizeController.Add();
 
-                RaffleLuckyDrawPrizeController.SubtractInventoryPrice(Record.ProductId, Math.Abs(Record.Quantity));
+                pingPongPrizeController.SubtractInventoryPrice(Record.ProductId, Math.Abs(Record.Quantity));
 
                 MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -82,19 +82,19 @@ namespace InSys
                 Record.RaffleId = Convert.ToInt32(RecordRaffle.Id);
                 Record.ProductId = Convert.ToInt32(txtProductName.Tag);
                 Record.Quantity = Convert.ToInt32(nudQuantity.Value);
-                Record.ShuffleLevel = Convert.ToInt32(nudShuffleLevel.Value);
-                RaffleLuckyDrawPrizeController.record = Record;
+                //Record.ShuffleLevel = Convert.ToInt32(nudShuffleLevel.Value);
+                pingPongPrizeController.record = Record;
 
-                result = RaffleLuckyDrawPrizeController.Edit();
+                result = pingPongPrizeController.Edit();
 
 
                 if (QuantityToUpdate > 0){
                     //Add to Inventory back
-                    RaffleLuckyDrawPrizeController.AddInventoryPrice(Record.ProductId, Math.Abs(QuantityToUpdate));
+                    pingPongPrizeController.AddInventoryPrice(Record.ProductId, Math.Abs(QuantityToUpdate));
                 }
                 else if (QuantityToUpdate < 0) {
                     //Subtract to inventory
-                    RaffleLuckyDrawPrizeController.SubtractInventoryPrice(Record.ProductId, Math.Abs(QuantityToUpdate));
+                    pingPongPrizeController.SubtractInventoryPrice(Record.ProductId, Math.Abs(QuantityToUpdate));
                 }
 
                 MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -108,7 +108,7 @@ namespace InSys
 
             if (Record != null && !IsAddTransaction)
             {
-                nudShuffleLevel.Value = Convert.ToInt32(Record.ShuffleLevel);
+                //nudShuffleLevel.Value = Convert.ToInt32(Record.ShuffleLevel);
                 nudQuantity.Value = Record.Quantity;
                 txtProductName.Text = $"{ProductToUpdate}";
                 txtProductName.Tag = Record.ProductId;

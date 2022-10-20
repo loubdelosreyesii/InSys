@@ -90,6 +90,12 @@
     <Compile Include="frmCustomerSearch.Designer.cs">
       <DependentUpon>frmCustomerSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPingPongPrizeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPingPongPrizeDetail.Designer.cs">
+      <DependentUpon>frmPingPongPrizeDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmParticipantDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerSearch.resx">
       <DependentUpon>frmCustomerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPingPongPrizeDetail.resx">
+      <DependentUpon>frmPingPongPrizeDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmParticipantDetail.resx">
       <DependentUpon>frmParticipantDetail.cs</DependentUpon>

@@ -12,12 +12,11 @@ namespace DataAccessLibrary.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class RafflePrize
+    public partial class PingPongPrize
     {
         public int Id { get; set; }
         public int RaffleId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
-        public int ShuffleLevel { get; set; }
     }
 }

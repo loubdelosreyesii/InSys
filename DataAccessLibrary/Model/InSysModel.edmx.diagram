@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d6fb1bd883044142b8eb1bead0b9a8e9" Name="Diagram1" ZoomLevel="129" >
+      <Diagram DiagramId="d6fb1bd883044142b8eb1bead0b9a8e9" Name="Diagram1" ZoomLevel="94" >
         <EntityTypeShape EntityType="X2MO_InSysModel.Participant" Width="1.75" PointX="13.875" PointY="2.375" />
         <EntityTypeShape EntityType="X2MO_InSysModel.Inventory" Width="1.5" PointX="4.75" PointY="3.875" />
         <EntityTypeShape EntityType="X2MO_InSysModel.Reference" Width="1.5" PointX="6.625" PointY="2" />
@@ -16,10 +16,12 @@
         <EntityTypeShape EntityType="X2MO_InSysModel.PointOfSale" Width="1.875" PointX="0.5" PointY="4.625" />
         <EntityTypeShape EntityType="X2MO_InSysModel.RaffleEntry" Width="2" PointX="11.25" PointY="2.375" />
         <EntityTypeShape EntityType="X2MO_InSysModel.User" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="X2MO_InSysModel.RafflePrize" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="X2MO_InSysModel.RaffleWinner" Width="2.375" PointX="3.125" PointY="7.625" />
-        <EntityTypeShape EntityType="X2MO_InSysModel.RaffleLuckyDrawPrize" Width="1.5" PointX="6.375" PointY="8.75" />
-        <EntityTypeShape EntityType="X2MO_InSysModel.LuckyDrawWinner" Width="1.5" PointX="8.375" PointY="8.75" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.RafflePrize" Width="1.875" PointX="0.5" PointY="6.625" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.RaffleWinner" Width="2.375" PointX="2.5" PointY="6.625" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.RaffleLuckyDrawPrize" Width="1.875" PointX="0.5" PointY="8.75" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.LuckyDrawWinner" Width="2.375" PointX="2.5" PointY="9" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.PingPongPrize" Width="1.5" PointX="10.625" PointY="8.75" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.PingPongWinner" Width="1.875" PointX="8.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

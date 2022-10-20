@@ -68,6 +68,27 @@
           <Property Name="ContactNumber" Type="nvarchar(max)" Nullable="false" />
           <Property Name="FacebookLink" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="PingPongPrizes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaffleId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PingPongWinners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaffleId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="RaffleReferenceNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PrizeId" Type="int" Nullable="false" />
+          <Property Name="PrizeOfferAmount" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
         <EntityType Name="PointOfSaleDetails">
           <Key>
             <PropertyRef Name="Id" />
@@ -113,6 +134,7 @@
           <Property Name="RaffleId" Type="int" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ShuffleLevel" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="RafflePrizes">
           <Key>
@@ -122,6 +144,7 @@
           <Property Name="RaffleId" Type="int" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ShuffleLevel" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Raffles">
           <Key>
@@ -174,6 +197,9 @@
         <Function Name="sp_LuckyDraw_SelectForView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="RaffleId" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_PingPongDraw_SelectForView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RaffleId" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_Raffle_PickupWinner" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="RaffleId" Type="int" Mode="In" />
         </Function>
@@ -190,6 +216,8 @@
           <EntitySet Name="Inventories" EntityType="Self.Inventories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LuckyDrawWinners" EntityType="Self.LuckyDrawWinners" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Participants" EntityType="Self.Participants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PingPongPrizes" EntityType="Self.PingPongPrizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PingPongWinners" EntityType="Self.PingPongWinners" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PointOfSaleDetails" EntityType="Self.PointOfSaleDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PointOfSales" EntityType="Self.PointOfSales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RaffleEntries" EntityType="Self.RaffleEntries" Schema="dbo" store:Type="Tables" />
@@ -241,6 +269,11 @@
           <FunctionImport Name="sp_Raffle_PickupWinner" ReturnType="Collection(X2MO_InSysModel.sp_Raffle_PickupWinner_Result)">
           <Parameter Name="RaffleId" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="PingPongPrizes" EntityType="X2MO_InSysModel.PingPongPrize" />
+          <FunctionImport Name="sp_PingPongDraw_SelectForView" ReturnType="Collection(X2MO_InSysModel.sp_PingPongDraw_SelectForView_Result)">
+          <Parameter Name="RaffleId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="PingPongWinners" EntityType="X2MO_InSysModel.PingPongWinner" />
         </EntityContainer>
         <EntityType Name="Participant">
           <Key>
@@ -386,6 +419,7 @@
           <Property Name="RaffleId" Type="Int32" Nullable="false" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="ShuffleLevel" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="RaffleWinner">
           <Key>
@@ -406,12 +440,14 @@
           <Property Name="RaffleId" Type="Int32" Nullable="false" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="ShuffleLevel" Type="Int32" Nullable="false" />
         </EntityType>
         <ComplexType Name="sp_LuckyDraw_SelectForView_Result">
           <Property Type="Int32" Name="InventoryId" Nullable="false" />
           <Property Type="Int32" Name="LuckyPrizeId" Nullable="false" />
           <Property Type="String" Name="BrandModel" Nullable="false" />
           <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <Property Type="Int32" Name="ShuffleLevel" Nullable="false" />
         </ComplexType>
         <EntityType Name="LuckyDrawWinner">
           <Key>
@@ -441,6 +477,7 @@
           <Property Type="String" Name="BrandModel" Nullable="false" />
           <Property Type="Int32" Name="Quantity" Nullable="false" />
           <Property Type="Int32" Name="RafflePrizeId" Nullable="false" />
+          <Property Type="Int32" Name="ShuffleLevel" Nullable="false" />
         </ComplexType>
         <ComplexType Name="sp_Raffle_PickupWinner_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -455,6 +492,33 @@
           <Property Type="Int32" Name="ProductId" Nullable="true" />
           <Property Type="Int32" Name="RafflePrizeId" Nullable="true" />
         </ComplexType>
+        <EntityType Name="PingPongPrize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RaffleId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="sp_PingPongDraw_SelectForView_Result">
+          <Property Type="Int32" Name="InventoryId" Nullable="false" />
+          <Property Type="Int32" Name="RafflePrizeId" Nullable="false" />
+          <Property Type="String" Name="BrandModel" Nullable="false" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="PingPongWinner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RaffleId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+          <Property Name="RaffleReferenceNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrizeId" Type="Int32" Nullable="false" />
+          <Property Name="PrizeOfferAmount" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -593,7 +657,8 @@
     <EntitySetMapping Name="RafflePrizes">
       <EntityTypeMapping TypeName="IsTypeOf(X2MO_InSysModel.RafflePrize)">
         <MappingFragment StoreEntitySet="RafflePrizes">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ShuffleLevel" ColumnName="ShuffleLevel" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RaffleId" ColumnName="RaffleId" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
@@ -615,6 +680,7 @@
           <EntitySetMapping Name="RaffleLuckyDrawPrizes">
             <EntityTypeMapping TypeName="X2MO_InSysModel.RaffleLuckyDrawPrize">
               <MappingFragment StoreEntitySet="RaffleLuckyDrawPrizes">
+                <ScalarProperty Name="ShuffleLevel" ColumnName="ShuffleLevel" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="RaffleId" ColumnName="RaffleId" />
@@ -629,6 +695,7 @@
                 <ScalarProperty Name="LuckyPrizeId" ColumnName="LuckyPrizeId" />
                 <ScalarProperty Name="BrandModel" ColumnName="BrandModel" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ShuffleLevel" ColumnName="ShuffleLevel" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -671,6 +738,7 @@
                 <ScalarProperty Name="BrandModel" ColumnName="BrandModel" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="RafflePrizeId" ColumnName="RafflePrizeId" />
+                <ScalarProperty Name="ShuffleLevel" ColumnName="ShuffleLevel" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -691,6 +759,39 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="PingPongPrizes">
+            <EntityTypeMapping TypeName="X2MO_InSysModel.PingPongPrize">
+              <MappingFragment StoreEntitySet="PingPongPrizes">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="RaffleId" ColumnName="RaffleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_PingPongDraw_SelectForView" FunctionName="X2MO_InSysModel.Store.sp_PingPongDraw_SelectForView">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="X2MO_InSysModel.sp_PingPongDraw_SelectForView_Result">
+                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
+                <ScalarProperty Name="RafflePrizeId" ColumnName="RafflePrizeId" />
+                <ScalarProperty Name="BrandModel" ColumnName="BrandModel" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="PingPongWinners">
+            <EntityTypeMapping TypeName="X2MO_InSysModel.PingPongWinner">
+              <MappingFragment StoreEntitySet="PingPongWinners">
+                <ScalarProperty Name="PrizeOfferAmount" ColumnName="PrizeOfferAmount" />
+                <ScalarProperty Name="PrizeId" ColumnName="PrizeId" />
+                <ScalarProperty Name="RaffleReferenceNumber" ColumnName="RaffleReferenceNumber" />
+                <ScalarProperty Name="ParticipantId" ColumnName="ParticipantId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="RaffleId" ColumnName="RaffleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

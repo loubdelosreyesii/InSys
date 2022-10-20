@@ -76,6 +76,19 @@
     <Compile Include="frmChoosePrizes.Designer.cs">
       <DependentUpon>frmChoosePrizes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmParticipant.Designer - Copy %283%29.cs">
+      <DependentUpon>frmRaffleWinnerView.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaffleWinnerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPeraPingPong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPeraPingPong.designer.cs">
+      <DependentUpon>frmPeraPingPong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmParticipant.Designer - Copy %282%29.cs">
       <DependentUpon>frmLuckyDrawWinnersView.cs</DependentUpon>
       <SubType>Form</SubType>
@@ -86,6 +99,12 @@
     </Compile>
     <Compile Include="frmLuckyDrawWinnersView.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPeraPingPongControlPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPeraPingPongControlPanel.Designer.cs">
+      <DependentUpon>frmPeraPingPongControlPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWinnerView.cs">
       <SubType>Form</SubType>
@@ -126,8 +145,17 @@
     <EmbeddedResource Include="frmChoosePrizes.resx">
       <DependentUpon>frmChoosePrizes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRaffleWinnerView.resx">
+      <DependentUpon>frmRaffleWinnerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPeraPingPong.resx">
+      <DependentUpon>frmPeraPingPong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLuckyDrawWinnersView.resx">
       <DependentUpon>frmLuckyDrawWinnersView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPeraPingPongControlPanel.resx">
+      <DependentUpon>frmPeraPingPongControlPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWinnerView.resx">
       <DependentUpon>frmWinnerView.cs</DependentUpon>

@@ -60,13 +60,14 @@ namespace InSys
 
                 if (nudQuantity.Value > 0)
                     Record.Quantity = Convert.ToInt32(nudQuantity.Value);
-                
+
+                Record.ShuffleLevel = Convert.ToInt32(nudShuffleLevel.Value);
+
                 RafflePrizeController.record = Record;
                 result = RafflePrizeController.Add();
 
                 RafflePrizeController.SubtractInventoryPrice(Record.ProductId, Math.Abs(Record.Quantity));
-
-
+                
                 MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else{
@@ -79,6 +80,8 @@ namespace InSys
                 Record.RaffleId = Convert.ToInt32(RecordRaffle.Id);
                 Record.ProductId = Convert.ToInt32(txtProductName.Tag);
                 Record.Quantity = Convert.ToInt32(nudQuantity.Value);
+                Record.ShuffleLevel = Convert.ToInt32(nudShuffleLevel.Value);
+
                 RafflePrizeController.record = Record;
                 
                 result = RafflePrizeController.Edit();
@@ -105,6 +108,7 @@ namespace InSys
 
             if (Record != null && !IsAddTransaction)
             {
+                nudShuffleLevel.Value = Convert.ToInt32(Record.ShuffleLevel);
                 nudQuantity.Value = Record.Quantity;
                 txtProductName.Text = $"{ProductToUpdate}";
                 txtProductName.Tag = Record.ProductId;
@@ -145,6 +149,11 @@ namespace InSys
         private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

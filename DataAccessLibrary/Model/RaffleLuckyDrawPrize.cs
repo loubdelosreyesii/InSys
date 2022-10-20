@@ -18,5 +18,6 @@ namespace DataAccessLibrary.Model
         public int RaffleId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
+        public int ShuffleLevel { get; set; }
     }
 }

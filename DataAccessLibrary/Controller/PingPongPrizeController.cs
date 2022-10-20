@@ -9,14 +9,14 @@ using DataAccessLibrary.Service;
 using ResultHelper;
 namespace DataAccessLibrary.Controller
 {
-    public class RafflePrizeController
+    public class PingPongPrizeController
     {
         public Result result { get; set; }
-        public RafflePrize record { get; set; }
+        public PingPongPrize record { get; set; }
 
-        public List<sp_RaffleDraw_SelectForView_Result> SelectProducts(int paramRaffleId){
-            IRafflePrize service = new RafflePrizeRepository();
-            List<sp_RaffleDraw_SelectForView_Result> record = new List<sp_RaffleDraw_SelectForView_Result>();
+        public List<sp_PingPongDraw_SelectForView_Result> SelectProducts(int paramRaffleId){
+            IPingPongPrize service = new PingPongPrizeRepository();
+            List<sp_PingPongDraw_SelectForView_Result> record = new List<sp_PingPongDraw_SelectForView_Result>();
 
             result = new Result();
 
@@ -31,9 +31,9 @@ namespace DataAccessLibrary.Controller
             return record;
         }
 
-        public List<RafflePrize> SelectAll(){
-            IRafflePrize service = new RafflePrizeRepository();
-            List<RafflePrize> record = new List<RafflePrize>();
+        public List<PingPongPrize> SelectAll(){
+            IPingPongPrize service = new PingPongPrizeRepository();
+            List<PingPongPrize> record = new List<PingPongPrize>();
 
             result = new Result();
 
@@ -47,7 +47,7 @@ namespace DataAccessLibrary.Controller
             return record;
         }
         public Result Add(){
-            IRafflePrize service = new RafflePrizeRepository();
+            IPingPongPrize service = new PingPongPrizeRepository();
             service.Record = record;
 
             result = new Result();
@@ -61,7 +61,7 @@ namespace DataAccessLibrary.Controller
             return result;
         }
         public Result SubtractWinnerPrize(int Id) {
-            IRafflePrize service = new RafflePrizeRepository();
+            IPingPongPrize service = new PingPongPrizeRepository();
             
             result = new Result();
             try{
@@ -83,7 +83,7 @@ namespace DataAccessLibrary.Controller
         }
         public Result Edit()
         {
-            IRafflePrize service = new RafflePrizeRepository();
+            IPingPongPrize service = new PingPongPrizeRepository();
             service.Record = record;
 
             result = new Result();
@@ -100,7 +100,7 @@ namespace DataAccessLibrary.Controller
         }
         public Result Delete()
         {
-            IRafflePrize service = new RafflePrizeRepository();
+            IPingPongPrize service = new PingPongPrizeRepository();
             service.Record = record;
 
             result = new Result();
@@ -119,7 +119,7 @@ namespace DataAccessLibrary.Controller
 
         public Result DeleteBulkByRaffleId()
         {
-            IRafflePrize service = new RafflePrizeRepository();
+            IPingPongPrize service = new PingPongPrizeRepository();
             service.Record = record;
 
             result = new Result();
