@@ -78,7 +78,7 @@ namespace RaffleUI
 
             var itemToDisplay = from entry in raffleEntries
                                 join part in participants on entry.ParticipantId equals part.Id
-                                join prize in productPrizes on part.Id  equals prize.ParticipantId
+                                join prize in productPrizes on new {entry.ParticipantId,entry.RaffleReferenceNumber}  equals new { prize.ParticipantId, prize.RaffleReferenceNumber }
                                 join prod in inventories on prize.ProductId equals prod.Id
                                 select new {
                                     ProductPhoto = Image.FromFile($"{Path.GetDirectoryName(Application.ExecutablePath)}\\Products\\{prize.ProductId}.jpg"),

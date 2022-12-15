@@ -507,6 +507,8 @@ namespace RaffleUI{
 
             isPrizeShuffled = false;    
             isBetterLuckNextActivated = true;
+
+            lblProductToRaffle.Text = "Better Luck Next Time";
         }
         PingPongPrizeController _pingPongPrizeController = new PingPongPrizeController();
         List<sp_PingPongDraw_SelectForView_Result> _pingPongDrawList;

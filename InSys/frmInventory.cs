@@ -23,12 +23,14 @@ namespace InSys
         List<Inventory> list = new List<Inventory>();
         List<Reference> references = new List<Reference>();
         List<Dealer> dealers = new List<Dealer>();
+        List<Reference> listOfProductTypes = new List<Reference>();
 
         Inventory record;
         Result result;
 
         frmInventoryDetail frmDetail;
         BindingSource listSource = new BindingSource();
+        BindingSource listSourceProductType = new BindingSource();
 
         public frmInventory()
         {
@@ -79,24 +81,33 @@ namespace InSys
 
         private void frmInventory_Load(object sender, EventArgs e)
         {
+            listOfProductTypes = referenceController.SelectByCategoryId(1);
+            listOfProductTypes.Insert(0,new Reference { Id = 0, Name= "All Product Types", CategoryID=0 , Description= "All Product Types"}) ;
             dgvwRecords.DataSource = listSource;
+
+            cboxProductType.DataSource = listOfProductTypes;
+            cboxProductType.DisplayMember = "Name";
+            cboxProductType.ValueMember = "Id";
             RefreshGridBindings();
         }
 
         private void RefreshGridBindings()
         {
+            int intProductType = Convert.ToInt32(cboxProductType.SelectedValue);
             dgvwRecords.ScrollBars = ScrollBars.Both;
 
             list = inventoryController.SelectAll();
 
-            
-            listSource.DataSource = from listInventories in list
+
+            if (intProductType > 0)
+                listSource.DataSource = from listInventories in list
                                     join listRefType in references
                                     on listInventories.TypeID equals listRefType.Id
                                     join listRefBrand in references
                                     on listInventories.BrandID equals listRefBrand.Id
                                     join listDealers in dealers
                                     on listInventories.DealerID equals listDealers.Id
+                                    where listInventories.TypeID== intProductType
                                     select new
                                     {
                                         ProductPhoto = Image.FromFile($"{ Path.GetDirectoryName(Application.ExecutablePath) }\\Products\\{listInventories.Id}.jpg"),
@@ -113,10 +124,33 @@ namespace InSys
                                         DealerName = listDealers.Name
                                     };
 
-            if (list.Count > 0)
-                listSource.ResetBindings(false);
             else
-                listSource.Clear();
+                listSource.DataSource = from listInventories in list
+                                        join listRefType in references
+                                        on listInventories.TypeID equals listRefType.Id
+                                        join listRefBrand in references
+                                        on listInventories.BrandID equals listRefBrand.Id
+                                        join listDealers in dealers
+                                        on listInventories.DealerID equals listDealers.Id
+                                        select new
+                                        {
+                                            ProductPhoto = Image.FromFile($"{Path.GetDirectoryName(Application.ExecutablePath)}\\Products\\{listInventories.Id}.jpg"),
+                                            ID = listInventories.Id,
+                                            TypeID = listRefType.Id,
+                                            TypeName = listRefType.Name,
+                                            BrandID = listRefBrand.Id,
+                                            BrandName = listRefBrand.Name,
+                                            Model = listInventories.Model,
+                                            Quantity = listInventories.Quantity,
+                                            DistributorPrice = listInventories.DistributorPrice,
+                                            SuggestedRetailPrice = listInventories.SuggestedRetailPrice,
+                                            DealerID = listDealers.Id,
+                                            DealerName = listDealers.Name
+                                        };
+            //'if (list.Count > 0)
+            listSource.ResetBindings(false);
+            //else
+            //    listSource = null;
 
         }
 
@@ -155,6 +189,12 @@ namespace InSys
 
             MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            RefreshGridBindings();
+        }
+
+        private void cboxProductType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Console.WriteLine("Selected Product Type Id:" + cboxProductType.SelectedValue);
             RefreshGridBindings();
         }
     }

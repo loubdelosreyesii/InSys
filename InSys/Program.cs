@@ -15,7 +15,7 @@ namespace InSys
         static void Main(){
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmInSys());
+            Application.Run(new frmInventory());
             //Application.Run(new RaffleUI.frmPeraPingPong());
         }
     }

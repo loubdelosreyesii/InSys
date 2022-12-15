@@ -179,6 +179,7 @@ List<sp_PingPongDraw_SelectForView_Result>();
 
         private void frmPeraPingPongControlPanel_Load(object sender, EventArgs e)
         {
+            this.Width = 100;
             shufflePrizes();
         }
 

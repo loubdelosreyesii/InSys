@@ -56,7 +56,7 @@
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(34, 309);
+            this.guna2Button5.Location = new System.Drawing.Point(25, 309);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
             this.guna2Button5.Size = new System.Drawing.Size(22, 22);
@@ -123,7 +123,7 @@
             // 
             this.pic1.BackColor = System.Drawing.Color.Black;
             this.pic1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic1.Location = new System.Drawing.Point(21, 40);
+            this.pic1.Location = new System.Drawing.Point(15, 40);
             this.pic1.Name = "pic1";
             this.pic1.Size = new System.Drawing.Size(47, 47);
             this.pic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -134,7 +134,7 @@
             // 
             this.pic2.BackColor = System.Drawing.Color.Green;
             this.pic2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic2.Location = new System.Drawing.Point(21, 93);
+            this.pic2.Location = new System.Drawing.Point(15, 93);
             this.pic2.Name = "pic2";
             this.pic2.Size = new System.Drawing.Size(47, 47);
             this.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +145,7 @@
             // 
             this.pic5.BackColor = System.Drawing.Color.Pink;
             this.pic5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic5.Location = new System.Drawing.Point(21, 256);
+            this.pic5.Location = new System.Drawing.Point(15, 256);
             this.pic5.Name = "pic5";
             this.pic5.Size = new System.Drawing.Size(47, 47);
             this.pic5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,7 +156,7 @@
             // 
             this.pic4.BackColor = System.Drawing.Color.Blue;
             this.pic4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic4.Location = new System.Drawing.Point(21, 199);
+            this.pic4.Location = new System.Drawing.Point(15, 199);
             this.pic4.Name = "pic4";
             this.pic4.Size = new System.Drawing.Size(47, 47);
             this.pic4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -167,7 +167,7 @@
             // 
             this.pic3.BackColor = System.Drawing.Color.Red;
             this.pic3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic3.Location = new System.Drawing.Point(21, 146);
+            this.pic3.Location = new System.Drawing.Point(15, 146);
             this.pic3.Name = "pic3";
             this.pic3.Size = new System.Drawing.Size(47, 47);
             this.pic3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(84, 346);
+            this.ClientSize = new System.Drawing.Size(73, 346);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -193,7 +193,7 @@
             this.Controls.Add(this.pic3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(100, 0);
+            this.MinimumSize = new System.Drawing.Size(10, 0);
             this.Name = "frmPeraPingPongControlPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Load += new System.EventHandler(this.frmPeraPingPongControlPanel_Load);

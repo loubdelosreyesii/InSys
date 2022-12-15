@@ -335,7 +335,7 @@
             this.btnClaimCardPrize.ShadowDecoration.Parent = this.btnClaimCardPrize;
             this.btnClaimCardPrize.Size = new System.Drawing.Size(365, 38);
             this.btnClaimCardPrize.TabIndex = 90;
-            this.btnClaimCardPrize.Text = "TAKE HOME CARD PRIZE";
+            this.btnClaimCardPrize.Text = "PICKED CARD NUMBER";
             this.btnClaimCardPrize.Click += new System.EventHandler(this.btnClaimCardPrize_Click);
             // 
             // txtChoosenCardNumber
