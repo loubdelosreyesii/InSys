@@ -50,6 +50,28 @@ namespace DataAccessLibrary.Controller{
             return records;
 
         }
+
+        public List<Inventory> SelectInventories()
+        {
+            IInventory service = new InventoryRepository();
+            List<Inventory> records = new List<Inventory>();
+
+            result = new Result();
+
+            try
+            {
+                service.Record = record;
+                records = service.SelectInventories();
+            }
+            catch (Exception ex)
+            {
+                result.Code = false;
+                result.Message = ex.ToString();
+            }
+            return records;
+
+        }
+
         public List<Inventory> SelectAll(){
             
             IInventory service = new InventoryRepository();

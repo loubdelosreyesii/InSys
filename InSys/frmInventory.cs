@@ -32,6 +32,9 @@ namespace InSys
         BindingSource listSource = new BindingSource();
         BindingSource listSourceProductType = new BindingSource();
 
+        int selectedProductId=0;
+        string strKeywordSearch = string.Empty;
+
         public frmInventory()
         {
             InitializeComponent();
@@ -54,13 +57,11 @@ namespace InSys
             record = new Inventory();
             frmDetail = new frmInventoryDetail();
 
-
             if (dgvwRecords.RowCount == 0)
             {
                 MessageBox.Show("No Records to edit.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
             dynamic selectedRow = dgvwRecords.CurrentRow.DataBoundItem;
 
             record.Id = selectedRow.ID;
@@ -79,52 +80,73 @@ namespace InSys
             RefreshGridBindings();
         }
 
+        public void frmLoad()
+        {
+            listOfProductTypes = referenceController.SelectByCategoryId(1);
+            listOfProductTypes.Insert(0, new Reference { Id = 0, Name = "All Product Types", CategoryID = 0, Description = "All Product Types" });
+            dgvwRecords.DataSource = listSource;
+
+            RefreshGridBindings();
+        }
         private void frmInventory_Load(object sender, EventArgs e)
         {
             listOfProductTypes = referenceController.SelectByCategoryId(1);
             listOfProductTypes.Insert(0,new Reference { Id = 0, Name= "All Product Types", CategoryID=0 , Description= "All Product Types"}) ;
             dgvwRecords.DataSource = listSource;
 
-            cboxProductType.DataSource = listOfProductTypes;
-            cboxProductType.DisplayMember = "Name";
-            cboxProductType.ValueMember = "Id";
             RefreshGridBindings();
         }
 
         private void RefreshGridBindings()
         {
-            int intProductType = Convert.ToInt32(cboxProductType.SelectedValue);
+            int intProductType = selectedProductId;
+
             dgvwRecords.ScrollBars = ScrollBars.Both;
 
-            list = inventoryController.SelectAll();
-
+            if (strKeywordSearch.Length <= 0)
+                list = inventoryController.SelectAll();
+            else
+            {
+                inventoryController.record = new Inventory();
+                inventoryController.record.Model = strKeywordSearch;
+                list = inventoryController.SelectInventories();
+            }
 
             if (intProductType > 0)
-                listSource.DataSource = from listInventories in list
-                                    join listRefType in references
-                                    on listInventories.TypeID equals listRefType.Id
-                                    join listRefBrand in references
-                                    on listInventories.BrandID equals listRefBrand.Id
-                                    join listDealers in dealers
-                                    on listInventories.DealerID equals listDealers.Id
-                                    where listInventories.TypeID== intProductType
-                                    select new
-                                    {
-                                        ProductPhoto = Image.FromFile($"{ Path.GetDirectoryName(Application.ExecutablePath) }\\Products\\{listInventories.Id}.jpg"),
-                                        ID = listInventories.Id,
-                                        TypeID = listRefType.Id,
-                                        TypeName = listRefType.Name,
-                                        BrandID = listRefBrand.Id,
-                                        BrandName = listRefBrand.Name,
-                                        Model = listInventories.Model,
-                                        Quantity = listInventories.Quantity,
-                                        DistributorPrice = listInventories.DistributorPrice,
-                                        SuggestedRetailPrice = listInventories.SuggestedRetailPrice,
-                                        DealerID = listDealers.Id,
-                                        DealerName = listDealers.Name
-                                    };
-
+            {
+                if (list.Count(x => x.TypeID == intProductType) > 0)
+                {
+                    listSource.DataSource = from listInventories in list
+                                            join listRefType in references
+                                            on listInventories.TypeID equals listRefType.Id
+                                            join listRefBrand in references
+                                            on listInventories.BrandID equals listRefBrand.Id
+                                            join listDealers in dealers
+                                            on listInventories.DealerID equals listDealers.Id
+                                            where listInventories.TypeID == intProductType
+                                            select new
+                                            {
+                                                ProductPhoto = Image.FromFile($"{Path.GetDirectoryName(Application.ExecutablePath)}\\Products\\{listInventories.Id}.jpg"),
+                                                ID = listInventories.Id,
+                                                TypeID = listRefType.Id,
+                                                TypeName = listRefType.Name,
+                                                BrandID = listRefBrand.Id,
+                                                BrandName = listRefBrand.Name,
+                                                Model = listInventories.Model,
+                                                Quantity = listInventories.Quantity,
+                                                DistributorPrice = listInventories.DistributorPrice,
+                                                SuggestedRetailPrice = listInventories.SuggestedRetailPrice,
+                                                DealerID = listDealers.Id,
+                                                DealerName = listDealers.Name
+                                            };
+                }
+                else
+                {
+                    MessageBox.Show("No Products yet available in the selected Product Type.", "InSys", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
             else
+            {
                 listSource.DataSource = from listInventories in list
                                         join listRefType in references
                                         on listInventories.TypeID equals listRefType.Id
@@ -147,11 +169,8 @@ namespace InSys
                                             DealerID = listDealers.Id,
                                             DealerName = listDealers.Name
                                         };
-            //'if (list.Count > 0)
+            }
             listSource.ResetBindings(false);
-            //else
-            //    listSource = null;
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -194,7 +213,109 @@ namespace InSys
 
         private void cboxProductType_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Console.WriteLine("Selected Product Type Id:" + cboxProductType.SelectedValue);
+            RefreshGridBindings();
+        }
+
+        private void cboxProductType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearchCustomer_TextChanged(object sender, EventArgs e)
+        {
+          RefreshGridBindings();
+        }
+
+        private void pnlFrame_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 1;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button13_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 0;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 2;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 3;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 4;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 5;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 6;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 7;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            selectedProductId = 8;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 9;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 10;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
+
+        private void guna2Button12_Click(object sender, EventArgs e)
+        {
+            strKeywordSearch = txtKeywordSearch.Text.Trim();
             RefreshGridBindings();
         }
     }

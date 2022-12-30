@@ -98,5 +98,28 @@ namespace DataAccessLibrary.Repository
                 return record;
             }
         }
+
+        public List<Inventory> SelectInventories()
+        {
+            Result = new Result();
+            using (var db = new X2MO_InSysEntities())
+            {
+                var records = db.Inventories.ToList();
+
+                if (_record != null && _record.Model.Length > 0)
+                    records = records.Where(p => p.Model.Contains(_record.Model)).ToList();
+
+                if (records == null)
+                {
+                    Result.Code = false;
+                    Result.Message = "No Inventory Record found.";
+                }
+
+                Result.Code = true;
+                Result.Message = String.Empty;
+
+                return records;
+            }
+        }
     }
 }

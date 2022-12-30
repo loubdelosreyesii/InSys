@@ -14,6 +14,7 @@ namespace DataAccessLibrary.Service
         Result Result { get; set; }
 
         List<Inventory> SelectAll();
+        List<Inventory> SelectInventories();
         Inventory Select();
         Result Add();
         Result Edit();

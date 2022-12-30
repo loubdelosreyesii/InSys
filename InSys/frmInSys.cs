@@ -66,6 +66,10 @@ namespace InSys
             //if (!frmUserLogin.result.Code) {
             //    this.Close();
             //}
+            frmInventory frm = new frmInventory();
+            frm.frmLoad();
+            this.pnlFrame.Controls.Clear();
+            this.pnlFrame.Controls.Add(frm.pnlFrame);
         }
 
         private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
@@ -83,7 +87,9 @@ namespace InSys
         private void gunaAdvenceTileButton3_Click(object sender, EventArgs e)
         {
             frmInventory frm = new frmInventory();
-            frm.Show();
+            frm.frmLoad();
+            this.pnlFrame.Controls.Clear();
+            this.pnlFrame.Controls.Add(frm.pnlFrame);
         }
 
         private void gunaAdvenceTileButton4_Click(object sender, EventArgs e)
@@ -102,6 +108,11 @@ namespace InSys
         {
             frmReference frm = new frmReference();
             frm.Show();
+        }
+
+        private void gunaAdvenceTileButton7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
