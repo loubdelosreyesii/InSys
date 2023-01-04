@@ -32,31 +32,15 @@ namespace InSys
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventory));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.dgvwRecords = new System.Windows.Forms.DataGridView();
-            this.dcolProductPhoto = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dcolProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolBrandID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolDistributorPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolSuggestedRetailPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolDealerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dcolDealerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -178,9 +162,7 @@ namespace InSys
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvwRecords.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvwRecords.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvwRecords.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvwRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvwRecords.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,155 +173,36 @@ namespace InSys
             this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvwRecords.ColumnHeadersHeight = 50;
             this.dgvwRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvwRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dcolProductPhoto,
-            this.dcolProductId,
-            this.dcolTypeID,
-            this.dcolTypeName,
-            this.dcolBrandID,
-            this.dcolBrandName,
-            this.dcolModel,
-            this.dcolDistributorPrice,
-            this.dcolSuggestedRetailPrice,
-            this.dcolQuantity,
-            this.dcolDealerID,
-            this.dcolDealerName});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvwRecords.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvwRecords.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvwRecords.EnableHeadersVisualStyles = false;
             this.dgvwRecords.Location = new System.Drawing.Point(0, 175);
             this.dgvwRecords.Name = "dgvwRecords";
             this.dgvwRecords.ReadOnly = true;
             this.dgvwRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvwRecords.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvwRecords.RowTemplate.Height = 30;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvwRecords.RowTemplate.Height = 50;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvwRecords.Size = new System.Drawing.Size(1073, 513);
             this.dgvwRecords.TabIndex = 24;
-            // 
-            // dcolProductPhoto
-            // 
-            this.dcolProductPhoto.DataPropertyName = "ProductPhoto";
-            this.dcolProductPhoto.HeaderText = "";
-            this.dcolProductPhoto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dcolProductPhoto.Name = "dcolProductPhoto";
-            this.dcolProductPhoto.ReadOnly = true;
-            // 
-            // dcolProductId
-            // 
-            this.dcolProductId.DataPropertyName = "ID";
-            this.dcolProductId.HeaderText = "ID";
-            this.dcolProductId.Name = "dcolProductId";
-            this.dcolProductId.ReadOnly = true;
-            this.dcolProductId.Visible = false;
-            this.dcolProductId.Width = 70;
-            // 
-            // dcolTypeID
-            // 
-            this.dcolTypeID.DataPropertyName = "TypeID";
-            this.dcolTypeID.HeaderText = "Type ID";
-            this.dcolTypeID.Name = "dcolTypeID";
-            this.dcolTypeID.ReadOnly = true;
-            this.dcolTypeID.Visible = false;
-            // 
-            // dcolTypeName
-            // 
-            this.dcolTypeName.DataPropertyName = "TypeName";
-            this.dcolTypeName.HeaderText = "TYPE";
-            this.dcolTypeName.Name = "dcolTypeName";
-            this.dcolTypeName.ReadOnly = true;
-            this.dcolTypeName.Width = 180;
-            // 
-            // dcolBrandID
-            // 
-            this.dcolBrandID.DataPropertyName = "BrandID";
-            this.dcolBrandID.HeaderText = "Brand ID";
-            this.dcolBrandID.Name = "dcolBrandID";
-            this.dcolBrandID.ReadOnly = true;
-            this.dcolBrandID.Visible = false;
-            // 
-            // dcolBrandName
-            // 
-            this.dcolBrandName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dcolBrandName.DataPropertyName = "BrandName";
-            this.dcolBrandName.HeaderText = "BRAND";
-            this.dcolBrandName.Name = "dcolBrandName";
-            this.dcolBrandName.ReadOnly = true;
-            // 
-            // dcolModel
-            // 
-            this.dcolModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dcolModel.DataPropertyName = "Model";
-            this.dcolModel.HeaderText = "MODEL";
-            this.dcolModel.Name = "dcolModel";
-            this.dcolModel.ReadOnly = true;
-            // 
-            // dcolDistributorPrice
-            // 
-            this.dcolDistributorPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dcolDistributorPrice.DataPropertyName = "DistributorPrice";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolDistributorPrice.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dcolDistributorPrice.HeaderText = "SELLING PRICE";
-            this.dcolDistributorPrice.Name = "dcolDistributorPrice";
-            this.dcolDistributorPrice.ReadOnly = true;
-            this.dcolDistributorPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dcolSuggestedRetailPrice
-            // 
-            this.dcolSuggestedRetailPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dcolSuggestedRetailPrice.DataPropertyName = "SuggestedRetailPrice";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolSuggestedRetailPrice.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dcolSuggestedRetailPrice.HeaderText = "SRP";
-            this.dcolSuggestedRetailPrice.Name = "dcolSuggestedRetailPrice";
-            this.dcolSuggestedRetailPrice.ReadOnly = true;
-            // 
-            // dcolQuantity
-            // 
-            this.dcolQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dcolQuantity.DataPropertyName = "Quantity";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolQuantity.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dcolQuantity.HeaderText = "QUANTITY";
-            this.dcolQuantity.Name = "dcolQuantity";
-            this.dcolQuantity.ReadOnly = true;
-            // 
-            // dcolDealerID
-            // 
-            this.dcolDealerID.DataPropertyName = "DealerID";
-            this.dcolDealerID.HeaderText = "Dealer ID";
-            this.dcolDealerID.Name = "dcolDealerID";
-            this.dcolDealerID.ReadOnly = true;
-            this.dcolDealerID.Visible = false;
-            // 
-            // dcolDealerName
-            // 
-            this.dcolDealerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dcolDealerName.DataPropertyName = "DealerName";
-            this.dcolDealerName.HeaderText = "SUPPLIER";
-            this.dcolDealerName.Name = "dcolDealerName";
-            this.dcolDealerName.ReadOnly = true;
             // 
             // guna2Button1
             // 
@@ -707,7 +570,6 @@ namespace InSys
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 691);
             this.Controls.Add(this.pnlFrame);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1024, 508);
             this.Name = "frmInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -747,17 +609,5 @@ namespace InSys
         private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
         private Label label3;
         public Panel pnlFrame;
-        private DataGridViewImageColumn dcolProductPhoto;
-        private DataGridViewTextBoxColumn dcolProductId;
-        private DataGridViewTextBoxColumn dcolTypeID;
-        private DataGridViewTextBoxColumn dcolTypeName;
-        private DataGridViewTextBoxColumn dcolBrandID;
-        private DataGridViewTextBoxColumn dcolBrandName;
-        private DataGridViewTextBoxColumn dcolModel;
-        private DataGridViewTextBoxColumn dcolDistributorPrice;
-        private DataGridViewTextBoxColumn dcolSuggestedRetailPrice;
-        private DataGridViewTextBoxColumn dcolQuantity;
-        private DataGridViewTextBoxColumn dcolDealerID;
-        private DataGridViewTextBoxColumn dcolDealerName;
     }
 }

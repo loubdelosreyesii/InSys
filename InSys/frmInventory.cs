@@ -171,6 +171,8 @@ namespace InSys
                                         };
             }
             listSource.ResetBindings(false);
+
+            FormatDataGridView();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -317,6 +319,31 @@ namespace InSys
         {
             strKeywordSearch = txtKeywordSearch.Text.Trim();
             RefreshGridBindings();
+        }
+
+        private void FormatDataGridView()
+        {
+
+            dgvwRecords.Columns["Id"].Visible = false;
+            dgvwRecords.Columns["TypeId"].Visible = false;
+            dgvwRecords.Columns["BrandId"].Visible = false;
+            dgvwRecords.Columns["DealerId"].Visible = false;
+
+
+            dgvwRecords.Columns["ProductPhoto"].HeaderText = "Product Photo";
+            dgvwRecords.Columns["BrandName"].HeaderText = "Brand";
+            dgvwRecords.Columns["TypeName"].HeaderText = "Product Type";
+            dgvwRecords.Columns["DistributorPrice"].HeaderText = "Distributor Price";
+            dgvwRecords.Columns["SuggestedRetailPrice"].HeaderText = "Selling Price";
+            dgvwRecords.Columns["DealerName"].HeaderText = "Dealer";
+
+
+
+
+            ((DataGridViewImageColumn)dgvwRecords.Columns["ProductPhoto"]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+            
+
+
         }
     }
 }

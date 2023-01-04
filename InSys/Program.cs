@@ -17,7 +17,7 @@ namespace InSys
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmInventory());
             //Application.Run(new RaffleUI.frmPeraPingPong());
-            Application.Run(new frmInSys());
+            Application.Run(new MDIMain());
         }
     }
 }
