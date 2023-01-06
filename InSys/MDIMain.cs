@@ -143,6 +143,23 @@ namespace InSys
 
         frmInventory fInventory = new frmInventory();
         frmProfitSharing fProfitSharing = new frmProfitSharing();
+        frmPOS fPOS = new frmPOS();
 
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fPOS == null)
+                    fPOS = new frmPOS();
+
+                ReShow(fPOS);
+            }
+            catch (ObjectDisposedException ex)
+            {
+                fPOS = new frmPOS();
+
+                ReShow(fPOS);
+            }
+        }
     }
 }

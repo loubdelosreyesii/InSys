@@ -178,8 +178,9 @@
             // 
             // gunaElipsePanel2
             // 
-            this.gunaElipsePanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gunaElipsePanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel2.BaseColor = System.Drawing.Color.White;
             this.gunaElipsePanel2.Controls.Add(this.guna2Chip3);
@@ -188,7 +189,7 @@
             this.gunaElipsePanel2.Controls.Add(this.txtSearchProducts);
             this.gunaElipsePanel2.Location = new System.Drawing.Point(337, 131);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(696, 497);
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(1095, 497);
             this.gunaElipsePanel2.TabIndex = 15;
             // 
             // guna2Chip3
@@ -207,6 +208,7 @@
             // 
             // btnAddToCart
             // 
+            this.btnAddToCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddToCart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnAddToCart.BorderRadius = 5;
             this.btnAddToCart.BorderThickness = 1;
@@ -216,7 +218,7 @@
             this.btnAddToCart.Font = new System.Drawing.Font("Mada", 9.75F);
             this.btnAddToCart.ForeColor = System.Drawing.Color.White;
             this.btnAddToCart.HoverState.Parent = this.btnAddToCart;
-            this.btnAddToCart.Location = new System.Drawing.Point(600, 3);
+            this.btnAddToCart.Location = new System.Drawing.Point(999, 3);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.ShadowDecoration.Parent = this.btnAddToCart;
             this.btnAddToCart.Size = new System.Drawing.Size(83, 36);
@@ -278,7 +280,7 @@
             this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvwRecords.RowTemplate.Height = 60;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(684, 449);
+            this.dgvwRecords.Size = new System.Drawing.Size(1083, 449);
             this.dgvwRecords.TabIndex = 25;
             // 
             // dcolProductPhoto
@@ -399,6 +401,7 @@
             // 
             // txtSearchProducts
             // 
+            this.txtSearchProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchProducts.AutoRoundedCorners = true;
             this.txtSearchProducts.BorderRadius = 17;
             this.txtSearchProducts.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -417,7 +420,7 @@
             this.txtSearchProducts.IconLeftSize = new System.Drawing.Size(17, 17);
             this.txtSearchProducts.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearchProducts.IconRight")));
             this.txtSearchProducts.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearchProducts.Location = new System.Drawing.Point(393, 3);
+            this.txtSearchProducts.Location = new System.Drawing.Point(792, 3);
             this.txtSearchProducts.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSearchProducts.Name = "txtSearchProducts";
             this.txtSearchProducts.PasswordChar = '\0';
@@ -440,7 +443,7 @@
             this.gunaElipsePanel3.Controls.Add(this.txtFirstName);
             this.gunaElipsePanel3.Location = new System.Drawing.Point(337, 49);
             this.gunaElipsePanel3.Name = "gunaElipsePanel3";
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(696, 76);
+            this.gunaElipsePanel3.Size = new System.Drawing.Size(1095, 76);
             this.gunaElipsePanel3.TabIndex = 16;
             // 
             // label4
@@ -523,7 +526,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.ShadowDecoration.Parent = this.pnlHeader;
-            this.pnlHeader.Size = new System.Drawing.Size(1045, 45);
+            this.pnlHeader.Size = new System.Drawing.Size(1444, 45);
             this.pnlHeader.TabIndex = 19;
             // 
             // guna2Chip1
@@ -548,7 +551,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 640);
+            this.ClientSize = new System.Drawing.Size(1444, 640);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.gunaElipsePanel3);
             this.Controls.Add(this.gunaElipsePanel2);

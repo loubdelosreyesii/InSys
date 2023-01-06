@@ -605,6 +605,7 @@
             this.btnPOS.Size = new System.Drawing.Size(194, 38);
             this.btnPOS.TabIndex = 9;
             this.btnPOS.Text = "Point Of Sales";
+            this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
             // 
             // btnProfitSharing
             // 
