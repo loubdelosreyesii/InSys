@@ -112,29 +112,6 @@ namespace InSys{
             GlobalMethods.UpdatePOSUI();
             GlobalMethods.RefreshGridBindings(txtSearchProducts.Text);
         }
-        private void btnAddCustomer_Click(object sender, EventArgs e)
-        {
-            if (txtFirstName.Text.Trim().Length <= 0)
-            {
-                MessageBox.Show("No Customer Name provided. Please try again.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            Customer customer = new Customer {
-                FirstName = txtFirstName.Text,
-                LastName = txtLastName.Text,
-                ContactNumber = txtContactNumber.Text,
-                MiddleName = string.Empty
-            };
-
-            customerController.record = customer;
-            result = customerController.Add();
-
-            if(result.Code)
-                recordCustomer = customerController.record;
-
-            MessageBox.Show($"{result.Message}", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
@@ -210,21 +187,6 @@ namespace InSys{
         }
 
         string strKeyword = string.Empty;
-
-        private void btnSearchCustomers_Click(object sender, EventArgs e)
-        {
-            frmCustomerSearch frm = new frmCustomerSearch();
-
-            frm.ShowDialog();
-
-            recordCustomer = frm.Customer;
-
-            if (recordCustomer != null){
-                txtLastName.Text = recordCustomer.LastName;
-                txtFirstName.Text = recordCustomer.FirstName;
-                txtContactNumber.Text = recordCustomer.ContactNumber;
-            }
-        }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
