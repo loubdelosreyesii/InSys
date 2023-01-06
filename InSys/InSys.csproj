@@ -218,6 +218,18 @@
     <Compile Include="MDIMain.Designer.cs">
       <DependentUpon>MDIMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProfitSharing\frmProfitShareDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfitSharing\frmProfitShareDetail.Designer.cs">
+      <DependentUpon>frmProfitShareDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfitSharing\frmProfitSharing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfitSharing\frmProfitSharing.Designer.cs">
+      <DependentUpon>frmProfitSharing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CheckedItems.resx">
@@ -291,6 +303,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDIMain.resx">
       <DependentUpon>MDIMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitSharing\frmProfitShareDetail.resx">
+      <DependentUpon>frmProfitShareDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitSharing\frmProfitSharing.resx">
+      <DependentUpon>frmProfitSharing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

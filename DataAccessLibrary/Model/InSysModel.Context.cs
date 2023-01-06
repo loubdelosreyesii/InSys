@@ -44,6 +44,7 @@ namespace DataAccessLibrary.Model
         public virtual DbSet<LuckyDrawWinner> LuckyDrawWinners { get; set; }
         public virtual DbSet<PingPongPrize> PingPongPrizes { get; set; }
         public virtual DbSet<PingPongWinner> PingPongWinners { get; set; }
+        public virtual DbSet<ProfitSharing> ProfitSharings { get; set; }
     
         public virtual ObjectResult<PointOfSalesViewModel> PointOfSaleViewModel()
         {

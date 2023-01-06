@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InSys.ProfitSharing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -122,7 +123,26 @@ namespace InSys
             form.WindowState = FormWindowState.Maximized;
             form.Show();
         }
+        
+        private void btnProfitSharing_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fProfitSharing == null)
+                    fProfitSharing = new frmProfitSharing();
+
+                ReShow(fProfitSharing);
+            }
+            catch (ObjectDisposedException ex)
+            {
+                fProfitSharing = new frmProfitSharing();
+
+                ReShow(fProfitSharing);
+            }
+        }
 
         frmInventory fInventory = new frmInventory();
+        frmProfitSharing fProfitSharing = new frmProfitSharing();
+
     }
 }

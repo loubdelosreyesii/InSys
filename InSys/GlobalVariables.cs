@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace InSys
 {
-    internal static class GlobalVariables
+    public static class GlobalVariables
     {
-        public const string APP_NAME = "InSys v1.0.0.3";
+        public const string APP_NAME = "InSys v1.0.0.5";
         public const string APP_CURRENCY = "en-PH";
         public static List<Inventory> checkedProducts = new List<Inventory>();
     }

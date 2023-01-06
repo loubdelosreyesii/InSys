@@ -43,7 +43,7 @@ namespace UserMan
 
             //dgvRecords.Columns[3].Visible = false;
         }
-         private void RefreshGridBindings() {
+        private void RefreshGridBindings() {
 
             references = referenceController.SelectByCategoryId(4);
             users = userController.SelectAll();
@@ -121,6 +121,9 @@ namespace UserMan
             RefreshGridBindings();
         }
 
-       
+        private void dgvRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

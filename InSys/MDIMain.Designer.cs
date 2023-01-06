@@ -79,7 +79,7 @@
             this.gunaAdvenceTileButton4 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton3 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton2 = new Guna.UI.WinForms.GunaAdvenceTileButton();
-            this.gunaAdvenceTileButton7 = new Guna.UI.WinForms.GunaAdvenceTileButton();
+            this.btnProfitSharing = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton5 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton6 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
@@ -451,7 +451,7 @@
             this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton4);
             this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton3);
             this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton2);
-            this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton7);
+            this.flowLayoutPanel1.Controls.Add(this.btnProfitSharing);
             this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton5);
             this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton6);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -606,39 +606,40 @@
             this.gunaAdvenceTileButton2.TabIndex = 9;
             this.gunaAdvenceTileButton2.Text = "Point Of Sales";
             // 
-            // gunaAdvenceTileButton7
+            // btnProfitSharing
             // 
-            this.gunaAdvenceTileButton7.Animated = true;
-            this.gunaAdvenceTileButton7.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceTileButton7.AnimationSpeed = 0.03F;
-            this.gunaAdvenceTileButton7.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceTileButton7.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaAdvenceTileButton7.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton7.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceTileButton7.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton7.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton7.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceTileButton7.CheckedImage")));
-            this.gunaAdvenceTileButton7.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceTileButton7.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceTileButton7.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceTileButton7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceTileButton7.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton7.Image = null;
-            this.gunaAdvenceTileButton7.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaAdvenceTileButton7.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.gunaAdvenceTileButton7.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaAdvenceTileButton7.Location = new System.Drawing.Point(0, 252);
-            this.gunaAdvenceTileButton7.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaAdvenceTileButton7.Name = "gunaAdvenceTileButton7";
-            this.gunaAdvenceTileButton7.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceTileButton7.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton7.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton7.OnHoverImage = null;
-            this.gunaAdvenceTileButton7.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton7.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton7.Size = new System.Drawing.Size(194, 38);
-            this.gunaAdvenceTileButton7.TabIndex = 15;
-            this.gunaAdvenceTileButton7.Text = "Profit Shares";
+            this.btnProfitSharing.Animated = true;
+            this.btnProfitSharing.AnimationHoverSpeed = 0.07F;
+            this.btnProfitSharing.AnimationSpeed = 0.03F;
+            this.btnProfitSharing.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfitSharing.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnProfitSharing.BorderColor = System.Drawing.Color.Black;
+            this.btnProfitSharing.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnProfitSharing.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnProfitSharing.CheckedForeColor = System.Drawing.Color.White;
+            this.btnProfitSharing.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnProfitSharing.CheckedImage")));
+            this.btnProfitSharing.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnProfitSharing.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnProfitSharing.FocusedColor = System.Drawing.Color.Empty;
+            this.btnProfitSharing.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfitSharing.ForeColor = System.Drawing.Color.White;
+            this.btnProfitSharing.Image = null;
+            this.btnProfitSharing.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnProfitSharing.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.btnProfitSharing.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnProfitSharing.Location = new System.Drawing.Point(0, 252);
+            this.btnProfitSharing.Margin = new System.Windows.Forms.Padding(0);
+            this.btnProfitSharing.Name = "btnProfitSharing";
+            this.btnProfitSharing.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnProfitSharing.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnProfitSharing.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnProfitSharing.OnHoverImage = null;
+            this.btnProfitSharing.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnProfitSharing.OnPressedColor = System.Drawing.Color.Black;
+            this.btnProfitSharing.Size = new System.Drawing.Size(194, 38);
+            this.btnProfitSharing.TabIndex = 15;
+            this.btnProfitSharing.Text = "Profit Shares";
+            this.btnProfitSharing.Click += new System.EventHandler(this.btnProfitSharing_Click);
             // 
             // gunaAdvenceTileButton5
             // 
@@ -783,7 +784,7 @@
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton4;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton3;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton2;
-        private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton7;
+        private Guna.UI.WinForms.GunaAdvenceTileButton btnProfitSharing;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton5;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton6;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
