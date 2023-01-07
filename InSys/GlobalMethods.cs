@@ -65,6 +65,7 @@ namespace InSys
                                     on listInventories.BrandID equals listRefBrand.Id
                                     join listDealers in dealers
                                     on listInventories.DealerID equals listDealers.Id
+                                    where listInventories.Quantity>0
                                     select new InventoryView{
                                         ProductPhoto = Image.FromFile($"{Path.GetDirectoryName(Application.ExecutablePath)}\\Products\\{listInventories.Id}.jpg"),
                                         Id = listInventories.Id,
@@ -82,9 +83,12 @@ namespace InSys
                                     };
 
             if (paramProductTypeId > 0)
-                query = query.Where(p => p.TypeID == paramProductTypeId);
+                if(paramProductTypeId<=10)
+                    query = query.Where(p => p.TypeID == paramProductTypeId);
+                else if(paramProductTypeId>=11)
+                    query = query.Where(p => p.TypeID >= paramProductTypeId);
 
-            if(paramKeyword.Length>0)
+            if (paramKeyword.Length>0)
                 queryList = query.Where(p=>p.Model.Contains(paramKeyword)).ToList();
             else
                 queryList = query.ToList();
