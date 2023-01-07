@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCheckOut = new Guna.UI2.WinForms.Guna2Button();
@@ -47,6 +47,30 @@
             this.guna2Chip3 = new Guna.UI2.WinForms.Guna2Chip();
             this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
             this.dgvwRecords = new System.Windows.Forms.DataGridView();
+            this.txtSearchProducts = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtContactNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtFirstName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Chip4 = new Guna.UI2.WinForms.Guna2Chip();
+            this.label1 = new System.Windows.Forms.Label();
             this.dcolProductPhoto = new System.Windows.Forms.DataGridViewImageColumn();
             this.dcolOriginalQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,20 +84,12 @@
             this.dcolQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolDealerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolDealerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSearchProducts = new Guna.UI2.WinForms.Guna2TextBox();
-            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtContactNumber = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtFirstName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.gunaElipsePanel1.SuspendLayout();
             this.gunaElipsePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).BeginInit();
             this.gunaElipsePanel3.SuspendLayout();
             this.pnlHeader.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaElipsePanel1
@@ -90,7 +106,7 @@
             this.gunaElipsePanel1.Controls.Add(this.lblTotalPrice);
             this.gunaElipsePanel1.Location = new System.Drawing.Point(8, 51);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(323, 577);
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(323, 591);
             this.gunaElipsePanel1.TabIndex = 14;
             // 
             // label5
@@ -137,6 +153,8 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 158);
@@ -183,24 +201,30 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel2.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel2.Controls.Add(this.label1);
+            this.gunaElipsePanel2.Controls.Add(this.guna2Chip4);
+            this.gunaElipsePanel2.Controls.Add(this.flowLayoutPanel2);
             this.gunaElipsePanel2.Controls.Add(this.guna2Chip3);
             this.gunaElipsePanel2.Controls.Add(this.btnAddToCart);
             this.gunaElipsePanel2.Controls.Add(this.dgvwRecords);
             this.gunaElipsePanel2.Controls.Add(this.txtSearchProducts);
             this.gunaElipsePanel2.Location = new System.Drawing.Point(337, 131);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(1095, 497);
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(821, 511);
             this.gunaElipsePanel2.TabIndex = 15;
+            this.gunaElipsePanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaElipsePanel2_Paint);
             // 
             // guna2Chip3
             // 
-            this.guna2Chip3.FillColor = System.Drawing.Color.White;
+            this.guna2Chip3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Chip3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2Chip3.Font = new System.Drawing.Font("Mada", 11.25F);
-            this.guna2Chip3.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Chip3.Location = new System.Drawing.Point(9, 11);
+            this.guna2Chip3.ForeColor = System.Drawing.Color.White;
+            this.guna2Chip3.Location = new System.Drawing.Point(130, 7);
             this.guna2Chip3.Name = "guna2Chip3";
             this.guna2Chip3.ShadowDecoration.Parent = this.guna2Chip3;
-            this.guna2Chip3.Size = new System.Drawing.Size(197, 23);
+            this.guna2Chip3.Size = new System.Drawing.Size(688, 37);
             this.guna2Chip3.TabIndex = 13;
             this.guna2Chip3.Text = "List of Products";
             this.guna2Chip3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -208,7 +232,6 @@
             // 
             // btnAddToCart
             // 
-            this.btnAddToCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddToCart.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnAddToCart.BorderRadius = 5;
             this.btnAddToCart.BorderThickness = 1;
@@ -218,10 +241,10 @@
             this.btnAddToCart.Font = new System.Drawing.Font("Mada", 9.75F);
             this.btnAddToCart.ForeColor = System.Drawing.Color.White;
             this.btnAddToCart.HoverState.Parent = this.btnAddToCart;
-            this.btnAddToCart.Location = new System.Drawing.Point(999, 3);
+            this.btnAddToCart.Location = new System.Drawing.Point(135, 47);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.ShadowDecoration.Parent = this.btnAddToCart;
-            this.btnAddToCart.Size = new System.Drawing.Size(83, 36);
+            this.btnAddToCart.Size = new System.Drawing.Size(103, 28);
             this.btnAddToCart.TabIndex = 26;
             this.btnAddToCart.Text = "Add to Cart";
             this.btnAddToCart.Click += new System.EventHandler(this.btnAdd_Click);
@@ -233,18 +256,17 @@
             this.dgvwRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvwRecords.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvwRecords.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvwRecords.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvwRecords.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvwRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mada", 11.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle73.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle73.Font = new System.Drawing.Font("Mada", 11.25F);
+            dataGridViewCellStyle73.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle73;
             this.dgvwRecords.ColumnHeadersHeight = 50;
             this.dgvwRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvwRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -262,148 +284,32 @@
             this.dcolDealerID,
             this.dcolDealerName});
             this.dgvwRecords.EnableHeadersVisualStyles = false;
-            this.dgvwRecords.Location = new System.Drawing.Point(9, 45);
+            this.dgvwRecords.Location = new System.Drawing.Point(130, 78);
             this.dgvwRecords.Name = "dgvwRecords";
             this.dgvwRecords.ReadOnly = true;
             this.dgvwRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle77;
             this.dgvwRecords.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle78.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle78;
             this.dgvwRecords.RowTemplate.Height = 60;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(1083, 449);
+            this.dgvwRecords.Size = new System.Drawing.Size(688, 430);
             this.dgvwRecords.TabIndex = 25;
-            // 
-            // dcolProductPhoto
-            // 
-            this.dcolProductPhoto.DataPropertyName = "ProductPhoto";
-            this.dcolProductPhoto.HeaderText = "";
-            this.dcolProductPhoto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dcolProductPhoto.Name = "dcolProductPhoto";
-            this.dcolProductPhoto.ReadOnly = true;
-            this.dcolProductPhoto.Width = 75;
-            // 
-            // dcolOriginalQuantity
-            // 
-            this.dcolOriginalQuantity.DataPropertyName = "OriginalQuantity";
-            this.dcolOriginalQuantity.HeaderText = "";
-            this.dcolOriginalQuantity.Name = "dcolOriginalQuantity";
-            this.dcolOriginalQuantity.ReadOnly = true;
-            this.dcolOriginalQuantity.Visible = false;
-            // 
-            // dcolProductId
-            // 
-            this.dcolProductId.DataPropertyName = "ID";
-            this.dcolProductId.HeaderText = "ID";
-            this.dcolProductId.Name = "dcolProductId";
-            this.dcolProductId.ReadOnly = true;
-            this.dcolProductId.Visible = false;
-            this.dcolProductId.Width = 70;
-            // 
-            // dcolTypeID
-            // 
-            this.dcolTypeID.DataPropertyName = "TypeID";
-            this.dcolTypeID.HeaderText = "Type ID";
-            this.dcolTypeID.Name = "dcolTypeID";
-            this.dcolTypeID.ReadOnly = true;
-            this.dcolTypeID.Visible = false;
-            // 
-            // dcolTypeName
-            // 
-            this.dcolTypeName.DataPropertyName = "TypeName";
-            this.dcolTypeName.HeaderText = "Type";
-            this.dcolTypeName.Name = "dcolTypeName";
-            this.dcolTypeName.ReadOnly = true;
-            this.dcolTypeName.Visible = false;
-            this.dcolTypeName.Width = 180;
-            // 
-            // dcolBrandID
-            // 
-            this.dcolBrandID.DataPropertyName = "BrandID";
-            this.dcolBrandID.HeaderText = "Brand ID";
-            this.dcolBrandID.Name = "dcolBrandID";
-            this.dcolBrandID.ReadOnly = true;
-            this.dcolBrandID.Visible = false;
-            // 
-            // dcolBrandName
-            // 
-            this.dcolBrandName.DataPropertyName = "BrandName";
-            this.dcolBrandName.HeaderText = "Brand";
-            this.dcolBrandName.Name = "dcolBrandName";
-            this.dcolBrandName.ReadOnly = true;
-            this.dcolBrandName.Width = 180;
-            // 
-            // dcolModel
-            // 
-            this.dcolModel.DataPropertyName = "Model";
-            this.dcolModel.HeaderText = "Model";
-            this.dcolModel.Name = "dcolModel";
-            this.dcolModel.ReadOnly = true;
-            this.dcolModel.Width = 220;
-            // 
-            // dcolDistributorPrice
-            // 
-            this.dcolDistributorPrice.DataPropertyName = "DistributorPrice";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolDistributorPrice.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dcolDistributorPrice.HeaderText = "Distributor Price";
-            this.dcolDistributorPrice.Name = "dcolDistributorPrice";
-            this.dcolDistributorPrice.ReadOnly = true;
-            this.dcolDistributorPrice.Visible = false;
-            // 
-            // dcolSuggestedRetailPrice
-            // 
-            this.dcolSuggestedRetailPrice.DataPropertyName = "SuggestedRetailPrice";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolSuggestedRetailPrice.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dcolSuggestedRetailPrice.HeaderText = "Suggested Retail Price";
-            this.dcolSuggestedRetailPrice.Name = "dcolSuggestedRetailPrice";
-            this.dcolSuggestedRetailPrice.ReadOnly = true;
-            this.dcolSuggestedRetailPrice.Width = 110;
-            // 
-            // dcolQuantity
-            // 
-            this.dcolQuantity.DataPropertyName = "Quantity";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolQuantity.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dcolQuantity.HeaderText = "Quantity";
-            this.dcolQuantity.Name = "dcolQuantity";
-            this.dcolQuantity.ReadOnly = true;
-            // 
-            // dcolDealerID
-            // 
-            this.dcolDealerID.DataPropertyName = "DealerID";
-            this.dcolDealerID.HeaderText = "Dealer ID";
-            this.dcolDealerID.Name = "dcolDealerID";
-            this.dcolDealerID.ReadOnly = true;
-            this.dcolDealerID.Visible = false;
-            // 
-            // dcolDealerName
-            // 
-            this.dcolDealerName.DataPropertyName = "DealerName";
-            this.dcolDealerName.HeaderText = "Dealer Name";
-            this.dcolDealerName.Name = "dcolDealerName";
-            this.dcolDealerName.ReadOnly = true;
-            this.dcolDealerName.Visible = false;
-            this.dcolDealerName.Width = 200;
             // 
             // txtSearchProducts
             // 
             this.txtSearchProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchProducts.AutoRoundedCorners = true;
-            this.txtSearchProducts.BorderRadius = 17;
+            this.txtSearchProducts.BorderRadius = 13;
             this.txtSearchProducts.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearchProducts.DefaultText = "";
             this.txtSearchProducts.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -420,14 +326,14 @@
             this.txtSearchProducts.IconLeftSize = new System.Drawing.Size(17, 17);
             this.txtSearchProducts.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearchProducts.IconRight")));
             this.txtSearchProducts.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearchProducts.Location = new System.Drawing.Point(792, 3);
+            this.txtSearchProducts.Location = new System.Drawing.Point(375, 47);
             this.txtSearchProducts.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSearchProducts.Name = "txtSearchProducts";
             this.txtSearchProducts.PasswordChar = '\0';
             this.txtSearchProducts.PlaceholderText = "Search Product ...";
             this.txtSearchProducts.SelectedText = "";
             this.txtSearchProducts.ShadowDecoration.Parent = this.txtSearchProducts;
-            this.txtSearchProducts.Size = new System.Drawing.Size(200, 36);
+            this.txtSearchProducts.Size = new System.Drawing.Size(443, 28);
             this.txtSearchProducts.TabIndex = 1;
             this.txtSearchProducts.TextChanged += new System.EventHandler(this.txtSearchProducts_TextChanged);
             // 
@@ -443,7 +349,7 @@
             this.gunaElipsePanel3.Controls.Add(this.txtFirstName);
             this.gunaElipsePanel3.Location = new System.Drawing.Point(337, 49);
             this.gunaElipsePanel3.Name = "gunaElipsePanel3";
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(1095, 76);
+            this.gunaElipsePanel3.Size = new System.Drawing.Size(821, 76);
             this.gunaElipsePanel3.TabIndex = 16;
             // 
             // label4
@@ -526,7 +432,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.ShadowDecoration.Parent = this.pnlHeader;
-            this.pnlHeader.Size = new System.Drawing.Size(1444, 45);
+            this.pnlHeader.Size = new System.Drawing.Size(1170, 45);
             this.pnlHeader.TabIndex = 19;
             // 
             // guna2Chip1
@@ -547,11 +453,440 @@
             // 
             this.guna2DragControl1.TargetControl = this.pnlHeader;
             // 
+            // guna2Button13
+            // 
+            this.guna2Button13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button13.BorderRadius = 5;
+            this.guna2Button13.BorderThickness = 1;
+            this.guna2Button13.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button13.CheckedState.Parent = this.guna2Button13;
+            this.guna2Button13.CustomImages.Parent = this.guna2Button13;
+            this.guna2Button13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button13.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button13.ForeColor = System.Drawing.Color.White;
+            this.guna2Button13.HoverState.Parent = this.guna2Button13;
+            this.guna2Button13.Location = new System.Drawing.Point(0, 10);
+            this.guna2Button13.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.guna2Button13.Name = "guna2Button13";
+            this.guna2Button13.ShadowDecoration.Parent = this.guna2Button13;
+            this.guna2Button13.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button13.TabIndex = 60;
+            this.guna2Button13.Tag = "0";
+            this.guna2Button13.Text = "All";
+            this.guna2Button13.Click += new System.EventHandler(this.guna2Button13_Click);
+            // 
+            // guna2Button11
+            // 
+            this.guna2Button11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button11.BorderRadius = 5;
+            this.guna2Button11.BorderThickness = 1;
+            this.guna2Button11.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button11.CheckedState.Parent = this.guna2Button11;
+            this.guna2Button11.CustomImages.Parent = this.guna2Button11;
+            this.guna2Button11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button11.ForeColor = System.Drawing.Color.White;
+            this.guna2Button11.HoverState.Parent = this.guna2Button11;
+            this.guna2Button11.Location = new System.Drawing.Point(0, 417);
+            this.guna2Button11.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button11.Name = "guna2Button11";
+            this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
+            this.guna2Button11.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button11.TabIndex = 59;
+            this.guna2Button11.Tag = "-1";
+            this.guna2Button11.Text = "Others";
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button3.BorderRadius = 5;
+            this.guna2Button3.BorderThickness = 1;
+            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
+            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
+            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.HoverState.Parent = this.guna2Button3;
+            this.guna2Button3.Location = new System.Drawing.Point(0, 380);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
+            this.guna2Button3.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button3.TabIndex = 49;
+            this.guna2Button3.Tag = "5";
+            this.guna2Button3.Text = "Blades";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
+            // guna2Button10
+            // 
+            this.guna2Button10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button10.BorderRadius = 5;
+            this.guna2Button10.BorderThickness = 1;
+            this.guna2Button10.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button10.CheckedState.Parent = this.guna2Button10;
+            this.guna2Button10.CustomImages.Parent = this.guna2Button10;
+            this.guna2Button10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button10.ForeColor = System.Drawing.Color.White;
+            this.guna2Button10.HoverState.Parent = this.guna2Button10;
+            this.guna2Button10.Location = new System.Drawing.Point(0, 343);
+            this.guna2Button10.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button10.Name = "guna2Button10";
+            this.guna2Button10.ShadowDecoration.Parent = this.guna2Button10;
+            this.guna2Button10.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button10.TabIndex = 58;
+            this.guna2Button10.Tag = "1";
+            this.guna2Button10.Text = "Accessories";
+            this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.BorderThickness = 1;
+            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(0, 306);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button2.TabIndex = 50;
+            this.guna2Button2.Tag = "9";
+            this.guna2Button2.Text = "Rubbers";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Button9
+            // 
+            this.guna2Button9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button9.BorderRadius = 5;
+            this.guna2Button9.BorderThickness = 1;
+            this.guna2Button9.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button9.CheckedState.Parent = this.guna2Button9;
+            this.guna2Button9.CustomImages.Parent = this.guna2Button9;
+            this.guna2Button9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button9.ForeColor = System.Drawing.Color.White;
+            this.guna2Button9.HoverState.Parent = this.guna2Button9;
+            this.guna2Button9.Location = new System.Drawing.Point(0, 269);
+            this.guna2Button9.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button9.Name = "guna2Button9";
+            this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
+            this.guna2Button9.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button9.TabIndex = 57;
+            this.guna2Button9.Tag = "2";
+            this.guna2Button9.Text = "Apparel";
+            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(0, 232);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button1.TabIndex = 51;
+            this.guna2Button1.Tag = "8";
+            this.guna2Button1.Text = "Pips-Out";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // guna2Button8
+            // 
+            this.guna2Button8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button8.BorderRadius = 5;
+            this.guna2Button8.BorderThickness = 1;
+            this.guna2Button8.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button8.CheckedState.Parent = this.guna2Button8;
+            this.guna2Button8.CustomImages.Parent = this.guna2Button8;
+            this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button8.ForeColor = System.Drawing.Color.White;
+            this.guna2Button8.HoverState.Parent = this.guna2Button8;
+            this.guna2Button8.Location = new System.Drawing.Point(0, 195);
+            this.guna2Button8.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button8.Name = "guna2Button8";
+            this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
+            this.guna2Button8.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button8.TabIndex = 56;
+            this.guna2Button8.Tag = "3";
+            this.guna2Button8.Text = "Bags";
+            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button4.BorderRadius = 5;
+            this.guna2Button4.BorderThickness = 1;
+            this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
+            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
+            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.HoverState.Parent = this.guna2Button4;
+            this.guna2Button4.Location = new System.Drawing.Point(0, 158);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
+            this.guna2Button4.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button4.TabIndex = 52;
+            this.guna2Button4.Tag = "4";
+            this.guna2Button4.Text = "Balls";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            // 
+            // guna2Button7
+            // 
+            this.guna2Button7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button7.BorderRadius = 5;
+            this.guna2Button7.BorderThickness = 1;
+            this.guna2Button7.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button7.CheckedState.Parent = this.guna2Button7;
+            this.guna2Button7.CustomImages.Parent = this.guna2Button7;
+            this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button7.ForeColor = System.Drawing.Color.White;
+            this.guna2Button7.HoverState.Parent = this.guna2Button7;
+            this.guna2Button7.Location = new System.Drawing.Point(0, 121);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button7.Name = "guna2Button7";
+            this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
+            this.guna2Button7.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button7.TabIndex = 55;
+            this.guna2Button7.Tag = "10";
+            this.guna2Button7.Text = "Shoes";
+            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button5.BorderRadius = 5;
+            this.guna2Button5.BorderThickness = 1;
+            this.guna2Button5.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
+            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
+            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.HoverState.Parent = this.guna2Button5;
+            this.guna2Button5.Location = new System.Drawing.Point(0, 84);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
+            this.guna2Button5.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button5.TabIndex = 53;
+            this.guna2Button5.Tag = "7";
+            this.guna2Button5.Text = "Hobby Bat";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button6.BorderRadius = 5;
+            this.guna2Button6.BorderThickness = 1;
+            this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
+            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
+            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button6.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.HoverState.Parent = this.guna2Button6;
+            this.guna2Button6.Location = new System.Drawing.Point(0, 47);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
+            this.guna2Button6.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button6.TabIndex = 54;
+            this.guna2Button6.Tag = "6";
+            this.guna2Button6.Text = "Glue";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button13);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button6);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button5);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button7);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button4);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button8);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button1);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button9);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button2);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button10);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button3);
+            this.flowLayoutPanel2.Controls.Add(this.guna2Button11);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(9, 47);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(115, 461);
+            this.flowLayoutPanel2.TabIndex = 61;
+            // 
+            // guna2Chip4
+            // 
+            this.guna2Chip4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2Chip4.Font = new System.Drawing.Font("Mada", 11.25F);
+            this.guna2Chip4.ForeColor = System.Drawing.Color.White;
+            this.guna2Chip4.Location = new System.Drawing.Point(3, 7);
+            this.guna2Chip4.Name = "guna2Chip4";
+            this.guna2Chip4.ShadowDecoration.Parent = this.guna2Chip4;
+            this.guna2Chip4.Size = new System.Drawing.Size(121, 37);
+            this.guna2Chip4.TabIndex = 62;
+            this.guna2Chip4.Text = "Product Types";
+            this.guna2Chip4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Chip4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Mada", 9.75F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(246, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 14);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Search Product Model";
+            // 
+            // dcolProductPhoto
+            // 
+            this.dcolProductPhoto.DataPropertyName = "ProductPhoto";
+            this.dcolProductPhoto.HeaderText = "";
+            this.dcolProductPhoto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dcolProductPhoto.Name = "dcolProductPhoto";
+            this.dcolProductPhoto.ReadOnly = true;
+            this.dcolProductPhoto.Width = 75;
+            // 
+            // dcolOriginalQuantity
+            // 
+            this.dcolOriginalQuantity.DataPropertyName = "OriginalQuantity";
+            this.dcolOriginalQuantity.HeaderText = "";
+            this.dcolOriginalQuantity.Name = "dcolOriginalQuantity";
+            this.dcolOriginalQuantity.ReadOnly = true;
+            this.dcolOriginalQuantity.Visible = false;
+            // 
+            // dcolProductId
+            // 
+            this.dcolProductId.DataPropertyName = "ID";
+            this.dcolProductId.HeaderText = "ID";
+            this.dcolProductId.Name = "dcolProductId";
+            this.dcolProductId.ReadOnly = true;
+            this.dcolProductId.Visible = false;
+            this.dcolProductId.Width = 70;
+            // 
+            // dcolTypeID
+            // 
+            this.dcolTypeID.DataPropertyName = "TypeID";
+            this.dcolTypeID.HeaderText = "Type ID";
+            this.dcolTypeID.Name = "dcolTypeID";
+            this.dcolTypeID.ReadOnly = true;
+            this.dcolTypeID.Visible = false;
+            // 
+            // dcolTypeName
+            // 
+            this.dcolTypeName.DataPropertyName = "TypeName";
+            this.dcolTypeName.HeaderText = "Type";
+            this.dcolTypeName.Name = "dcolTypeName";
+            this.dcolTypeName.ReadOnly = true;
+            this.dcolTypeName.Visible = false;
+            this.dcolTypeName.Width = 180;
+            // 
+            // dcolBrandID
+            // 
+            this.dcolBrandID.DataPropertyName = "BrandID";
+            this.dcolBrandID.HeaderText = "Brand ID";
+            this.dcolBrandID.Name = "dcolBrandID";
+            this.dcolBrandID.ReadOnly = true;
+            this.dcolBrandID.Visible = false;
+            // 
+            // dcolBrandName
+            // 
+            this.dcolBrandName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dcolBrandName.DataPropertyName = "BrandName";
+            this.dcolBrandName.HeaderText = "Brand";
+            this.dcolBrandName.Name = "dcolBrandName";
+            this.dcolBrandName.ReadOnly = true;
+            // 
+            // dcolModel
+            // 
+            this.dcolModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dcolModel.DataPropertyName = "Model";
+            this.dcolModel.HeaderText = "Model";
+            this.dcolModel.Name = "dcolModel";
+            this.dcolModel.ReadOnly = true;
+            // 
+            // dcolDistributorPrice
+            // 
+            this.dcolDistributorPrice.DataPropertyName = "DistributorPrice";
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle74.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.dcolDistributorPrice.DefaultCellStyle = dataGridViewCellStyle74;
+            this.dcolDistributorPrice.HeaderText = "Distributor Price";
+            this.dcolDistributorPrice.Name = "dcolDistributorPrice";
+            this.dcolDistributorPrice.ReadOnly = true;
+            this.dcolDistributorPrice.Visible = false;
+            // 
+            // dcolSuggestedRetailPrice
+            // 
+            this.dcolSuggestedRetailPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dcolSuggestedRetailPrice.DataPropertyName = "SuggestedRetailPrice";
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle75.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.dcolSuggestedRetailPrice.DefaultCellStyle = dataGridViewCellStyle75;
+            this.dcolSuggestedRetailPrice.HeaderText = "SRP";
+            this.dcolSuggestedRetailPrice.Name = "dcolSuggestedRetailPrice";
+            this.dcolSuggestedRetailPrice.ReadOnly = true;
+            // 
+            // dcolQuantity
+            // 
+            this.dcolQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dcolQuantity.DataPropertyName = "Quantity";
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle76.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.dcolQuantity.DefaultCellStyle = dataGridViewCellStyle76;
+            this.dcolQuantity.HeaderText = "Quantity";
+            this.dcolQuantity.Name = "dcolQuantity";
+            this.dcolQuantity.ReadOnly = true;
+            // 
+            // dcolDealerID
+            // 
+            this.dcolDealerID.DataPropertyName = "DealerID";
+            this.dcolDealerID.HeaderText = "Dealer ID";
+            this.dcolDealerID.Name = "dcolDealerID";
+            this.dcolDealerID.ReadOnly = true;
+            this.dcolDealerID.Visible = false;
+            // 
+            // dcolDealerName
+            // 
+            this.dcolDealerName.DataPropertyName = "DealerName";
+            this.dcolDealerName.HeaderText = "Dealer Name";
+            this.dcolDealerName.Name = "dcolDealerName";
+            this.dcolDealerName.ReadOnly = true;
+            this.dcolDealerName.Visible = false;
+            this.dcolDealerName.Width = 200;
+            // 
             // frmPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1444, 640);
+            this.ClientSize = new System.Drawing.Size(1170, 654);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.gunaElipsePanel3);
             this.Controls.Add(this.gunaElipsePanel2);
@@ -565,10 +900,12 @@
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
             this.gunaElipsePanel2.ResumeLayout(false);
+            this.gunaElipsePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).EndInit();
             this.gunaElipsePanel3.ResumeLayout(false);
             this.gunaElipsePanel3.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -594,6 +931,24 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         internal Guna.UI2.WinForms.Guna2TileButton lblTotalPrice;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button13;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button guna2Button7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button10;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button11;
+        private Guna.UI2.WinForms.Guna2Chip guna2Chip4;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewImageColumn dcolProductPhoto;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolOriginalQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolProductId;
@@ -607,8 +962,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolDealerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolDealerName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

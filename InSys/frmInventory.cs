@@ -345,5 +345,12 @@ namespace InSys
 
 
         }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            selectedProductId = 12;
+            strKeywordSearch = string.Empty;
+            RefreshGridBindings();
+        }
     }
 }

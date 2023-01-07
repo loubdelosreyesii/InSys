@@ -36,7 +36,7 @@ namespace InSys{
 
         decimal POSPrice = 00.00m;
         int itemIndex = 0;
-
+        int intProductTypeId = 0;
         public frmPOS(){
             InitializeComponent();
 
@@ -50,7 +50,7 @@ namespace InSys{
             GlobalMethods.references = references;
             GlobalMethods.dealers = dealers;
 
-            GlobalMethods.RefreshGridBindings(string.Empty);
+            GlobalMethods.RefreshGridBindings(string.Empty,intProductTypeId);
 
             if (dgvwRecords.RowCount<= 0)
             {
@@ -110,7 +110,7 @@ namespace InSys{
             flowLayoutPanel1.Controls.Add(checkedItem);
 
             GlobalMethods.UpdatePOSUI();
-            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text);
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
@@ -179,11 +179,11 @@ namespace InSys{
             checkedProducts.Clear();
             flowLayoutPanel1.Controls.Clear();
             GlobalMethods.UpdatePOSUI();
-            GlobalMethods.RefreshGridBindings(string.Empty);
+            GlobalMethods.RefreshGridBindings(string.Empty, intProductTypeId);
         }
         private void txtSearchProducts_TextChanged(object sender, EventArgs e)
         {
-            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text);
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
         }
 
         string strKeyword = string.Empty;
@@ -191,6 +191,77 @@ namespace InSys{
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gunaElipsePanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button13_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 0;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 1;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 2;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 3;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 4;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 5;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 6;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 7;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 8;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 9;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 10;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
         }
     }
 }

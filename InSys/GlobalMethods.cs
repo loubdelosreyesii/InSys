@@ -48,14 +48,16 @@ namespace InSys
             POSTotalAmountScreen.Text = $"{string.Format(new CultureInfo("en-PH"), "{0:C}", decTotalAmounToBePaid)}";
         }
        
-        public static void RefreshGridBindings(string paramKeyword)
+        public static void RefreshGridBindings(string paramKeyword,int paramProductTypeId)
         {
+            List<InventoryView> queryList;
             inventoryController = new InventoryController();
             list = inventoryController.SelectAll();
 
             listSource = new BindingSource();
 
             listSource.DataSource = null;
+
             var query = from listInventories in list
                                     join listRefType in references
                                     on listInventories.TypeID equals listRefType.Id
@@ -79,7 +81,8 @@ namespace InSys
                                         DealerName = listDealers.Name
                                     };
 
-            List<InventoryView> queryList;
+            if (paramProductTypeId > 0)
+                query = query.Where(p => p.TypeID == paramProductTypeId);
 
             if(paramKeyword.Length>0)
                 queryList = query.Where(p=>p.Model.Contains(paramKeyword)).ToList();
@@ -97,7 +100,6 @@ namespace InSys
             listSource.DataSource = queryList;
             POSProductView.DataSource = listSource;
             POSProductView.Refresh();
-            //listSource.ResetBindings(false);
         }
     }
 }
