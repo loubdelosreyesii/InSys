@@ -58,7 +58,7 @@ namespace InSys{
                 return;
             }
         }
-        private void btnAdd_Click(object sender, EventArgs e){
+        private void AddToCart() {
             GlobalMethods.POSTotalAmountScreen = this.lblTotalPrice;
 
             if (dgvwRecords.RowCount == 0)
@@ -68,37 +68,40 @@ namespace InSys{
             }
             itemIndex += 1;
 
-            
+
             var selectedItem = dgvwRecords.CurrentRow;
             dynamic selectedInventory = selectedItem.DataBoundItem;
 
-            Inventory _inventory =  new Inventory {
-                Id= selectedInventory.Id,
+            Inventory _inventory = new Inventory
+            {
+                Id = selectedInventory.Id,
                 TypeID = selectedInventory.TypeID,
                 BrandID = selectedInventory.BrandID,
                 Model = selectedInventory.Model,
-                Quantity= 1,
+                Quantity = 1,
                 DistributorPrice = selectedInventory.DistributorPrice,
                 SuggestedRetailPrice = selectedInventory.SuggestedRetailPrice,
                 DealerID = selectedInventory.DealerID
             };
 
-            int recordCheck= checkedProducts.Where(p => p.Id == _inventory.Id).Count();
+            int recordCheck = checkedProducts.Where(p => p.Id == _inventory.Id).Count();
 
-            if (recordCheck > 0) {
-                MessageBox.Show("Item is already in the cart. Please modify the item in the Cart Section.",APP_NAME,MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if (recordCheck > 0)
+            {
+                MessageBox.Show("Item is already in the cart. Please modify the item in the Cart Section.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             checkedProducts.Add(_inventory);
 
             CheckedItems checkedItem = new CheckedItems();
 
+            checkedItem.SearchText = txtSearchProducts.Text;
             checkedItem.ProductID = _inventory.Id;
             checkedItem.Brand = selectedItem.Cells["dcolBrandName"].Value.ToString();
             checkedItem.Currency = "en-PH";
             checkedItem.Model = _inventory.Model;
             checkedItem.Name = $"checkedItem{itemIndex}";
-            checkedItem.parentControl =  flowLayoutPanel1;
+            checkedItem.parentControl = flowLayoutPanel1;
             checkedItem.Photo = $"{Path.GetDirectoryName(Application.ExecutablePath)}\\Products\\{checkedItem.ProductID}.jpg";
             checkedItem.Price = _inventory.SuggestedRetailPrice;
 
@@ -106,11 +109,14 @@ namespace InSys{
             checkedItem.Size = new System.Drawing.Size(284, 109);
             checkedItem.TabIndex = itemIndex;
             checkedItem.TotalPrice = _inventory.Quantity * _inventory.SuggestedRetailPrice;
-            
+
             flowLayoutPanel1.Controls.Add(checkedItem);
 
             GlobalMethods.UpdatePOSUI();
             GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+        private void btnAdd_Click(object sender, EventArgs e){
+            AddToCart();
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
@@ -262,6 +268,22 @@ namespace InSys{
         {
             intProductTypeId = 10;
             GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            intProductTypeId = 11;
+            GlobalMethods.RefreshGridBindings(txtSearchProducts.Text, intProductTypeId);
+        }
+
+        private void frmPOS_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            checkedProducts = new List<Inventory>();
+        }
+
+        private void dgvwRecords_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            AddToCart();
         }
     }
 }
