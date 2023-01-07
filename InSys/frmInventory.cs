@@ -116,29 +116,57 @@ namespace InSys
             {
                 if (list.Count(x => x.TypeID == intProductType) > 0)
                 {
-                    listSource.DataSource = from listInventories in list
-                                            join listRefType in references
-                                            on listInventories.TypeID equals listRefType.Id
-                                            join listRefBrand in references
-                                            on listInventories.BrandID equals listRefBrand.Id
-                                            join listDealers in dealers
-                                            on listInventories.DealerID equals listDealers.Id
-                                            where listInventories.TypeID == intProductType
-                                            select new
-                                            {
-                                                ProductPhoto = Image.FromFile($"{Path.GetDirectoryName(Application.ExecutablePath)}\\Products\\{listInventories.Id}.jpg"),
-                                                ID = listInventories.Id,
-                                                TypeID = listRefType.Id,
-                                                TypeName = listRefType.Name,
-                                                BrandID = listRefBrand.Id,
-                                                BrandName = listRefBrand.Name,
-                                                Model = listInventories.Model,
-                                                Quantity = listInventories.Quantity,
-                                                DistributorPrice = listInventories.DistributorPrice,
-                                                SuggestedRetailPrice = listInventories.SuggestedRetailPrice,
-                                                DealerID = listDealers.Id,
-                                                DealerName = listDealers.Name
-                                            };
+                    if (intProductType >= 10)
+                    {
+                        listSource.DataSource = from listInventories in list
+                                                join listRefType in references
+                                                on listInventories.TypeID equals listRefType.Id
+                                                join listRefBrand in references
+                                                on listInventories.BrandID equals listRefBrand.Id
+                                                join listDealers in dealers
+                                                on listInventories.DealerID equals listDealers.Id
+                                                where listInventories.TypeID == intProductType
+                                                select new
+                                                {
+                                                    ProductPhoto = Image.FromFile($"{Path.GetDirectoryName(Application.ExecutablePath)}\\Products\\{listInventories.Id}.jpg"),
+                                                    ID = listInventories.Id,
+                                                    TypeID = listRefType.Id,
+                                                    TypeName = listRefType.Name,
+                                                    BrandID = listRefBrand.Id,
+                                                    BrandName = listRefBrand.Name,
+                                                    Model = listInventories.Model,
+                                                    Quantity = listInventories.Quantity,
+                                                    DistributorPrice = listInventories.DistributorPrice,
+                                                    SuggestedRetailPrice = listInventories.SuggestedRetailPrice,
+                                                    DealerID = listDealers.Id,
+                                                    DealerName = listDealers.Name
+                                                };
+                    }
+                    else {
+                        listSource.DataSource = from listInventories in list
+                                                join listRefType in references
+                                                on listInventories.TypeID equals listRefType.Id
+                                                join listRefBrand in references
+                                                on listInventories.BrandID equals listRefBrand.Id
+                                                join listDealers in dealers
+                                                on listInventories.DealerID equals listDealers.Id
+                                                where listInventories.TypeID >=intProductType
+                                                select new
+                                                {
+                                                    ProductPhoto = Image.FromFile($"{Path.GetDirectoryName(Application.ExecutablePath)}\\Products\\{listInventories.Id}.jpg"),
+                                                    ID = listInventories.Id,
+                                                    TypeID = listRefType.Id,
+                                                    TypeName = listRefType.Name,
+                                                    BrandID = listRefBrand.Id,
+                                                    BrandName = listRefBrand.Name,
+                                                    Model = listInventories.Model,
+                                                    Quantity = listInventories.Quantity,
+                                                    DistributorPrice = listInventories.DistributorPrice,
+                                                    SuggestedRetailPrice = listInventories.SuggestedRetailPrice,
+                                                    DealerID = listDealers.Id,
+                                                    DealerName = listDealers.Name
+                                                };
+                    }
                 }
                 else
                 {
@@ -338,17 +366,14 @@ namespace InSys
             dgvwRecords.Columns["DealerName"].HeaderText = "Dealer";
 
 
-
-
             ((DataGridViewImageColumn)dgvwRecords.Columns["ProductPhoto"]).ImageLayout = DataGridViewImageCellLayout.Stretch;
             
-
 
         }
 
         private void guna2Button11_Click(object sender, EventArgs e)
         {
-            selectedProductId = 12;
+            selectedProductId = 11;
             strKeywordSearch = string.Empty;
             RefreshGridBindings();
         }
