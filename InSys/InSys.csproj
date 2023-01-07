@@ -150,12 +150,6 @@
     <Compile Include="frmRaffleDetail.Designer.cs">
       <DependentUpon>frmRaffleDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInSys.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmInSys.Designer.cs">
-      <DependentUpon>frmInSys.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDealer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,9 +264,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRaffleDetail.resx">
       <DependentUpon>frmRaffleDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmInSys.resx">
-      <DependentUpon>frmInSys.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDealer.resx">
       <DependentUpon>frmDealer.cs</DependentUpon>
