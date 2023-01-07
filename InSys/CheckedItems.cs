@@ -26,6 +26,7 @@ namespace InSys
         public decimal TotalPrice { get; set; }
         public Control parentControl { get; set; }
         public int ProductTypeID { get; set; }
+        public string SearchText { get; set; }
         public CheckedItems()
         {
             InitializeComponent();
@@ -84,7 +85,7 @@ namespace InSys
                 }
             }
             GlobalMethods.UpdatePOSUI();
-            GlobalMethods.RefreshGridBindings(string.Empty, ProductTypeID);
+            GlobalMethods.RefreshGridBindings(SearchText, ProductTypeID);
         }
 
         private void txtPrice_Leave(object sender, EventArgs e)
