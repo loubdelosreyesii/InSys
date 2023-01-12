@@ -16,10 +16,10 @@ namespace DataAccessLibrary.Model
     {
         public int Id { get; set; }
         public int RaffleId { get; set; }
-        public int ProductId { get; set; }
+        public Nullable<int> ProductId { get; set; }
         public int ParticipantId { get; set; }
         public string RaffleReferenceNumber { get; set; }
-        public int PrizeId { get; set; }
+        public Nullable<int> PrizeId { get; set; }
         public Nullable<decimal> PrizeOfferAmount { get; set; }
     }
 }

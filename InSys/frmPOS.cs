@@ -23,10 +23,13 @@ namespace InSys{
         CustomerController customerController = new CustomerController();
         PointOfSaleController pointOfSaleController = new PointOfSaleController();
         PointOfSaleDetailController pointOfSaleDetailController = new PointOfSaleDetailController();
+        ProfitSharingController profitController = new ProfitSharingController();
 
         List<Reference> references = new List<Reference>();
         List<Dealer> dealers = new List<Dealer>();
         List<PointOfSaleDetail> listPOSDetails = new List<PointOfSaleDetail>();
+        List<DataAccessLibrary.Model.ProfitSharing> listProfitSharing = new List<DataAccessLibrary.Model.ProfitSharing>();
+
 
         Inventory record;
         Result result;
@@ -42,6 +45,7 @@ namespace InSys{
 
             references = referenceController.SelectAll();
             dealers = dealerController.SelectAll();
+            listProfitSharing = profitController.SelectAll();
         }
 
         private void frmPOS_Load(object sender, EventArgs e){
@@ -51,6 +55,10 @@ namespace InSys{
             GlobalMethods.dealers = dealers;
 
             GlobalMethods.RefreshGridBindings(string.Empty,intProductTypeId);
+            
+            cboxSeller.DataSource = listProfitSharing;
+            cboxSeller.DisplayMember = "SellerName";
+            cboxSeller.ValueMember = "Id";
 
             if (dgvwRecords.RowCount<= 0)
             {

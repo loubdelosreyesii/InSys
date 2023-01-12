@@ -57,7 +57,7 @@ namespace InSys
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(793, 45);
+            this.guna2Panel1.Size = new System.Drawing.Size(750, 45);
             this.guna2Panel1.TabIndex = 12;
             // 
             // guna2Chip1
@@ -155,7 +155,7 @@ namespace InSys
             this.dcolAddress,
             this.dcolContactNumber});
             this.dgvwRecords.EnableHeadersVisualStyles = false;
-            this.dgvwRecords.Location = new System.Drawing.Point(21, 93);
+            this.dgvwRecords.Location = new System.Drawing.Point(0, 93);
             this.dgvwRecords.Name = "dgvwRecords";
             this.dgvwRecords.ReadOnly = true;
             this.dgvwRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -173,7 +173,7 @@ namespace InSys
             this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvwRecords.RowTemplate.Height = 60;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(750, 321);
+            this.dgvwRecords.Size = new System.Drawing.Size(750, 340);
             this.dgvwRecords.TabIndex = 24;
             // 
             // dcolID
@@ -212,7 +212,7 @@ namespace InSys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 434);
+            this.ClientSize = new System.Drawing.Size(750, 434);
             this.Controls.Add(this.dgvwRecords);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);

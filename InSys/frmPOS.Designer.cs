@@ -37,6 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboxSeller = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCheckOut = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -99,6 +101,8 @@
             this.gunaElipsePanel1.AutoScroll = true;
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel1.Controls.Add(this.label6);
+            this.gunaElipsePanel1.Controls.Add(this.cboxSeller);
             this.gunaElipsePanel1.Controls.Add(this.label5);
             this.gunaElipsePanel1.Controls.Add(this.btnCheckOut);
             this.gunaElipsePanel1.Controls.Add(this.label3);
@@ -108,6 +112,37 @@
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Size = new System.Drawing.Size(323, 591);
             this.gunaElipsePanel1.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Mada", 9.75F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(13, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 14);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Seller";
+            // 
+            // cboxSeller
+            // 
+            this.cboxSeller.Animated = true;
+            this.cboxSeller.BackColor = System.Drawing.Color.Transparent;
+            this.cboxSeller.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboxSeller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxSeller.FocusedColor = System.Drawing.Color.Empty;
+            this.cboxSeller.FocusedState.Parent = this.cboxSeller;
+            this.cboxSeller.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxSeller.ForeColor = System.Drawing.Color.Black;
+            this.cboxSeller.FormattingEnabled = true;
+            this.cboxSeller.HoverState.Parent = this.cboxSeller;
+            this.cboxSeller.ItemHeight = 25;
+            this.cboxSeller.ItemsAppearance.Parent = this.cboxSeller;
+            this.cboxSeller.Location = new System.Drawing.Point(16, 107);
+            this.cboxSeller.Name = "cboxSeller";
+            this.cboxSeller.ShadowDecoration.Parent = this.cboxSeller;
+            this.cboxSeller.Size = new System.Drawing.Size(188, 31);
+            this.cboxSeller.TabIndex = 37;
             // 
             // label5
             // 
@@ -132,7 +167,7 @@
             this.btnCheckOut.Font = new System.Drawing.Font("Mada", 9.75F);
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
             this.btnCheckOut.HoverState.Parent = this.btnCheckOut;
-            this.btnCheckOut.Location = new System.Drawing.Point(210, 119);
+            this.btnCheckOut.Location = new System.Drawing.Point(210, 102);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.ShadowDecoration.Parent = this.btnCheckOut;
             this.btnCheckOut.Size = new System.Drawing.Size(98, 36);
@@ -145,7 +180,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mada", 9.75F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(9, 141);
+            this.label3.Location = new System.Drawing.Point(13, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 14);
             this.label3.TabIndex = 34;
@@ -159,7 +194,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 158);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(296, 416);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(296, 430);
             this.flowLayoutPanel1.TabIndex = 35;
             // 
             // lblTotalPrice
@@ -167,14 +202,14 @@
             this.lblTotalPrice.BorderRadius = 5;
             this.lblTotalPrice.CheckedState.Parent = this.lblTotalPrice;
             this.lblTotalPrice.CustomImages.Parent = this.lblTotalPrice;
-            this.lblTotalPrice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblTotalPrice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
             this.lblTotalPrice.Font = new System.Drawing.Font("Mada Medium", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTotalPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.White;
             this.lblTotalPrice.HoverState.Parent = this.lblTotalPrice;
             this.lblTotalPrice.Location = new System.Drawing.Point(12, 36);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.ShadowDecoration.Parent = this.lblTotalPrice;
-            this.lblTotalPrice.Size = new System.Drawing.Size(296, 74);
+            this.lblTotalPrice.Size = new System.Drawing.Size(296, 51);
             this.lblTotalPrice.TabIndex = 34;
             this.lblTotalPrice.Text = "0.00";
             this.lblTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -740,7 +775,6 @@
             // 
             this.txtSearchProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchProducts.AutoRoundedCorners = true;
-            this.txtSearchProducts.BorderRadius = 13;
             this.txtSearchProducts.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearchProducts.DefaultText = "";
             this.txtSearchProducts.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -963,5 +997,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolDealerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcolDealerName;
+        private Guna.UI2.WinForms.Guna2ComboBox cboxSeller;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -18,5 +18,6 @@ namespace DataAccessLibrary.Model
         public int CustomerId { get; set; }
         public string ReceiptNumber { get; set; }
         public System.DateTime TransactionDateTime { get; set; }
+        public string SellerName { get; set; }
     }
 }

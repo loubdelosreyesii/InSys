@@ -4,217 +4,218 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="X2MO_InSysModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="X2MO_InSysModelStoreContainer">
-    <EntitySet Name="Participants" EntityType="X2MO_InSysModel.Store.Participants" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Inventories" EntityType="X2MO_InSysModel.Store.Inventories" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="References" EntityType="X2MO_InSysModel.Store.References" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Categories" EntityType="X2MO_InSysModel.Store.Categories" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Dealers" EntityType="X2MO_InSysModel.Store.Dealers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Raffles" EntityType="X2MO_InSysModel.Store.Raffles" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Customers" EntityType="X2MO_InSysModel.Store.Customers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PointOfSaleDetails" EntityType="X2MO_InSysModel.Store.PointOfSaleDetails" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PointOfSales" EntityType="X2MO_InSysModel.Store.PointOfSales" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RaffleEntries" EntityType="X2MO_InSysModel.Store.RaffleEntries" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Users" EntityType="X2MO_InSysModel.Store.Users" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RafflePrizes" EntityType="X2MO_InSysModel.Store.RafflePrizes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RaffleWinners" EntityType="X2MO_InSysModel.Store.RaffleWinners" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RaffleLuckyDrawPrizes" EntityType="X2MO_InSysModel.Store.RaffleLuckyDrawPrizes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="LuckyDrawWinners" EntityType="X2MO_InSysModel.Store.LuckyDrawWinners" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PingPongPrizes" EntityType="X2MO_InSysModel.Store.PingPongPrizes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PingPongWinners" EntityType="X2MO_InSysModel.Store.PingPongWinners" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProfitSharings" EntityType="X2MO_InSysModel.Store.ProfitSharings" store:Type="Tables" Schema="dbo" />
-  </EntityContainer>
-  <EntityType Name="Participants">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MiddleName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="BirthDate" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EmailAddress" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ContactNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FacebookLink" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Inventories">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TypeID" Type="int" Nullable="false" />
-    <Property Name="BrandID" Type="int" Nullable="false" />
-    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Quantity" Type="int" Nullable="false" />
-    <Property Name="DistributorPrice" Type="decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="SuggestedRetailPrice" Type="decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="DealerID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="References">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CategoryID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Categories">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Dealers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ContactNumber" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Raffles">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DrawDate" Type="datetime" Nullable="false" />
-    <Property Name="EntryPrice" Type="decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="MaxEntries" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Customers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MiddleName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ContactNumber" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PointOfSaleDetails">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="POSId" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="Quantity" Type="int" Nullable="false" />
-    <Property Name="Price" Type="decimal" Nullable="false" Precision="18" Scale="2" />
-  </EntityType>
-  <EntityType Name="PointOfSales">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CustomerId" Type="int" Nullable="false" />
-    <Property Name="ReceiptNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TransactionDateTime" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="RaffleEntries">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RaffleId" Type="int" Nullable="false" />
-    <Property Name="ParticipantId" Type="int" Nullable="false" />
-    <Property Name="TransactionDateTime" Type="datetime" Nullable="false" />
-    <Property Name="PaymentReceipt" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="RaffleReferenceNumber" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="PaidAmount" Type="decimal" Nullable="false" Precision="18" Scale="0" />
-    <Property Name="PaymentMethod" Type="int" Nullable="false" />
-    <Property Name="LuckyNumber1" Type="int" Nullable="true" />
-    <Property Name="LuckyNumber2" Type="int" Nullable="true" />
-    <Property Name="LuckyNumber3" Type="int" Nullable="true" />
-    <Property Name="RafflePrizeId" Type="int" Nullable="true" />
-    <Property Name="ProductId" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="UserType" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="RafflePrizes">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RaffleId" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="Quantity" Type="int" Nullable="false" />
-    <Property Name="ShuffleLevel" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="RaffleWinners">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RaffleId" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="ParticipantId" Type="int" Nullable="false" />
-    <Property Name="RaffleReferenceNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PrizeId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="RaffleLuckyDrawPrizes">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RaffleId" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="Quantity" Type="int" Nullable="false" />
-    <Property Name="ShuffleLevel" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="LuckyDrawWinners">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RaffleId" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="ParticipantId" Type="int" Nullable="false" />
-    <Property Name="RaffleReferenceNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="LuckyDrawPrizeId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PingPongPrizes">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RaffleId" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="Quantity" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PingPongWinners">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RaffleId" Type="int" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="ParticipantId" Type="int" Nullable="false" />
-    <Property Name="RaffleReferenceNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PrizeId" Type="int" Nullable="false" />
-    <Property Name="PrizeOfferAmount" Type="decimal" Nullable="true" Precision="18" Scale="2" />
-  </EntityType>
-  <EntityType Name="ProfitSharings">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="SellerName" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="SharePercentage" Type="int" Nullable="false" />
-  </EntityType>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="X2MO_InSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactNumber" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dealers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactNumber" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inventories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="BrandID" Type="int" Nullable="false" />
+          <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="DistributorPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SuggestedRetailPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DealerID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LuckyDrawWinners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaffleId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="RaffleReferenceNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LuckyDrawPrizeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Participants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BirthDate" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FacebookLink" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PingPongPrizes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaffleId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PingPongWinners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaffleId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="RaffleReferenceNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PrizeId" Type="int" />
+          <Property Name="PrizeOfferAmount" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="PointOfSaleDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="POSId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PointOfSales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="ReceiptNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TransactionDateTime" Type="datetime" Nullable="false" />
+          <Property Name="SellerName" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProfitSharings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SellerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SharePercentage" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RaffleEntries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaffleId" Type="int" Nullable="false" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="TransactionDateTime" Type="datetime" Nullable="false" />
+          <Property Name="PaymentReceipt" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RaffleReferenceNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PaymentMethod" Type="int" Nullable="false" />
+          <Property Name="LuckyNumber1" Type="int" />
+          <Property Name="LuckyNumber2" Type="int" />
+          <Property Name="LuckyNumber3" Type="int" />
+          <Property Name="RafflePrizeId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+        </EntityType>
+        <EntityType Name="RaffleLuckyDrawPrizes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaffleId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ShuffleLevel" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RafflePrizes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaffleId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ShuffleLevel" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Raffles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DrawDate" Type="datetime" Nullable="false" />
+          <Property Name="EntryPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="MaxEntries" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RaffleWinners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaffleId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="RaffleReferenceNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PrizeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="References">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="X2MO_InSysModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dealers" EntityType="Self.Dealers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventories" EntityType="Self.Inventories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LuckyDrawWinners" EntityType="Self.LuckyDrawWinners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Participants" EntityType="Self.Participants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PingPongPrizes" EntityType="Self.PingPongPrizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PingPongWinners" EntityType="Self.PingPongWinners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointOfSaleDetails" EntityType="Self.PointOfSaleDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointOfSales" EntityType="Self.PointOfSales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProfitSharings" EntityType="Self.ProfitSharings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RaffleEntries" EntityType="Self.RaffleEntries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RaffleLuckyDrawPrizes" EntityType="Self.RaffleLuckyDrawPrizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RafflePrizes" EntityType="Self.RafflePrizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Raffles" EntityType="Self.Raffles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RaffleWinners" EntityType="Self.RaffleWinners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="References" EntityType="Self.References" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="X2MO_InSysModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -352,6 +353,7 @@
           <Property Name="CustomerId" Type="Int32" Nullable="false" />
           <Property Name="ReceiptNumber" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="TransactionDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SellerName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <ComplexType Name="sp_POS_SelectForView_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -500,10 +502,10 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RaffleId" Type="Int32" Nullable="false" />
-          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" />
           <Property Name="ParticipantId" Type="Int32" Nullable="false" />
           <Property Name="RaffleReferenceNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PrizeId" Type="Int32" Nullable="false" />
+          <Property Name="PrizeId" Type="Int32" />
           <Property Name="PrizeOfferAmount" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="ProfitSharing">
@@ -511,7 +513,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SellerName" Type="String" Nullable="false" FixedLength="false" MaxLength="100" />
+          <Property Name="SellerName" Type="String" Nullable="false" FixedLength="false" MaxLength="100" Unicode="true" />
           <Property Name="SharePercentage" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
@@ -613,7 +615,8 @@
     <EntitySetMapping Name="PointOfSales">
       <EntityTypeMapping TypeName="IsTypeOf(X2MO_InSysModel.PointOfSale)">
         <MappingFragment StoreEntitySet="PointOfSales">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SellerName" ColumnName="SellerName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
           <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
           <ScalarProperty Name="TransactionDateTime" ColumnName="TransactionDateTime" />
