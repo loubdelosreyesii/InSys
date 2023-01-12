@@ -350,7 +350,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" />
           <Property Name="ReceiptNumber" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="TransactionDateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="SellerName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -617,7 +617,7 @@
         <MappingFragment StoreEntitySet="PointOfSales">
           <ScalarProperty Name="SellerName" ColumnName="SellerName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerId" />
           <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
           <ScalarProperty Name="TransactionDateTime" ColumnName="TransactionDateTime" />
         </MappingFragment>

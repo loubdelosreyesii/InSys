@@ -15,7 +15,7 @@ namespace DataAccessLibrary.Model
     public partial class PointOfSale
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; }
+        public string CustomerName { get; set; }
         public string ReceiptNumber { get; set; }
         public System.DateTime TransactionDateTime { get; set; }
         public string SellerName { get; set; }
