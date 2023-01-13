@@ -104,7 +104,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="ReceiptNumber" Type="nvarchar(max)" Nullable="false" />
           <Property Name="TransactionDateTime" Type="datetime" Nullable="false" />
           <Property Name="SellerName" Type="nchar" MaxLength="10" />
@@ -350,7 +350,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerName" Type="String" Nullable="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
           <Property Name="ReceiptNumber" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="TransactionDateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="SellerName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -615,11 +615,11 @@
     <EntitySetMapping Name="PointOfSales">
       <EntityTypeMapping TypeName="IsTypeOf(X2MO_InSysModel.PointOfSale)">
         <MappingFragment StoreEntitySet="PointOfSales">
-          <ScalarProperty Name="SellerName" ColumnName="SellerName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CustomerName" ColumnName="CustomerId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
           <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
           <ScalarProperty Name="TransactionDateTime" ColumnName="TransactionDateTime" />
+          <ScalarProperty Name="SellerName" ColumnName="SellerName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

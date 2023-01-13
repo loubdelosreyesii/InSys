@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -78,11 +78,8 @@
             this.dcolDealerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcolDealerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearchProducts = new Guna.UI2.WinForms.Guna2TextBox();
-            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtContactNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtFirstName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -90,7 +87,6 @@
             this.gunaElipsePanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).BeginInit();
-            this.gunaElipsePanel3.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +97,9 @@
             this.gunaElipsePanel1.AutoScroll = true;
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel1.Controls.Add(this.label2);
             this.gunaElipsePanel1.Controls.Add(this.label6);
+            this.gunaElipsePanel1.Controls.Add(this.txtCustomerName);
             this.gunaElipsePanel1.Controls.Add(this.cboxSeller);
             this.gunaElipsePanel1.Controls.Add(this.label5);
             this.gunaElipsePanel1.Controls.Add(this.btnCheckOut);
@@ -118,7 +116,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Mada", 9.75F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(13, 90);
+            this.label6.Location = new System.Drawing.Point(5, 139);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 14);
             this.label6.TabIndex = 32;
@@ -138,10 +136,10 @@
             this.cboxSeller.HoverState.Parent = this.cboxSeller;
             this.cboxSeller.ItemHeight = 25;
             this.cboxSeller.ItemsAppearance.Parent = this.cboxSeller;
-            this.cboxSeller.Location = new System.Drawing.Point(16, 107);
+            this.cboxSeller.Location = new System.Drawing.Point(8, 156);
             this.cboxSeller.Name = "cboxSeller";
             this.cboxSeller.ShadowDecoration.Parent = this.cboxSeller;
-            this.cboxSeller.Size = new System.Drawing.Size(188, 31);
+            this.cboxSeller.Size = new System.Drawing.Size(312, 31);
             this.cboxSeller.TabIndex = 37;
             // 
             // label5
@@ -149,7 +147,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Mada", 11.25F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(13, 18);
+            this.label5.Location = new System.Drawing.Point(5, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(134, 17);
             this.label5.TabIndex = 36;
@@ -167,7 +165,7 @@
             this.btnCheckOut.Font = new System.Drawing.Font("Mada", 9.75F);
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
             this.btnCheckOut.HoverState.Parent = this.btnCheckOut;
-            this.btnCheckOut.Location = new System.Drawing.Point(210, 102);
+            this.btnCheckOut.Location = new System.Drawing.Point(222, 193);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.ShadowDecoration.Parent = this.btnCheckOut;
             this.btnCheckOut.Size = new System.Drawing.Size(98, 36);
@@ -180,7 +178,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mada", 9.75F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(13, 141);
+            this.label3.Location = new System.Drawing.Point(9, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 14);
             this.label3.TabIndex = 34;
@@ -192,9 +190,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 158);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 235);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(296, 430);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(308, 353);
             this.flowLayoutPanel1.TabIndex = 35;
             // 
             // lblTotalPrice
@@ -206,10 +204,10 @@
             this.lblTotalPrice.Font = new System.Drawing.Font("Mada Medium", 18F, System.Drawing.FontStyle.Bold);
             this.lblTotalPrice.ForeColor = System.Drawing.Color.White;
             this.lblTotalPrice.HoverState.Parent = this.lblTotalPrice;
-            this.lblTotalPrice.Location = new System.Drawing.Point(12, 36);
+            this.lblTotalPrice.Location = new System.Drawing.Point(4, 24);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.ShadowDecoration.Parent = this.lblTotalPrice;
-            this.lblTotalPrice.Size = new System.Drawing.Size(296, 51);
+            this.lblTotalPrice.Size = new System.Drawing.Size(316, 51);
             this.lblTotalPrice.TabIndex = 34;
             this.lblTotalPrice.Text = "0.00";
             this.lblTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -243,9 +241,9 @@
             this.gunaElipsePanel2.Controls.Add(this.btnAddToCart);
             this.gunaElipsePanel2.Controls.Add(this.dgvwRecords);
             this.gunaElipsePanel2.Controls.Add(this.txtSearchProducts);
-            this.gunaElipsePanel2.Location = new System.Drawing.Point(337, 131);
+            this.gunaElipsePanel2.Location = new System.Drawing.Point(337, 51);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(821, 511);
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(821, 591);
             this.gunaElipsePanel2.TabIndex = 15;
             this.gunaElipsePanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaElipsePanel2_Paint);
             // 
@@ -255,7 +253,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Mada", 9.75F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(246, 54);
+            this.label1.Location = new System.Drawing.Point(389, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 14);
             this.label1.TabIndex = 32;
@@ -295,7 +293,7 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(9, 47);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(115, 461);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(115, 541);
             this.flowLayoutPanel2.TabIndex = 61;
             // 
             // guna2Button13
@@ -314,7 +312,7 @@
             this.guna2Button13.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.guna2Button13.Name = "guna2Button13";
             this.guna2Button13.ShadowDecoration.Parent = this.guna2Button13;
-            this.guna2Button13.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button13.Size = new System.Drawing.Size(115, 28);
             this.guna2Button13.TabIndex = 60;
             this.guna2Button13.Tag = "0";
             this.guna2Button13.Text = "All";
@@ -332,11 +330,11 @@
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
             this.guna2Button6.HoverState.Parent = this.guna2Button6;
-            this.guna2Button6.Location = new System.Drawing.Point(0, 42);
+            this.guna2Button6.Location = new System.Drawing.Point(0, 33);
             this.guna2Button6.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button6.Size = new System.Drawing.Size(115, 28);
             this.guna2Button6.TabIndex = 54;
             this.guna2Button6.Tag = "6";
             this.guna2Button6.Text = "Glue";
@@ -354,11 +352,11 @@
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(0, 79);
+            this.guna2Button5.Location = new System.Drawing.Point(0, 61);
             this.guna2Button5.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button5.Size = new System.Drawing.Size(115, 28);
             this.guna2Button5.TabIndex = 53;
             this.guna2Button5.Tag = "7";
             this.guna2Button5.Text = "Hobby Bat";
@@ -376,11 +374,11 @@
             this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button7.ForeColor = System.Drawing.Color.White;
             this.guna2Button7.HoverState.Parent = this.guna2Button7;
-            this.guna2Button7.Location = new System.Drawing.Point(0, 116);
+            this.guna2Button7.Location = new System.Drawing.Point(0, 89);
             this.guna2Button7.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
-            this.guna2Button7.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button7.Size = new System.Drawing.Size(115, 28);
             this.guna2Button7.TabIndex = 55;
             this.guna2Button7.Tag = "10";
             this.guna2Button7.Text = "Shoes";
@@ -398,11 +396,11 @@
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(0, 153);
+            this.guna2Button4.Location = new System.Drawing.Point(0, 117);
             this.guna2Button4.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button4.Size = new System.Drawing.Size(115, 28);
             this.guna2Button4.TabIndex = 52;
             this.guna2Button4.Tag = "4";
             this.guna2Button4.Text = "Balls";
@@ -420,11 +418,11 @@
             this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button8.ForeColor = System.Drawing.Color.White;
             this.guna2Button8.HoverState.Parent = this.guna2Button8;
-            this.guna2Button8.Location = new System.Drawing.Point(0, 190);
+            this.guna2Button8.Location = new System.Drawing.Point(0, 145);
             this.guna2Button8.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
-            this.guna2Button8.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button8.Size = new System.Drawing.Size(115, 28);
             this.guna2Button8.TabIndex = 56;
             this.guna2Button8.Tag = "3";
             this.guna2Button8.Text = "Bags";
@@ -442,11 +440,11 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 227);
+            this.guna2Button1.Location = new System.Drawing.Point(0, 173);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button1.Size = new System.Drawing.Size(115, 28);
             this.guna2Button1.TabIndex = 51;
             this.guna2Button1.Tag = "8";
             this.guna2Button1.Text = "Pips-Out";
@@ -464,11 +462,11 @@
             this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button9.ForeColor = System.Drawing.Color.White;
             this.guna2Button9.HoverState.Parent = this.guna2Button9;
-            this.guna2Button9.Location = new System.Drawing.Point(0, 264);
+            this.guna2Button9.Location = new System.Drawing.Point(0, 201);
             this.guna2Button9.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
-            this.guna2Button9.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button9.Size = new System.Drawing.Size(115, 28);
             this.guna2Button9.TabIndex = 57;
             this.guna2Button9.Tag = "2";
             this.guna2Button9.Text = "Apparel";
@@ -486,11 +484,11 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(0, 301);
+            this.guna2Button2.Location = new System.Drawing.Point(0, 229);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button2.Size = new System.Drawing.Size(115, 28);
             this.guna2Button2.TabIndex = 50;
             this.guna2Button2.Tag = "9";
             this.guna2Button2.Text = "Rubbers";
@@ -508,11 +506,11 @@
             this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button10.ForeColor = System.Drawing.Color.White;
             this.guna2Button10.HoverState.Parent = this.guna2Button10;
-            this.guna2Button10.Location = new System.Drawing.Point(0, 338);
+            this.guna2Button10.Location = new System.Drawing.Point(0, 257);
             this.guna2Button10.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.ShadowDecoration.Parent = this.guna2Button10;
-            this.guna2Button10.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button10.Size = new System.Drawing.Size(115, 28);
             this.guna2Button10.TabIndex = 58;
             this.guna2Button10.Tag = "1";
             this.guna2Button10.Text = "Accessories";
@@ -530,11 +528,11 @@
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(0, 375);
+            this.guna2Button3.Location = new System.Drawing.Point(0, 285);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button3.Size = new System.Drawing.Size(115, 28);
             this.guna2Button3.TabIndex = 49;
             this.guna2Button3.Tag = "5";
             this.guna2Button3.Text = "Blades";
@@ -552,11 +550,11 @@
             this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button11.ForeColor = System.Drawing.Color.White;
             this.guna2Button11.HoverState.Parent = this.guna2Button11;
-            this.guna2Button11.Location = new System.Drawing.Point(0, 412);
+            this.guna2Button11.Location = new System.Drawing.Point(0, 313);
             this.guna2Button11.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button11.Name = "guna2Button11";
             this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
-            this.guna2Button11.Size = new System.Drawing.Size(115, 37);
+            this.guna2Button11.Size = new System.Drawing.Size(115, 28);
             this.guna2Button11.TabIndex = 59;
             this.guna2Button11.Tag = "-1";
             this.guna2Button11.Text = "Others";
@@ -607,14 +605,14 @@
             this.dgvwRecords.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvwRecords.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvwRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mada", 11.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Mada", 11.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvwRecords.ColumnHeadersHeight = 50;
             this.dgvwRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvwRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -636,21 +634,21 @@
             this.dgvwRecords.Name = "dgvwRecords";
             this.dgvwRecords.ReadOnly = true;
             this.dgvwRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvwRecords.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvwRecords.RowTemplate.Height = 60;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(688, 430);
+            this.dgvwRecords.Size = new System.Drawing.Size(688, 510);
             this.dgvwRecords.TabIndex = 25;
             this.dgvwRecords.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvwRecords_CellMouseDoubleClick);
             // 
@@ -724,9 +722,9 @@
             // dcolDistributorPrice
             // 
             this.dcolDistributorPrice.DataPropertyName = "DistributorPrice";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolDistributorPrice.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.dcolDistributorPrice.DefaultCellStyle = dataGridViewCellStyle8;
             this.dcolDistributorPrice.HeaderText = "Distributor Price";
             this.dcolDistributorPrice.Name = "dcolDistributorPrice";
             this.dcolDistributorPrice.ReadOnly = true;
@@ -736,9 +734,9 @@
             // 
             this.dcolSuggestedRetailPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dcolSuggestedRetailPrice.DataPropertyName = "SuggestedRetailPrice";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolSuggestedRetailPrice.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.dcolSuggestedRetailPrice.DefaultCellStyle = dataGridViewCellStyle9;
             this.dcolSuggestedRetailPrice.HeaderText = "SRP";
             this.dcolSuggestedRetailPrice.Name = "dcolSuggestedRetailPrice";
             this.dcolSuggestedRetailPrice.ReadOnly = true;
@@ -747,9 +745,9 @@
             // 
             this.dcolQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dcolQuantity.DataPropertyName = "Quantity";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolQuantity.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.dcolQuantity.DefaultCellStyle = dataGridViewCellStyle10;
             this.dcolQuantity.HeaderText = "Quantity";
             this.dcolQuantity.Name = "dcolQuantity";
             this.dcolQuantity.ReadOnly = true;
@@ -775,6 +773,7 @@
             // 
             this.txtSearchProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchProducts.AutoRoundedCorners = true;
+            this.txtSearchProducts.BorderRadius = 1;
             this.txtSearchProducts.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearchProducts.DefaultText = "";
             this.txtSearchProducts.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -791,102 +790,52 @@
             this.txtSearchProducts.IconLeftSize = new System.Drawing.Size(17, 17);
             this.txtSearchProducts.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearchProducts.IconRight")));
             this.txtSearchProducts.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearchProducts.Location = new System.Drawing.Point(375, 47);
+            this.txtSearchProducts.Location = new System.Drawing.Point(522, 47);
             this.txtSearchProducts.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSearchProducts.Name = "txtSearchProducts";
             this.txtSearchProducts.PasswordChar = '\0';
             this.txtSearchProducts.PlaceholderText = "Search Product ...";
             this.txtSearchProducts.SelectedText = "";
             this.txtSearchProducts.ShadowDecoration.Parent = this.txtSearchProducts;
-            this.txtSearchProducts.Size = new System.Drawing.Size(443, 28);
+            this.txtSearchProducts.Size = new System.Drawing.Size(296, 28);
             this.txtSearchProducts.TabIndex = 1;
             this.txtSearchProducts.TextChanged += new System.EventHandler(this.txtSearchProducts_TextChanged);
-            // 
-            // gunaElipsePanel3
-            // 
-            this.gunaElipsePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel3.Controls.Add(this.label4);
-            this.gunaElipsePanel3.Controls.Add(this.txtContactNumber);
-            this.gunaElipsePanel3.Controls.Add(this.label2);
-            this.gunaElipsePanel3.Controls.Add(this.txtFirstName);
-            this.gunaElipsePanel3.Location = new System.Drawing.Point(337, 49);
-            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(821, 76);
-            this.gunaElipsePanel3.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Mada", 9.75F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(465, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 14);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Contact Number";
-            // 
-            // txtContactNumber
-            // 
-            this.txtContactNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtContactNumber.DefaultText = "";
-            this.txtContactNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtContactNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtContactNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtContactNumber.DisabledState.Parent = this.txtContactNumber;
-            this.txtContactNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtContactNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContactNumber.FocusedState.Parent = this.txtContactNumber;
-            this.txtContactNumber.Font = new System.Drawing.Font("Mada", 9.75F);
-            this.txtContactNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContactNumber.HoverState.Parent = this.txtContactNumber;
-            this.txtContactNumber.Location = new System.Drawing.Point(468, 28);
-            this.txtContactNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.PasswordChar = '\0';
-            this.txtContactNumber.PlaceholderText = "Enter Contact Number Here...";
-            this.txtContactNumber.SelectedText = "";
-            this.txtContactNumber.ShadowDecoration.Parent = this.txtContactNumber;
-            this.txtContactNumber.Size = new System.Drawing.Size(215, 36);
-            this.txtContactNumber.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mada", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(14, 9);
+            this.label2.Location = new System.Drawing.Point(5, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 14);
             this.label2.TabIndex = 27;
             this.label2.Text = "Customer Name";
             // 
-            // txtFirstName
+            // txtCustomerName
             // 
-            this.txtFirstName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFirstName.DefaultText = "";
-            this.txtFirstName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtFirstName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtFirstName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFirstName.DisabledState.Parent = this.txtFirstName;
-            this.txtFirstName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFirstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFirstName.FocusedState.Parent = this.txtFirstName;
-            this.txtFirstName.Font = new System.Drawing.Font("Mada", 9.75F);
-            this.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFirstName.HoverState.Parent = this.txtFirstName;
-            this.txtFirstName.Location = new System.Drawing.Point(17, 28);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.PasswordChar = '\0';
-            this.txtFirstName.PlaceholderText = "Enter Customer Name Here...";
-            this.txtFirstName.SelectedText = "";
-            this.txtFirstName.ShadowDecoration.Parent = this.txtFirstName;
-            this.txtFirstName.Size = new System.Drawing.Size(437, 36);
-            this.txtFirstName.TabIndex = 26;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
+            this.txtCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustomerName.DefaultText = "";
+            this.txtCustomerName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCustomerName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCustomerName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerName.DisabledState.Parent = this.txtCustomerName;
+            this.txtCustomerName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerName.FocusedState.Parent = this.txtCustomerName;
+            this.txtCustomerName.Font = new System.Drawing.Font("Mada", 9.75F);
+            this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerName.HoverState.Parent = this.txtCustomerName;
+            this.txtCustomerName.Location = new System.Drawing.Point(8, 100);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.PasswordChar = '\0';
+            this.txtCustomerName.PlaceholderText = "Enter Customer Name Here...";
+            this.txtCustomerName.SelectedText = "";
+            this.txtCustomerName.ShadowDecoration.Parent = this.txtCustomerName;
+            this.txtCustomerName.Size = new System.Drawing.Size(312, 36);
+            this.txtCustomerName.TabIndex = 26;
+            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // pnlHeader
             // 
@@ -924,7 +873,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 654);
             this.Controls.Add(this.pnlHeader);
-            this.Controls.Add(this.gunaElipsePanel3);
             this.Controls.Add(this.gunaElipsePanel2);
             this.Controls.Add(this.gunaElipsePanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -938,8 +886,6 @@
             this.gunaElipsePanel2.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).EndInit();
-            this.gunaElipsePanel3.ResumeLayout(false);
-            this.gunaElipsePanel3.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -948,14 +894,11 @@
         #endregion
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel3;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchProducts;
         private System.Windows.Forms.DataGridView dgvwRecords;
         private Guna.UI2.WinForms.Guna2Button btnAddToCart;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox txtFirstName;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox txtContactNumber;
+        private Guna.UI2.WinForms.Guna2TextBox txtCustomerName;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip2;
         private CheckedItems checkedItems1;
         private CheckedItems checkedItems22;

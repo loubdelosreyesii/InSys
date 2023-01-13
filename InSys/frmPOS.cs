@@ -35,7 +35,7 @@ namespace InSys{
         Result result;
         PointOfSale recordPOS;
         PointOfSaleDetail recordPOSDetail;
-        Customer recordCustomer;
+        //Customer recordCustomer;
 
         decimal POSPrice = 00.00m;
         int itemIndex = 0;
@@ -132,10 +132,19 @@ namespace InSys{
             int recordCount = 0;
             DateTime dtNow = DateTime.Now;
             recordPOS = new PointOfSale();
+            
+            if (cboxSeller.Text.Length == 0)
+            {
+                MessageBox.Show("Please select a seller before you continue to check-out.",APP_NAME,MessageBoxButtons.OK,MessageBoxIcon.Information); 
+                return;
+            }
+            
+            if (txtCustomerName.Text.Length == 0)
+                recordPOS.CustomerName = "N/A";
+            else
+                recordPOS.CustomerName = txtCustomerName.Text;
 
-            if(recordCustomer != null)
-                recordPOS.CustomerId = recordCustomer.Id;
-
+            recordPOS.SellerName = cboxSeller.Text;
             recordPOS.ReceiptNumber = dtNow.ToString("yyyyhhddMMmmss");
             recordPOS.TransactionDateTime = dtNow;
 

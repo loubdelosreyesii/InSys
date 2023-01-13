@@ -178,7 +178,9 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSellerName);
+            this.MinimizeBox = false;
             this.Name = "frmProfitShareDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Profit Share Detail";
             this.Load += new System.EventHandler(this.frmProfitShareDetail_Load);
             this.guna2Panel1.ResumeLayout(false);
