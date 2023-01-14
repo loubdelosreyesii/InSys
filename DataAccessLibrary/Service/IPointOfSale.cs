@@ -1,6 +1,7 @@
 ﻿using DataAccessLibrary.Model;
 using System.Collections.Generic;
 using ResultHelper;
+using System;
 
 namespace DataAccessLibrary.Service{
     internal interface IPointOfSale{
@@ -10,5 +11,6 @@ namespace DataAccessLibrary.Service{
         Result Add();
         Result Edit();
         Result Delete();
+        object SelectSellerTransactions(DateTime paramDateFrom, DateTime paramDateTo, string paramUserName);
     }
 }

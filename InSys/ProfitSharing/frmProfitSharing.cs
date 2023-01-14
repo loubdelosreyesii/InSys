@@ -18,7 +18,8 @@ namespace InSys.ProfitSharing
     public partial class frmProfitSharing : Form
     {
         ProfitSharingController profitController = new ProfitSharingController();
-        
+        PointOfSaleController posController = new PointOfSaleController();
+
         Model.ProfitSharing record = new Model.ProfitSharing();
         List<Model.ProfitSharing> records = new List<Model.ProfitSharing>();
 
@@ -105,6 +106,17 @@ namespace InSys.ProfitSharing
             MessageBox.Show(result.Message, APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             RefreshGridBindings();
+        }
+
+        private void btnSearchTransactions_Click(object sender, EventArgs e)
+        {
+            dtpFrom.Value = new DateTime(dtpFrom.Value.Year, dtpFrom.Value.Month, dtpFrom.Value.Day, 0, 0, 0);
+            dtpTo.Value = new DateTime(dtpTo.Value.Year, dtpTo.Value.Month, dtpTo.Value.Day, 23, 59, 59);
+
+            posController.SelectSellerTransactions(dgvwPOSTransactions, dtpFrom.Value, dtpTo.Value, txtKeywordSearch.Text);
+
+
+           
         }
     }
 }

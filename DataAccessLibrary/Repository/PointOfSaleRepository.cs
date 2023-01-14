@@ -82,5 +82,44 @@ namespace DataAccessLibrary.Repository
                 return record;
             }
         }
+
+        public object SelectSellerTransactions(DateTime paramDateFrom, DateTime paramDateTo, string paramUserName)
+        {
+            result = new Result();
+            using (var db = new X2MO_InSysEntities())
+            {
+                var records = (from pos in db.PointOfSales
+                               join posDetails in db.PointOfSaleDetails
+                               on pos.Id equals posDetails.POSId
+                               join stock in db.Inventories
+                               on posDetails.ProductId equals stock.Id
+                               join refProdType in db.References
+                               on stock.TypeID equals refProdType.Id
+                               select new {
+                                   pos.Id,
+                                   pos.TransactionDateTime,
+                                   pos.ReceiptNumber,
+                                   pos.CustomerName,
+                                   pos.SellerName,
+                                   posDetails.ProductId,
+                                   refProdType.Name,
+                                   stock.Model,
+                                   ProfitPerStock = posDetails.Price - stock.DistributorPrice,
+                                   TotalProfit = (posDetails.Price * posDetails.Quantity) - (stock.DistributorPrice * posDetails.Quantity),
+                                   ProfitSignal =( posDetails.Price - stock.DistributorPrice)>0 ?"Green":"Red",
+                                   stock.DistributorPrice,
+                                   stock.SuggestedRetailPrice,
+                                   posDetails.Price,
+                                   posDetails.Quantity
+                               }).OrderByDescending(p=>p.TransactionDateTime).ThenBy(p=>p.SellerName).ToList();
+
+                records = records.Where(p => p.TransactionDateTime >= paramDateFrom && p.TransactionDateTime <= paramDateTo).ToList();
+
+                if (paramUserName.Length > 0)
+                    records = records.Where(p => p.SellerName == paramUserName).ToList();
+
+                return records;
+            }
+        }
     }
 }

@@ -42,7 +42,7 @@
             this.guna2Chip4 = new Guna.UI2.WinForms.Guna2Chip();
             this.guna2Chip3 = new Guna.UI2.WinForms.Guna2Chip();
             this.guna2Chip2 = new Guna.UI2.WinForms.Guna2Chip();
-            this.dgvwSellerTransaction = new System.Windows.Forms.DataGridView();
+            this.dgvwPOSTransactions = new System.Windows.Forms.DataGridView();
             this.dgvwRecords = new System.Windows.Forms.DataGridView();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
@@ -52,18 +52,30 @@
             this.txtKeywordSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.btnSearchTransactions = new System.Windows.Forms.Button();
             this.pnlFrame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvwSellerTransaction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvwPOSTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlFrame
             // 
+            this.pnlFrame.Controls.Add(this.btnSearchTransactions);
+            this.pnlFrame.Controls.Add(this.label3);
+            this.pnlFrame.Controls.Add(this.label2);
+            this.pnlFrame.Controls.Add(this.label1);
+            this.pnlFrame.Controls.Add(this.dtpTo);
+            this.pnlFrame.Controls.Add(this.dtpFrom);
             this.pnlFrame.Controls.Add(this.guna2Chip4);
             this.pnlFrame.Controls.Add(this.guna2Chip3);
             this.pnlFrame.Controls.Add(this.guna2Chip2);
-            this.pnlFrame.Controls.Add(this.dgvwSellerTransaction);
+            this.pnlFrame.Controls.Add(this.dgvwPOSTransactions);
             this.pnlFrame.Controls.Add(this.dgvwRecords);
             this.pnlFrame.Controls.Add(this.guna2Button12);
             this.pnlFrame.Controls.Add(this.gunaLinePanel1);
@@ -76,7 +88,7 @@
             this.pnlFrame.Location = new System.Drawing.Point(0, 0);
             this.pnlFrame.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFrame.Name = "pnlFrame";
-            this.pnlFrame.Size = new System.Drawing.Size(977, 374);
+            this.pnlFrame.Size = new System.Drawing.Size(1167, 658);
             this.pnlFrame.TabIndex = 51;
             this.pnlFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFrame_Paint);
             // 
@@ -90,7 +102,7 @@
             this.guna2Chip4.Location = new System.Drawing.Point(465, 60);
             this.guna2Chip4.Name = "guna2Chip4";
             this.guna2Chip4.ShadowDecoration.Parent = this.guna2Chip4;
-            this.guna2Chip4.Size = new System.Drawing.Size(509, 23);
+            this.guna2Chip4.Size = new System.Drawing.Size(699, 23);
             this.guna2Chip4.TabIndex = 53;
             this.guna2Chip4.Text = "Earnings";
             this.guna2Chip4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -117,27 +129,27 @@
             this.guna2Chip2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2Chip2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Chip2.ForeColor = System.Drawing.Color.White;
-            this.guna2Chip2.Location = new System.Drawing.Point(465, 194);
+            this.guna2Chip2.Location = new System.Drawing.Point(465, 267);
             this.guna2Chip2.Name = "guna2Chip2";
             this.guna2Chip2.ShadowDecoration.Parent = this.guna2Chip2;
-            this.guna2Chip2.Size = new System.Drawing.Size(509, 23);
+            this.guna2Chip2.Size = new System.Drawing.Size(699, 23);
             this.guna2Chip2.TabIndex = 51;
-            this.guna2Chip2.Text = "Seller\'s Transactions";
+            this.guna2Chip2.Text = "Sales Transactions";
             this.guna2Chip2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Chip2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
-            // dgvwSellerTransaction
+            // dgvwPOSTransactions
             // 
-            this.dgvwSellerTransaction.AllowUserToAddRows = false;
-            this.dgvwSellerTransaction.AllowUserToDeleteRows = false;
-            this.dgvwSellerTransaction.AllowUserToResizeRows = false;
+            this.dgvwPOSTransactions.AllowUserToAddRows = false;
+            this.dgvwPOSTransactions.AllowUserToDeleteRows = false;
+            this.dgvwPOSTransactions.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgvwSellerTransaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvwSellerTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvwPOSTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvwPOSTransactions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvwSellerTransaction.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvwSellerTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvwPOSTransactions.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvwPOSTransactions.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,9 +157,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwSellerTransaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvwSellerTransaction.ColumnHeadersHeight = 50;
-            this.dgvwSellerTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvwPOSTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvwPOSTransactions.ColumnHeadersHeight = 30;
+            this.dgvwPOSTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,12 +167,12 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvwSellerTransaction.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvwSellerTransaction.EnableHeadersVisualStyles = false;
-            this.dgvwSellerTransaction.Location = new System.Drawing.Point(465, 216);
-            this.dgvwSellerTransaction.Name = "dgvwSellerTransaction";
-            this.dgvwSellerTransaction.ReadOnly = true;
-            this.dgvwSellerTransaction.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvwPOSTransactions.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvwPOSTransactions.EnableHeadersVisualStyles = false;
+            this.dgvwPOSTransactions.Location = new System.Drawing.Point(465, 323);
+            this.dgvwPOSTransactions.Name = "dgvwPOSTransactions";
+            this.dgvwPOSTransactions.ReadOnly = true;
+            this.dgvwPOSTransactions.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,15 +181,15 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwSellerTransaction.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvwSellerTransaction.RowHeadersVisible = false;
+            this.dgvwPOSTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvwPOSTransactions.RowHeadersVisible = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvwSellerTransaction.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvwSellerTransaction.RowTemplate.Height = 50;
-            this.dgvwSellerTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwSellerTransaction.Size = new System.Drawing.Size(509, 155);
-            this.dgvwSellerTransaction.TabIndex = 50;
+            this.dgvwPOSTransactions.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvwPOSTransactions.RowTemplate.Height = 23;
+            this.dgvwPOSTransactions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvwPOSTransactions.Size = new System.Drawing.Size(699, 332);
+            this.dgvwPOSTransactions.TabIndex = 50;
             // 
             // dgvwRecords
             // 
@@ -228,7 +240,7 @@
             this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvwRecords.RowTemplate.Height = 50;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(458, 249);
+            this.dgvwRecords.Size = new System.Drawing.Size(458, 533);
             this.dgvwRecords.TabIndex = 24;
             // 
             // guna2Button12
@@ -260,7 +272,7 @@
             this.gunaLinePanel1.LineTop = 100;
             this.gunaLinePanel1.Location = new System.Drawing.Point(2, 53);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(975, 1);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(1165, 1);
             this.gunaLinePanel1.TabIndex = 49;
             // 
             // guna2Panel1
@@ -272,7 +284,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(977, 45);
+            this.guna2Panel1.Size = new System.Drawing.Size(1167, 45);
             this.guna2Panel1.TabIndex = 12;
             // 
             // guna2Chip1
@@ -368,16 +380,83 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(466, 297);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 15);
+            this.label3.TabIndex = 119;
+            this.label3.Text = "Transaction Date";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(721, 297);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 15);
+            this.label2.TabIndex = 118;
+            this.label2.Text = "To";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(572, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 15);
+            this.label1.TabIndex = 117;
+            this.label1.Text = "From";
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTo.Location = new System.Drawing.Point(747, 297);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(108, 20);
+            this.dtpTo.TabIndex = 116;
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFrom.Location = new System.Drawing.Point(607, 297);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(108, 20);
+            this.dtpFrom.TabIndex = 115;
+            // 
+            // btnSearchTransactions
+            // 
+            this.btnSearchTransactions.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnSearchTransactions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSearchTransactions.FlatAppearance.BorderSize = 0;
+            this.btnSearchTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchTransactions.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.btnSearchTransactions.ForeColor = System.Drawing.Color.White;
+            this.btnSearchTransactions.Location = new System.Drawing.Point(861, 295);
+            this.btnSearchTransactions.Name = "btnSearchTransactions";
+            this.btnSearchTransactions.Size = new System.Drawing.Size(134, 24);
+            this.btnSearchTransactions.TabIndex = 120;
+            this.btnSearchTransactions.Text = "Search Transactions";
+            this.btnSearchTransactions.UseVisualStyleBackColor = false;
+            this.btnSearchTransactions.Click += new System.EventHandler(this.btnSearchTransactions_Click);
+            // 
             // frmProfitSharing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 374);
+            this.ClientSize = new System.Drawing.Size(1167, 658);
             this.Controls.Add(this.pnlFrame);
             this.Name = "frmProfitSharing";
             this.Load += new System.EventHandler(this.frmProfitSharing_Load);
             this.pnlFrame.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvwSellerTransaction)).EndInit();
+            this.pnlFrame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvwPOSTransactions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -398,7 +477,13 @@
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip3;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip2;
-        private System.Windows.Forms.DataGridView dgvwSellerTransaction;
+        private System.Windows.Forms.DataGridView dgvwPOSTransactions;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip4;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpTo;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
+        internal System.Windows.Forms.Button btnSearchTransactions;
     }
 }
