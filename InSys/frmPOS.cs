@@ -138,7 +138,9 @@ namespace InSys{
                 MessageBox.Show("Please select a seller before you continue to check-out.",APP_NAME,MessageBoxButtons.OK,MessageBoxIcon.Information); 
                 return;
             }
-            
+            if (MessageBox.Show("Are you sure you want to checkout?", APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                return;
+
             if (txtCustomerName.Text.Length == 0)
                 recordPOS.CustomerName = "N/A";
             else
