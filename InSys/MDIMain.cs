@@ -1,4 +1,6 @@
-﻿using InSys.ProfitSharing;
+﻿using InSys.CapitalForm;
+using InSys.ProfitSharing;
+using RaffleUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,20 +56,6 @@ namespace InSys
         {
             this.Close();
         }
-
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             statusStrip.Visible = statusBarToolStripMenuItem.Checked;
@@ -110,14 +98,18 @@ namespace InSys
 
                 ReShow(fInventory);
             }
-            catch (ObjectDisposedException ex)
+            catch (ObjectDisposedException)
             {
                 fInventory = new frmInventory();
 
                 ReShow(fInventory);
             }
         }
-
+        private void ReShowNormalWindowMode(Form form)
+        {
+            form.MdiParent = this;
+            form.Show();
+        }
         private void ReShow(Form form) {
             form.MdiParent = this;
             form.WindowState = FormWindowState.Maximized;
@@ -133,7 +125,7 @@ namespace InSys
 
                 ReShow(fProfitSharing);
             }
-            catch (ObjectDisposedException ex)
+            catch (ObjectDisposedException)
             {
                 fProfitSharing = new frmProfitSharing();
 
@@ -141,10 +133,7 @@ namespace InSys
             }
         }
 
-        frmInventory fInventory = new frmInventory();
-        frmProfitSharing fProfitSharing = new frmProfitSharing();
-        frmPOS fPOS = new frmPOS();
-
+       
         private void btnPOS_Click(object sender, EventArgs e)
         {
             try
@@ -154,11 +143,113 @@ namespace InSys
 
                 ReShow(fPOS);
             }
-            catch (ObjectDisposedException ex)
+            catch (ObjectDisposedException)
             {
                 fPOS = new frmPOS();
 
                 ReShow(fPOS);
+            }
+        }
+
+        private void gunaAdvenceTileButton6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fReference == null)
+                    fReference = new frmReference();
+
+                ReShow(fReference);
+            }
+            catch (ObjectDisposedException)
+            {
+                fReference = new frmReference();
+
+                ReShow(fReference);
+            }
+        }
+
+        private void gunaAdvenceTileButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fCapital == null)
+                    fCapital = new frmCapital();
+
+                ReShow(fCapital);
+            }
+            catch (ObjectDisposedException)
+            {
+                fCapital = new frmCapital();
+
+                ReShow(fCapital);
+            }
+        }
+
+        private void MDIMain_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fInventory == null)
+                    fInventory = new frmInventory();
+
+                ReShow(fInventory);
+            }
+            catch (ObjectDisposedException)
+            {
+                fInventory = new frmInventory();
+
+                ReShow(fInventory);
+            }
+        }
+
+        private void gunaAdvenceTileButton5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fDealer == null)
+                    fDealer = new frmDealer();
+
+                ReShow(fDealer);
+            }
+            catch (ObjectDisposedException)
+            {
+                fDealer = new frmDealer();
+
+                ReShow(fDealer);
+            }
+        }
+
+        private void btnStartRaffle_Click(object sender, EventArgs e)
+        {
+            if (fRaffleEvent == null)
+                fRaffleEvent = new frmChooseRaffleEvent();
+
+            fRaffleEvent.ShowDialog();
+        }
+
+        frmRaffle fRaffle = new frmRaffle();
+        frmInventory fInventory = new frmInventory();
+        frmProfitSharing fProfitSharing = new frmProfitSharing();
+        frmPOS fPOS = new frmPOS();
+        frmReference fReference = new frmReference();
+        frmCapital fCapital = new frmCapital();
+        frmDealer fDealer = new frmDealer();
+        frmChooseRaffleEvent fRaffleEvent = new frmChooseRaffleEvent();
+
+        private void gunaAdvenceTileButton4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fRaffle == null)
+                    fRaffle = new frmRaffle();
+
+                ReShow(fRaffle);
+            }
+            catch (ObjectDisposedException)
+            {
+                fRaffle = new frmRaffle();
+
+                ReShow(fRaffle);
             }
         }
     }

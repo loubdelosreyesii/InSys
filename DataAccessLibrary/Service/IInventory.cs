@@ -15,6 +15,7 @@ namespace DataAccessLibrary.Service
 
         List<Inventory> SelectAll();
         List<Inventory> SelectInventories();
+        Decimal SelectRemainingInventoryAmount();
         Inventory Select();
         Result Add();
         Result Edit();

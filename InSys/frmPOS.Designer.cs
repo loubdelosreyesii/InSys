@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,18 +51,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Chip4 = new Guna.UI2.WinForms.Guna2Chip();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAll = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGlue = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHobbyBat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnShoes = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBalls = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBags = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPipsOut = new Guna.UI2.WinForms.Guna2Button();
+            this.btnApparel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRubbers = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAccessories = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBlades = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOthers = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Chip3 = new Guna.UI2.WinForms.Guna2Chip();
             this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
             this.dgvwRecords = new System.Windows.Forms.DataGridView();
@@ -156,7 +156,6 @@
             this.txtCustomerName.ShadowDecoration.Parent = this.txtCustomerName;
             this.txtCustomerName.Size = new System.Drawing.Size(312, 36);
             this.txtCustomerName.TabIndex = 26;
-            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // cboxSeller
             // 
@@ -281,7 +280,6 @@
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Size = new System.Drawing.Size(821, 591);
             this.gunaElipsePanel2.TabIndex = 15;
-            this.gunaElipsePanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaElipsePanel2_Paint);
             // 
             // label1
             // 
@@ -314,287 +312,287 @@
             this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button13);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button6);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button5);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button7);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button4);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button8);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button1);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button9);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button2);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button10);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button3);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button11);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(9, 47);
+            this.flowLayoutPanel2.Controls.Add(this.btnAll);
+            this.flowLayoutPanel2.Controls.Add(this.btnAccessories);
+            this.flowLayoutPanel2.Controls.Add(this.btnApparel);
+            this.flowLayoutPanel2.Controls.Add(this.btnBags);
+            this.flowLayoutPanel2.Controls.Add(this.btnBalls);
+            this.flowLayoutPanel2.Controls.Add(this.btnBlades);
+            this.flowLayoutPanel2.Controls.Add(this.btnGlue);
+            this.flowLayoutPanel2.Controls.Add(this.btnHobbyBat);
+            this.flowLayoutPanel2.Controls.Add(this.btnPipsOut);
+            this.flowLayoutPanel2.Controls.Add(this.btnRubbers);
+            this.flowLayoutPanel2.Controls.Add(this.btnShoes);
+            this.flowLayoutPanel2.Controls.Add(this.btnOthers);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 47);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(115, 541);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(121, 541);
             this.flowLayoutPanel2.TabIndex = 61;
             // 
-            // guna2Button13
+            // btnAll
             // 
-            this.guna2Button13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button13.BorderRadius = 3;
-            this.guna2Button13.BorderThickness = 1;
-            this.guna2Button13.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button13.CheckedState.Parent = this.guna2Button13;
-            this.guna2Button13.CustomImages.Parent = this.guna2Button13;
-            this.guna2Button13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button13.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button13.ForeColor = System.Drawing.Color.White;
-            this.guna2Button13.HoverState.Parent = this.guna2Button13;
-            this.guna2Button13.Location = new System.Drawing.Point(0, 5);
-            this.guna2Button13.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.guna2Button13.Name = "guna2Button13";
-            this.guna2Button13.ShadowDecoration.Parent = this.guna2Button13;
-            this.guna2Button13.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button13.TabIndex = 60;
-            this.guna2Button13.Tag = "0";
-            this.guna2Button13.Text = "All";
-            this.guna2Button13.Click += new System.EventHandler(this.guna2Button13_Click);
+            this.btnAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAll.BorderRadius = 3;
+            this.btnAll.BorderThickness = 1;
+            this.btnAll.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnAll.CheckedState.Parent = this.btnAll;
+            this.btnAll.CustomImages.Parent = this.btnAll;
+            this.btnAll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnAll.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAll.ForeColor = System.Drawing.Color.White;
+            this.btnAll.HoverState.Parent = this.btnAll;
+            this.btnAll.Location = new System.Drawing.Point(0, 5);
+            this.btnAll.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.ShadowDecoration.Parent = this.btnAll;
+            this.btnAll.Size = new System.Drawing.Size(121, 28);
+            this.btnAll.TabIndex = 60;
+            this.btnAll.Tag = "0";
+            this.btnAll.Text = "All";
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
-            // guna2Button6
+            // btnGlue
             // 
-            this.guna2Button6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button6.BorderRadius = 3;
-            this.guna2Button6.BorderThickness = 1;
-            this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
-            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
-            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.HoverState.Parent = this.guna2Button6;
-            this.guna2Button6.Location = new System.Drawing.Point(0, 33);
-            this.guna2Button6.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button6.TabIndex = 54;
-            this.guna2Button6.Tag = "6";
-            this.guna2Button6.Text = "Glue";
-            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
+            this.btnGlue.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGlue.BorderRadius = 3;
+            this.btnGlue.BorderThickness = 1;
+            this.btnGlue.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnGlue.CheckedState.Parent = this.btnGlue;
+            this.btnGlue.CustomImages.Parent = this.btnGlue;
+            this.btnGlue.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnGlue.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGlue.ForeColor = System.Drawing.Color.White;
+            this.btnGlue.HoverState.Parent = this.btnGlue;
+            this.btnGlue.Location = new System.Drawing.Point(0, 173);
+            this.btnGlue.Margin = new System.Windows.Forms.Padding(0);
+            this.btnGlue.Name = "btnGlue";
+            this.btnGlue.ShadowDecoration.Parent = this.btnGlue;
+            this.btnGlue.Size = new System.Drawing.Size(121, 28);
+            this.btnGlue.TabIndex = 54;
+            this.btnGlue.Tag = "6";
+            this.btnGlue.Text = "Glue";
+            this.btnGlue.Click += new System.EventHandler(this.btnGlue_Click);
             // 
-            // guna2Button5
+            // btnHobbyBat
             // 
-            this.guna2Button5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button5.BorderRadius = 3;
-            this.guna2Button5.BorderThickness = 1;
-            this.guna2Button5.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
-            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
-            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(0, 61);
-            this.guna2Button5.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button5.TabIndex = 53;
-            this.guna2Button5.Tag = "7";
-            this.guna2Button5.Text = "Hobby Bat";
-            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            this.btnHobbyBat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnHobbyBat.BorderRadius = 3;
+            this.btnHobbyBat.BorderThickness = 1;
+            this.btnHobbyBat.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnHobbyBat.CheckedState.Parent = this.btnHobbyBat;
+            this.btnHobbyBat.CustomImages.Parent = this.btnHobbyBat;
+            this.btnHobbyBat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnHobbyBat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHobbyBat.ForeColor = System.Drawing.Color.White;
+            this.btnHobbyBat.HoverState.Parent = this.btnHobbyBat;
+            this.btnHobbyBat.Location = new System.Drawing.Point(0, 201);
+            this.btnHobbyBat.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHobbyBat.Name = "btnHobbyBat";
+            this.btnHobbyBat.ShadowDecoration.Parent = this.btnHobbyBat;
+            this.btnHobbyBat.Size = new System.Drawing.Size(121, 28);
+            this.btnHobbyBat.TabIndex = 53;
+            this.btnHobbyBat.Tag = "7";
+            this.btnHobbyBat.Text = "Hobby Bat";
+            this.btnHobbyBat.Click += new System.EventHandler(this.btnHobbyBat_Click);
             // 
-            // guna2Button7
+            // btnShoes
             // 
-            this.guna2Button7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button7.BorderRadius = 3;
-            this.guna2Button7.BorderThickness = 1;
-            this.guna2Button7.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button7.CheckedState.Parent = this.guna2Button7;
-            this.guna2Button7.CustomImages.Parent = this.guna2Button7;
-            this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button7.ForeColor = System.Drawing.Color.White;
-            this.guna2Button7.HoverState.Parent = this.guna2Button7;
-            this.guna2Button7.Location = new System.Drawing.Point(0, 89);
-            this.guna2Button7.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
-            this.guna2Button7.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button7.TabIndex = 55;
-            this.guna2Button7.Tag = "10";
-            this.guna2Button7.Text = "Shoes";
-            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
+            this.btnShoes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnShoes.BorderRadius = 3;
+            this.btnShoes.BorderThickness = 1;
+            this.btnShoes.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnShoes.CheckedState.Parent = this.btnShoes;
+            this.btnShoes.CustomImages.Parent = this.btnShoes;
+            this.btnShoes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnShoes.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnShoes.ForeColor = System.Drawing.Color.White;
+            this.btnShoes.HoverState.Parent = this.btnShoes;
+            this.btnShoes.Location = new System.Drawing.Point(0, 285);
+            this.btnShoes.Margin = new System.Windows.Forms.Padding(0);
+            this.btnShoes.Name = "btnShoes";
+            this.btnShoes.ShadowDecoration.Parent = this.btnShoes;
+            this.btnShoes.Size = new System.Drawing.Size(121, 28);
+            this.btnShoes.TabIndex = 55;
+            this.btnShoes.Tag = "10";
+            this.btnShoes.Text = "Shoes";
+            this.btnShoes.Click += new System.EventHandler(this.btnShoes_Click);
             // 
-            // guna2Button4
+            // btnBalls
             // 
-            this.guna2Button4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button4.BorderRadius = 3;
-            this.guna2Button4.BorderThickness = 1;
-            this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(0, 117);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button4.TabIndex = 52;
-            this.guna2Button4.Tag = "4";
-            this.guna2Button4.Text = "Balls";
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            this.btnBalls.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBalls.BorderRadius = 3;
+            this.btnBalls.BorderThickness = 1;
+            this.btnBalls.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnBalls.CheckedState.Parent = this.btnBalls;
+            this.btnBalls.CustomImages.Parent = this.btnBalls;
+            this.btnBalls.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnBalls.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBalls.ForeColor = System.Drawing.Color.White;
+            this.btnBalls.HoverState.Parent = this.btnBalls;
+            this.btnBalls.Location = new System.Drawing.Point(0, 117);
+            this.btnBalls.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBalls.Name = "btnBalls";
+            this.btnBalls.ShadowDecoration.Parent = this.btnBalls;
+            this.btnBalls.Size = new System.Drawing.Size(121, 28);
+            this.btnBalls.TabIndex = 52;
+            this.btnBalls.Tag = "4";
+            this.btnBalls.Text = "Balls";
+            this.btnBalls.Click += new System.EventHandler(this.btnBalls_Click);
             // 
-            // guna2Button8
+            // btnBags
             // 
-            this.guna2Button8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button8.BorderRadius = 3;
-            this.guna2Button8.BorderThickness = 1;
-            this.guna2Button8.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button8.CheckedState.Parent = this.guna2Button8;
-            this.guna2Button8.CustomImages.Parent = this.guna2Button8;
-            this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button8.ForeColor = System.Drawing.Color.White;
-            this.guna2Button8.HoverState.Parent = this.guna2Button8;
-            this.guna2Button8.Location = new System.Drawing.Point(0, 145);
-            this.guna2Button8.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
-            this.guna2Button8.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button8.TabIndex = 56;
-            this.guna2Button8.Tag = "3";
-            this.guna2Button8.Text = "Bags";
-            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
+            this.btnBags.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBags.BorderRadius = 3;
+            this.btnBags.BorderThickness = 1;
+            this.btnBags.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnBags.CheckedState.Parent = this.btnBags;
+            this.btnBags.CustomImages.Parent = this.btnBags;
+            this.btnBags.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnBags.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBags.ForeColor = System.Drawing.Color.White;
+            this.btnBags.HoverState.Parent = this.btnBags;
+            this.btnBags.Location = new System.Drawing.Point(0, 89);
+            this.btnBags.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBags.Name = "btnBags";
+            this.btnBags.ShadowDecoration.Parent = this.btnBags;
+            this.btnBags.Size = new System.Drawing.Size(121, 28);
+            this.btnBags.TabIndex = 56;
+            this.btnBags.Tag = "3";
+            this.btnBags.Text = "Bags";
+            this.btnBags.Click += new System.EventHandler(this.btnBags_Click);
             // 
-            // guna2Button1
+            // btnPipsOut
             // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button1.BorderRadius = 3;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 173);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button1.TabIndex = 51;
-            this.guna2Button1.Tag = "8";
-            this.guna2Button1.Text = "Pips-Out";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnPipsOut.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPipsOut.BorderRadius = 3;
+            this.btnPipsOut.BorderThickness = 1;
+            this.btnPipsOut.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnPipsOut.CheckedState.Parent = this.btnPipsOut;
+            this.btnPipsOut.CustomImages.Parent = this.btnPipsOut;
+            this.btnPipsOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnPipsOut.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPipsOut.ForeColor = System.Drawing.Color.White;
+            this.btnPipsOut.HoverState.Parent = this.btnPipsOut;
+            this.btnPipsOut.Location = new System.Drawing.Point(0, 229);
+            this.btnPipsOut.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPipsOut.Name = "btnPipsOut";
+            this.btnPipsOut.ShadowDecoration.Parent = this.btnPipsOut;
+            this.btnPipsOut.Size = new System.Drawing.Size(121, 28);
+            this.btnPipsOut.TabIndex = 51;
+            this.btnPipsOut.Tag = "8";
+            this.btnPipsOut.Text = "Pips-Out";
+            this.btnPipsOut.Click += new System.EventHandler(this.btnPipsOut_Click);
             // 
-            // guna2Button9
+            // btnApparel
             // 
-            this.guna2Button9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button9.BorderRadius = 3;
-            this.guna2Button9.BorderThickness = 1;
-            this.guna2Button9.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button9.CheckedState.Parent = this.guna2Button9;
-            this.guna2Button9.CustomImages.Parent = this.guna2Button9;
-            this.guna2Button9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.HoverState.Parent = this.guna2Button9;
-            this.guna2Button9.Location = new System.Drawing.Point(0, 201);
-            this.guna2Button9.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
-            this.guna2Button9.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button9.TabIndex = 57;
-            this.guna2Button9.Tag = "2";
-            this.guna2Button9.Text = "Apparel";
-            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
+            this.btnApparel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnApparel.BorderRadius = 3;
+            this.btnApparel.BorderThickness = 1;
+            this.btnApparel.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnApparel.CheckedState.Parent = this.btnApparel;
+            this.btnApparel.CustomImages.Parent = this.btnApparel;
+            this.btnApparel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnApparel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnApparel.ForeColor = System.Drawing.Color.White;
+            this.btnApparel.HoverState.Parent = this.btnApparel;
+            this.btnApparel.Location = new System.Drawing.Point(0, 61);
+            this.btnApparel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnApparel.Name = "btnApparel";
+            this.btnApparel.ShadowDecoration.Parent = this.btnApparel;
+            this.btnApparel.Size = new System.Drawing.Size(121, 28);
+            this.btnApparel.TabIndex = 57;
+            this.btnApparel.Tag = "2";
+            this.btnApparel.Text = "Apparel";
+            this.btnApparel.Click += new System.EventHandler(this.btnApparel_Click);
             // 
-            // guna2Button2
+            // btnRubbers
             // 
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button2.BorderRadius = 3;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(0, 229);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button2.TabIndex = 50;
-            this.guna2Button2.Tag = "9";
-            this.guna2Button2.Text = "Rubbers";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btnRubbers.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRubbers.BorderRadius = 3;
+            this.btnRubbers.BorderThickness = 1;
+            this.btnRubbers.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnRubbers.CheckedState.Parent = this.btnRubbers;
+            this.btnRubbers.CustomImages.Parent = this.btnRubbers;
+            this.btnRubbers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnRubbers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRubbers.ForeColor = System.Drawing.Color.White;
+            this.btnRubbers.HoverState.Parent = this.btnRubbers;
+            this.btnRubbers.Location = new System.Drawing.Point(0, 257);
+            this.btnRubbers.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRubbers.Name = "btnRubbers";
+            this.btnRubbers.ShadowDecoration.Parent = this.btnRubbers;
+            this.btnRubbers.Size = new System.Drawing.Size(121, 28);
+            this.btnRubbers.TabIndex = 50;
+            this.btnRubbers.Tag = "9";
+            this.btnRubbers.Text = "Rubbers";
+            this.btnRubbers.Click += new System.EventHandler(this.btnRubbers_Click);
             // 
-            // guna2Button10
+            // btnAccessories
             // 
-            this.guna2Button10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button10.BorderRadius = 3;
-            this.guna2Button10.BorderThickness = 1;
-            this.guna2Button10.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button10.CheckedState.Parent = this.guna2Button10;
-            this.guna2Button10.CustomImages.Parent = this.guna2Button10;
-            this.guna2Button10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button10.ForeColor = System.Drawing.Color.White;
-            this.guna2Button10.HoverState.Parent = this.guna2Button10;
-            this.guna2Button10.Location = new System.Drawing.Point(0, 257);
-            this.guna2Button10.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button10.Name = "guna2Button10";
-            this.guna2Button10.ShadowDecoration.Parent = this.guna2Button10;
-            this.guna2Button10.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button10.TabIndex = 58;
-            this.guna2Button10.Tag = "1";
-            this.guna2Button10.Text = "Accessories";
-            this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
+            this.btnAccessories.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAccessories.BorderRadius = 3;
+            this.btnAccessories.BorderThickness = 1;
+            this.btnAccessories.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnAccessories.CheckedState.Parent = this.btnAccessories;
+            this.btnAccessories.CustomImages.Parent = this.btnAccessories;
+            this.btnAccessories.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnAccessories.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAccessories.ForeColor = System.Drawing.Color.White;
+            this.btnAccessories.HoverState.Parent = this.btnAccessories;
+            this.btnAccessories.Location = new System.Drawing.Point(0, 33);
+            this.btnAccessories.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAccessories.Name = "btnAccessories";
+            this.btnAccessories.ShadowDecoration.Parent = this.btnAccessories;
+            this.btnAccessories.Size = new System.Drawing.Size(121, 28);
+            this.btnAccessories.TabIndex = 58;
+            this.btnAccessories.Tag = "1";
+            this.btnAccessories.Text = "Accessories";
+            this.btnAccessories.Click += new System.EventHandler(this.btnAccessories_Click);
             // 
-            // guna2Button3
+            // btnBlades
             // 
-            this.guna2Button3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button3.BorderRadius = 3;
-            this.guna2Button3.BorderThickness = 1;
-            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(0, 285);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button3.TabIndex = 49;
-            this.guna2Button3.Tag = "5";
-            this.guna2Button3.Text = "Blades";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            this.btnBlades.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBlades.BorderRadius = 3;
+            this.btnBlades.BorderThickness = 1;
+            this.btnBlades.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnBlades.CheckedState.Parent = this.btnBlades;
+            this.btnBlades.CustomImages.Parent = this.btnBlades;
+            this.btnBlades.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnBlades.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBlades.ForeColor = System.Drawing.Color.White;
+            this.btnBlades.HoverState.Parent = this.btnBlades;
+            this.btnBlades.Location = new System.Drawing.Point(0, 145);
+            this.btnBlades.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBlades.Name = "btnBlades";
+            this.btnBlades.ShadowDecoration.Parent = this.btnBlades;
+            this.btnBlades.Size = new System.Drawing.Size(121, 28);
+            this.btnBlades.TabIndex = 49;
+            this.btnBlades.Tag = "5";
+            this.btnBlades.Text = "Blades";
+            this.btnBlades.Click += new System.EventHandler(this.btnBlades_Click);
             // 
-            // guna2Button11
+            // btnOthers
             // 
-            this.guna2Button11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button11.BorderRadius = 3;
-            this.guna2Button11.BorderThickness = 1;
-            this.guna2Button11.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button11.CheckedState.Parent = this.guna2Button11;
-            this.guna2Button11.CustomImages.Parent = this.guna2Button11;
-            this.guna2Button11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
-            this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button11.ForeColor = System.Drawing.Color.White;
-            this.guna2Button11.HoverState.Parent = this.guna2Button11;
-            this.guna2Button11.Location = new System.Drawing.Point(0, 313);
-            this.guna2Button11.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Button11.Name = "guna2Button11";
-            this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
-            this.guna2Button11.Size = new System.Drawing.Size(115, 28);
-            this.guna2Button11.TabIndex = 59;
-            this.guna2Button11.Tag = "-1";
-            this.guna2Button11.Text = "Others";
-            this.guna2Button11.Click += new System.EventHandler(this.guna2Button11_Click);
+            this.btnOthers.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnOthers.BorderRadius = 3;
+            this.btnOthers.BorderThickness = 1;
+            this.btnOthers.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnOthers.CheckedState.Parent = this.btnOthers;
+            this.btnOthers.CustomImages.Parent = this.btnOthers;
+            this.btnOthers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
+            this.btnOthers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOthers.ForeColor = System.Drawing.Color.White;
+            this.btnOthers.HoverState.Parent = this.btnOthers;
+            this.btnOthers.Location = new System.Drawing.Point(0, 313);
+            this.btnOthers.Margin = new System.Windows.Forms.Padding(0);
+            this.btnOthers.Name = "btnOthers";
+            this.btnOthers.ShadowDecoration.Parent = this.btnOthers;
+            this.btnOthers.Size = new System.Drawing.Size(121, 28);
+            this.btnOthers.TabIndex = 59;
+            this.btnOthers.Tag = "-1";
+            this.btnOthers.Text = "Others";
+            this.btnOthers.Click += new System.EventHandler(this.btnOthers_Click);
             // 
             // guna2Chip3
             // 
@@ -623,7 +621,7 @@
             this.btnAddToCart.Font = new System.Drawing.Font("Mada", 9.75F);
             this.btnAddToCart.ForeColor = System.Drawing.Color.White;
             this.btnAddToCart.HoverState.Parent = this.btnAddToCart;
-            this.btnAddToCart.Location = new System.Drawing.Point(135, 47);
+            this.btnAddToCart.Location = new System.Drawing.Point(127, 47);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.ShadowDecoration.Parent = this.btnAddToCart;
             this.btnAddToCart.Size = new System.Drawing.Size(103, 28);
@@ -641,14 +639,14 @@
             this.dgvwRecords.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvwRecords.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvwRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mada", 11.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Mada", 11.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvwRecords.ColumnHeadersHeight = 50;
             this.dgvwRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvwRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -670,18 +668,18 @@
             this.dgvwRecords.Name = "dgvwRecords";
             this.dgvwRecords.ReadOnly = true;
             this.dgvwRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvwRecords.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvwRecords.RowTemplate.Height = 60;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvwRecords.Size = new System.Drawing.Size(688, 510);
@@ -758,9 +756,9 @@
             // dcolDistributorPrice
             // 
             this.dcolDistributorPrice.DataPropertyName = "DistributorPrice";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolDistributorPrice.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.dcolDistributorPrice.DefaultCellStyle = dataGridViewCellStyle8;
             this.dcolDistributorPrice.HeaderText = "Distributor Price";
             this.dcolDistributorPrice.Name = "dcolDistributorPrice";
             this.dcolDistributorPrice.ReadOnly = true;
@@ -770,9 +768,9 @@
             // 
             this.dcolSuggestedRetailPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dcolSuggestedRetailPrice.DataPropertyName = "SuggestedRetailPrice";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolSuggestedRetailPrice.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.dcolSuggestedRetailPrice.DefaultCellStyle = dataGridViewCellStyle9;
             this.dcolSuggestedRetailPrice.HeaderText = "SRP";
             this.dcolSuggestedRetailPrice.Name = "dcolSuggestedRetailPrice";
             this.dcolSuggestedRetailPrice.ReadOnly = true;
@@ -781,9 +779,9 @@
             // 
             this.dcolQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dcolQuantity.DataPropertyName = "Quantity";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.dcolQuantity.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.dcolQuantity.DefaultCellStyle = dataGridViewCellStyle10;
             this.dcolQuantity.HeaderText = "Quantity";
             this.dcolQuantity.Name = "dcolQuantity";
             this.dcolQuantity.ReadOnly = true;
@@ -809,7 +807,7 @@
             // 
             this.txtSearchProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchProducts.AutoRoundedCorners = true;
-            this.txtSearchProducts.BorderRadius = 1;
+            this.txtSearchProducts.BorderRadius = 13;
             this.txtSearchProducts.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearchProducts.DefaultText = "";
             this.txtSearchProducts.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -913,18 +911,18 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button13;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button7;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button8;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button9;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button10;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button11;
+        private Guna.UI2.WinForms.Guna2Button btnAll;
+        private Guna.UI2.WinForms.Guna2Button btnGlue;
+        private Guna.UI2.WinForms.Guna2Button btnHobbyBat;
+        private Guna.UI2.WinForms.Guna2Button btnShoes;
+        private Guna.UI2.WinForms.Guna2Button btnBalls;
+        private Guna.UI2.WinForms.Guna2Button btnBags;
+        private Guna.UI2.WinForms.Guna2Button btnPipsOut;
+        private Guna.UI2.WinForms.Guna2Button btnApparel;
+        private Guna.UI2.WinForms.Guna2Button btnRubbers;
+        private Guna.UI2.WinForms.Guna2Button btnAccessories;
+        private Guna.UI2.WinForms.Guna2Button btnBlades;
+        private Guna.UI2.WinForms.Guna2Button btnOthers;
         private Guna.UI2.WinForms.Guna2Chip guna2Chip4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewImageColumn dcolProductPhoto;

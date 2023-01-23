@@ -2,8 +2,11 @@
 using DataAccessLibrary.Service;
 using ResultHelper;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+
 namespace DataAccessLibrary.Repository
 {
     internal class PointOfSaleRepository : IPointOfSale
@@ -91,6 +94,8 @@ namespace DataAccessLibrary.Repository
                 var records = (from pos in db.PointOfSales
                                join posDetails in db.PointOfSaleDetails
                                on pos.Id equals posDetails.POSId
+                               join sharing in db.ProfitSharings
+                               on pos.SellerName equals sharing.SellerName
                                join stock in db.Inventories
                                on posDetails.ProductId equals stock.Id
                                join refProdType in db.References
@@ -106,20 +111,43 @@ namespace DataAccessLibrary.Repository
                                    stock.Model,
                                    ProfitPerStock = posDetails.Price - stock.DistributorPrice,
                                    TotalProfit = (posDetails.Price * posDetails.Quantity) - (stock.DistributorPrice * posDetails.Quantity),
+                                   SellerShare = sharing.SharePercentage,
                                    ProfitSignal =( posDetails.Price - stock.DistributorPrice)>0 ?"Green":"Red",
                                    stock.DistributorPrice,
                                    stock.SuggestedRetailPrice,
                                    posDetails.Price,
                                    posDetails.Quantity
-                               }).OrderByDescending(p=>p.TransactionDateTime).ThenBy(p=>p.SellerName).ToList();
+                               }).ToList();
 
-                records = records.Where(p => p.TransactionDateTime >= paramDateFrom && p.TransactionDateTime <= paramDateTo).ToList();
+                var recordsT = records.AsEnumerable().Select(x =>new 
+                {
+                                   x.Id,
+                                   x.TransactionDateTime,
+                                   x.ReceiptNumber,
+                                   x.CustomerName,
+                                   x.SellerName,
+                                   x.ProductId,
+                                   x.Name,
+                                   x.Model,
+                                   x.ProfitPerStock,
+                                   x.TotalProfit,
+                                   x.SellerShare,
+                                   SellerProfit= x.SellerShare<=0?Convert.ToDecimal(0.00):Convert.ToDecimal(x.SellerShare/100.00)* Convert.ToDecimal(x.TotalProfit),
+                                   x.ProfitSignal,
+                                   x.DistributorPrice,
+                                   x.SuggestedRetailPrice,
+                                   x.Price,
+                                   x.Quantity
+                }).OrderByDescending(p => p.TransactionDateTime).ThenBy(p => p.SellerName).ToList();
+
+                recordsT = recordsT.Where(p => p.TransactionDateTime >= paramDateFrom && p.TransactionDateTime <= paramDateTo).ToList();
 
                 if (paramUserName.Length > 0)
-                    records = records.Where(p => p.SellerName == paramUserName).ToList();
+                    recordsT = recordsT.Where(p => p.SellerName == paramUserName).ToList();
 
-                return records;
+                return recordsT;
             }
         }
     }
+     //- (stock.DistributorPrice* posDetails.Quantity))
 }

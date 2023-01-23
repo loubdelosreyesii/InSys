@@ -1,4 +1,5 @@
-﻿using DataAccessLibrary.Model;
+﻿using DataAccessLibrary.Controller;
+using DataAccessLibrary.Model;
 using DataAccessLibrary.Service;
 using ResultHelper;
 using System;
@@ -12,6 +13,7 @@ namespace DataAccessLibrary.Repository
     internal class InventoryRepository : IInventory
     {
         private Inventory _record;
+        private CapitalController capitalController = new CapitalController();
 
         public Inventory Record
         {
@@ -39,7 +41,26 @@ namespace DataAccessLibrary.Repository
             Result = new Result();
             using (var db = new X2MO_InSysEntities())
             {
+                Capital recordCapital = new Capital();
+                DateTime dtNow = DateTime.Now;
                 db.Inventories.Add(_record);
+                db.SaveChanges();
+
+                db.InventoryPriceHistories.Add(new InventoryPriceHistory { 
+                    ProductId = _record.Id,
+                    Quantity= _record.Quantity,
+                    DistributorPrice = _record.DistributorPrice,
+                    SuggestedRetailPrice = _record.SuggestedRetailPrice,
+                    TransactionDateTime= dtNow
+                });
+
+                recordCapital.Amount = capitalController.SelectCurrentBalance() - (_record.Quantity * _record.DistributorPrice);
+                recordCapital.TransactionDateTime = dtNow;
+
+                capitalController = new CapitalController();
+                capitalController.record = recordCapital;
+                capitalController.Edit(true,$"Purchase Product: {_record.Model}; Distributor Price: {_record.DistributorPrice}; Qty: {_record.Quantity};");
+
                 db.SaveChanges();
 
                 Result.Code = true;
@@ -70,7 +91,19 @@ namespace DataAccessLibrary.Repository
             Result = new Result();
             using (var db = new X2MO_InSysEntities())
             {
+                Capital recordCapital = new Capital();
                 db.Entry(_record).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                db.InventoryPriceHistories.Add(new InventoryPriceHistory
+                {
+                    ProductId = _record.Id,
+                    Quantity = _record.Quantity,
+                    DistributorPrice = _record.DistributorPrice,
+                    SuggestedRetailPrice = _record.SuggestedRetailPrice,
+                    TransactionDateTime = DateTime.Now
+                });
+
                 db.SaveChanges();
 
                 Result.Code = true;
@@ -120,6 +153,17 @@ namespace DataAccessLibrary.Repository
 
                 return records;
             }
+        }
+
+        public decimal SelectRemainingInventoryAmount()
+        {
+            decimal decAmount = 0.00m;
+
+            using (var db = new X2MO_InSysEntities()) {
+                decAmount = db.Inventories.Where(p=>p.Quantity>0).AsEnumerable().Select(x=>x.Quantity * x.DistributorPrice).Aggregate((a,b)=> a + b);
+            }
+
+            return decAmount;
         }
     }
 }

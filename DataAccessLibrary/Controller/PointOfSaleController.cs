@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -36,6 +37,9 @@ namespace DataAccessLibrary.Controller{
             dgvDisplay.Columns["SuggestedRetailPrice"].HeaderText = "Retail Price";
             dgvDisplay.Columns["DistributorPrice"].HeaderText = "Distributor Price";
             dgvDisplay.Columns["ProfitPerStock"].HeaderText = "Profit Per Stock";
+            dgvDisplay.Columns["TotalProfit"].HeaderText = "Total Profit";
+            dgvDisplay.Columns["SellerShare"].HeaderText = "Seller Share";
+            dgvDisplay.Columns["SellerProfit"].HeaderText = "Seller Profit";
 
             dgvDisplay.Columns["DistributorPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvDisplay.Columns["SuggestedRetailPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -43,10 +47,14 @@ namespace DataAccessLibrary.Controller{
             dgvDisplay.Columns["Quantity"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvDisplay.Columns["TotalProfit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvDisplay.Columns["ProfitPerStock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvDisplay.Columns["SellerShare"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvDisplay.Columns["SellerProfit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             dgvDisplay.Columns["TotalProfit"].ValueType = typeof(string);
             dgvDisplay.Columns["ProfitPerStock"].ValueType = typeof(string);
-
+            dgvDisplay.Columns["SellerShare"].ValueType = typeof(decimal);
+            dgvDisplay.Columns["SellerProfit"].ValueType = typeof(decimal);
+            //dgvDisplay.Columns["SellerProfit"].ValueType = typeof(string);
             foreach (DataGridViewColumn column in dgvDisplay.Columns)
             {
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -69,9 +77,6 @@ namespace DataAccessLibrary.Controller{
                 decimal value = Convert.ToDecimal(row.Cells["TotalProfit"].Value);
                 row.Cells["TotalProfit"].Value = value.ToString("c", new CultureInfo("en-PH"));
             }
-
-            
-
         }
         public List<PointOfSale> SelectAll(){
             

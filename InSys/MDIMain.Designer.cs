@@ -75,13 +75,14 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaAdvenceTileButton1 = new Guna.UI.WinForms.GunaAdvenceTileButton();
+            this.btnStartRaffle = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton4 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton3 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.btnPOS = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.btnProfitSharing = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton5 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton6 = new Guna.UI.WinForms.GunaAdvenceTileButton();
+            this.gunaAdvenceTileButton2 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -250,7 +251,6 @@
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.cutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
-            this.cutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
             // 
             // copyToolStripMenuItem
             // 
@@ -260,7 +260,6 @@
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
             // pasteToolStripMenuItem
             // 
@@ -270,7 +269,6 @@
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.pasteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
-            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
@@ -447,13 +445,14 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton1);
+            this.flowLayoutPanel1.Controls.Add(this.btnStartRaffle);
             this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton4);
             this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton3);
             this.flowLayoutPanel1.Controls.Add(this.btnPOS);
             this.flowLayoutPanel1.Controls.Add(this.btnProfitSharing);
             this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton5);
             this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton6);
+            this.flowLayoutPanel1.Controls.Add(this.gunaAdvenceTileButton2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -466,42 +465,43 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.Size = new System.Drawing.Size(194, 42);
             this.panel1.TabIndex = 14;
             // 
-            // gunaAdvenceTileButton1
+            // btnStartRaffle
             // 
-            this.gunaAdvenceTileButton1.Animated = true;
-            this.gunaAdvenceTileButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceTileButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceTileButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceTileButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaAdvenceTileButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceTileButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton1.CheckedImage = null;
-            this.gunaAdvenceTileButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceTileButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceTileButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceTileButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceTileButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton1.Image = null;
-            this.gunaAdvenceTileButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaAdvenceTileButton1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.gunaAdvenceTileButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(0, 100);
-            this.gunaAdvenceTileButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaAdvenceTileButton1.Name = "gunaAdvenceTileButton1";
-            this.gunaAdvenceTileButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceTileButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton1.OnHoverImage = null;
-            this.gunaAdvenceTileButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton1.Size = new System.Drawing.Size(194, 38);
-            this.gunaAdvenceTileButton1.TabIndex = 8;
-            this.gunaAdvenceTileButton1.Text = "Start Raffle";
+            this.btnStartRaffle.Animated = true;
+            this.btnStartRaffle.AnimationHoverSpeed = 0.07F;
+            this.btnStartRaffle.AnimationSpeed = 0.03F;
+            this.btnStartRaffle.BackColor = System.Drawing.Color.Transparent;
+            this.btnStartRaffle.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnStartRaffle.BorderColor = System.Drawing.Color.Black;
+            this.btnStartRaffle.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnStartRaffle.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnStartRaffle.CheckedForeColor = System.Drawing.Color.White;
+            this.btnStartRaffle.CheckedImage = null;
+            this.btnStartRaffle.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnStartRaffle.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnStartRaffle.FocusedColor = System.Drawing.Color.Empty;
+            this.btnStartRaffle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartRaffle.ForeColor = System.Drawing.Color.White;
+            this.btnStartRaffle.Image = null;
+            this.btnStartRaffle.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnStartRaffle.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.btnStartRaffle.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnStartRaffle.Location = new System.Drawing.Point(0, 42);
+            this.btnStartRaffle.Margin = new System.Windows.Forms.Padding(0);
+            this.btnStartRaffle.Name = "btnStartRaffle";
+            this.btnStartRaffle.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnStartRaffle.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnStartRaffle.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnStartRaffle.OnHoverImage = null;
+            this.btnStartRaffle.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnStartRaffle.OnPressedColor = System.Drawing.Color.Black;
+            this.btnStartRaffle.Size = new System.Drawing.Size(194, 38);
+            this.btnStartRaffle.TabIndex = 8;
+            this.btnStartRaffle.Text = "Start Raffle";
+            this.btnStartRaffle.Click += new System.EventHandler(this.btnStartRaffle_Click);
             // 
             // gunaAdvenceTileButton4
             // 
@@ -524,7 +524,7 @@
             this.gunaAdvenceTileButton4.ImageSize = new System.Drawing.Size(30, 30);
             this.gunaAdvenceTileButton4.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.gunaAdvenceTileButton4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaAdvenceTileButton4.Location = new System.Drawing.Point(0, 138);
+            this.gunaAdvenceTileButton4.Location = new System.Drawing.Point(0, 80);
             this.gunaAdvenceTileButton4.Margin = new System.Windows.Forms.Padding(0);
             this.gunaAdvenceTileButton4.Name = "gunaAdvenceTileButton4";
             this.gunaAdvenceTileButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -536,6 +536,7 @@
             this.gunaAdvenceTileButton4.Size = new System.Drawing.Size(194, 38);
             this.gunaAdvenceTileButton4.TabIndex = 11;
             this.gunaAdvenceTileButton4.Text = "Raffles";
+            this.gunaAdvenceTileButton4.Click += new System.EventHandler(this.gunaAdvenceTileButton4_Click);
             // 
             // gunaAdvenceTileButton3
             // 
@@ -558,7 +559,7 @@
             this.gunaAdvenceTileButton3.ImageSize = new System.Drawing.Size(30, 30);
             this.gunaAdvenceTileButton3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.gunaAdvenceTileButton3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaAdvenceTileButton3.Location = new System.Drawing.Point(0, 176);
+            this.gunaAdvenceTileButton3.Location = new System.Drawing.Point(0, 118);
             this.gunaAdvenceTileButton3.Margin = new System.Windows.Forms.Padding(0);
             this.gunaAdvenceTileButton3.Name = "gunaAdvenceTileButton3";
             this.gunaAdvenceTileButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -593,7 +594,7 @@
             this.btnPOS.ImageSize = new System.Drawing.Size(30, 30);
             this.btnPOS.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.btnPOS.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPOS.Location = new System.Drawing.Point(0, 214);
+            this.btnPOS.Location = new System.Drawing.Point(0, 156);
             this.btnPOS.Margin = new System.Windows.Forms.Padding(0);
             this.btnPOS.Name = "btnPOS";
             this.btnPOS.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -628,7 +629,7 @@
             this.btnProfitSharing.ImageSize = new System.Drawing.Size(30, 30);
             this.btnProfitSharing.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.btnProfitSharing.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnProfitSharing.Location = new System.Drawing.Point(0, 252);
+            this.btnProfitSharing.Location = new System.Drawing.Point(0, 194);
             this.btnProfitSharing.Margin = new System.Windows.Forms.Padding(0);
             this.btnProfitSharing.Name = "btnProfitSharing";
             this.btnProfitSharing.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -663,7 +664,7 @@
             this.gunaAdvenceTileButton5.ImageSize = new System.Drawing.Size(30, 30);
             this.gunaAdvenceTileButton5.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.gunaAdvenceTileButton5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaAdvenceTileButton5.Location = new System.Drawing.Point(0, 290);
+            this.gunaAdvenceTileButton5.Location = new System.Drawing.Point(0, 232);
             this.gunaAdvenceTileButton5.Margin = new System.Windows.Forms.Padding(0);
             this.gunaAdvenceTileButton5.Name = "gunaAdvenceTileButton5";
             this.gunaAdvenceTileButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -675,6 +676,7 @@
             this.gunaAdvenceTileButton5.Size = new System.Drawing.Size(194, 38);
             this.gunaAdvenceTileButton5.TabIndex = 12;
             this.gunaAdvenceTileButton5.Text = "Dealers";
+            this.gunaAdvenceTileButton5.Click += new System.EventHandler(this.gunaAdvenceTileButton5_Click);
             // 
             // gunaAdvenceTileButton6
             // 
@@ -697,7 +699,7 @@
             this.gunaAdvenceTileButton6.ImageSize = new System.Drawing.Size(30, 30);
             this.gunaAdvenceTileButton6.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.gunaAdvenceTileButton6.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaAdvenceTileButton6.Location = new System.Drawing.Point(0, 328);
+            this.gunaAdvenceTileButton6.Location = new System.Drawing.Point(0, 270);
             this.gunaAdvenceTileButton6.Margin = new System.Windows.Forms.Padding(0);
             this.gunaAdvenceTileButton6.Name = "gunaAdvenceTileButton6";
             this.gunaAdvenceTileButton6.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -709,6 +711,42 @@
             this.gunaAdvenceTileButton6.Size = new System.Drawing.Size(194, 38);
             this.gunaAdvenceTileButton6.TabIndex = 13;
             this.gunaAdvenceTileButton6.Text = "References";
+            this.gunaAdvenceTileButton6.Click += new System.EventHandler(this.gunaAdvenceTileButton6_Click);
+            // 
+            // gunaAdvenceTileButton2
+            // 
+            this.gunaAdvenceTileButton2.Animated = true;
+            this.gunaAdvenceTileButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceTileButton2.AnimationSpeed = 0.03F;
+            this.gunaAdvenceTileButton2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceTileButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaAdvenceTileButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceTileButton2.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.CheckedImage = null;
+            this.gunaAdvenceTileButton2.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceTileButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceTileButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceTileButton2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceTileButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.Image = null;
+            this.gunaAdvenceTileButton2.ImageSize = new System.Drawing.Size(30, 30);
+            this.gunaAdvenceTileButton2.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.gunaAdvenceTileButton2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaAdvenceTileButton2.Location = new System.Drawing.Point(0, 308);
+            this.gunaAdvenceTileButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.gunaAdvenceTileButton2.Name = "gunaAdvenceTileButton2";
+            this.gunaAdvenceTileButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaAdvenceTileButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.OnHoverImage = null;
+            this.gunaAdvenceTileButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.Size = new System.Drawing.Size(194, 38);
+            this.gunaAdvenceTileButton2.TabIndex = 16;
+            this.gunaAdvenceTileButton2.Text = "Capital";
+            this.gunaAdvenceTileButton2.Click += new System.EventHandler(this.gunaAdvenceTileButton2_Click);
             // 
             // MDIMain
             // 
@@ -722,8 +760,9 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MDIMain";
+            this.Text = "InSys v1.1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MDIMain_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -781,7 +820,7 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton1;
+        private Guna.UI.WinForms.GunaAdvenceTileButton btnStartRaffle;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton4;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton3;
         private Guna.UI.WinForms.GunaAdvenceTileButton btnPOS;
@@ -789,6 +828,7 @@
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton5;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton6;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton2;
     }
 }
 

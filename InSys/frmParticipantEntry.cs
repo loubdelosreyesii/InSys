@@ -152,7 +152,6 @@ namespace InSys
         bool isValidAmount = false;
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            
             if (RecordRaffle.EntryPrice> 0  && txtPaidAmount.TextLength == 0){
                 MessageBox.Show("Please enter the Paid Amount first.",APP_NAME,MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;

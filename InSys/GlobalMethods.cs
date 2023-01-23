@@ -47,7 +47,7 @@ namespace InSys
             decimal decTotalAmounToBePaid = checkedProducts.Sum(p=>p.SuggestedRetailPrice * p.Quantity);
             POSTotalAmountScreen.Text = $"{string.Format(new CultureInfo("en-PH"), "{0:C}", decTotalAmounToBePaid)}";
         }
-       
+
         public static void RefreshGridBindings(string paramKeyword,int paramProductTypeId)
         {
             List<InventoryView> queryList;

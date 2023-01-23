@@ -30,10 +30,9 @@ namespace InSys
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDealer));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -76,54 +75,60 @@ namespace InSys
             // 
             // btnDelete
             // 
-            this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.BorderRadius = 5;
             this.btnDelete.BorderThickness = 1;
             this.btnDelete.CheckedState.Parent = this.btnDelete;
             this.btnDelete.CustomImages.Parent = this.btnDelete;
-            this.btnDelete.FillColor = System.Drawing.Color.White;
+            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(173, 51);
+            this.btnDelete.Location = new System.Drawing.Point(161, 51);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(70, 36);
+            this.btnDelete.Size = new System.Drawing.Size(70, 27);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.BorderRadius = 5;
             this.btnEdit.BorderThickness = 1;
             this.btnEdit.CheckedState.Parent = this.btnEdit;
             this.btnEdit.CustomImages.Parent = this.btnEdit;
-            this.btnEdit.FillColor = System.Drawing.Color.White;
+            this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.HoverState.Parent = this.btnEdit;
-            this.btnEdit.Location = new System.Drawing.Point(97, 51);
+            this.btnEdit.Location = new System.Drawing.Point(91, 51);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShadowDecoration.Parent = this.btnEdit;
-            this.btnEdit.Size = new System.Drawing.Size(70, 36);
+            this.btnEdit.Size = new System.Drawing.Size(70, 27);
             this.btnEdit.TabIndex = 20;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.BorderRadius = 5;
             this.btnAdd.BorderThickness = 1;
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.FillColor = System.Drawing.Color.White;
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(73)))), ((int)(((byte)(148)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
             this.btnAdd.Location = new System.Drawing.Point(21, 51);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(70, 36);
+            this.btnAdd.Size = new System.Drawing.Size(70, 27);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -139,15 +144,15 @@ namespace InSys
             this.dgvwRecords.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvwRecords.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvwRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvwRecords.ColumnHeadersHeight = 50;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvwRecords.ColumnHeadersHeight = 30;
             this.dgvwRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvwRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dcolID,
@@ -155,25 +160,25 @@ namespace InSys
             this.dcolAddress,
             this.dcolContactNumber});
             this.dgvwRecords.EnableHeadersVisualStyles = false;
-            this.dgvwRecords.Location = new System.Drawing.Point(0, 93);
+            this.dgvwRecords.Location = new System.Drawing.Point(0, 84);
             this.dgvwRecords.Name = "dgvwRecords";
             this.dgvwRecords.ReadOnly = true;
             this.dgvwRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvwRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvwRecords.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvwRecords.RowTemplate.Height = 60;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(750, 340);
+            this.dgvwRecords.Size = new System.Drawing.Size(750, 349);
             this.dgvwRecords.TabIndex = 24;
             // 
             // dcolID
@@ -219,7 +224,6 @@ namespace InSys
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDealer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmInventory_Load);

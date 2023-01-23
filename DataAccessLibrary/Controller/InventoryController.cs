@@ -29,7 +29,14 @@ namespace DataAccessLibrary.Controller{
             }
             return record;
         }
-
+        public decimal SelectRemainingInventoryAmount() {
+            IInventory service = new InventoryRepository();
+            Decimal decAmount;
+            
+            decAmount= service.SelectRemainingInventoryAmount();
+           
+            return decAmount;
+        }
         public List<Inventory> SelectAll(int RaffleId)
         {
 

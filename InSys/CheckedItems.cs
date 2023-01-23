@@ -16,6 +16,7 @@ namespace InSys
 {
     public partial class CheckedItems : UserControl
     {
+        public int InventoryQuantity { get; set; }
         public int ProductID { get; set; }
         public string Currency { get; set; }
         public string Photo { get; set; }
@@ -27,6 +28,7 @@ namespace InSys
         public Control parentControl { get; set; }
         public int ProductTypeID { get; set; }
         public string SearchText { get; set; }
+        
         public CheckedItems()
         {
             InitializeComponent();
@@ -34,6 +36,8 @@ namespace InSys
         
         private void CheckedItems_Load(object sender, EventArgs e)
         {
+            nuQuantity.Maximum = InventoryQuantity;
+
             if ((Currency == null) || (Currency.Length > 0))
                 Currency = "en-PH";
             
@@ -127,6 +131,7 @@ namespace InSys
                 parentControl.Controls.Remove(this);
 
                 GlobalMethods.UpdatePOSUI();
+                GlobalMethods.RefreshGridBindings(SearchText, ProductTypeID);
             }
         }
     }

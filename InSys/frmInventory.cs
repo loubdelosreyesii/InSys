@@ -80,14 +80,14 @@ namespace InSys
             RefreshGridBindings();
         }
 
-        public void frmLoad()
-        {
-            listOfProductTypes = referenceController.SelectByCategoryId(1);
-            listOfProductTypes.Insert(0, new Reference { Id = 0, Name = "All Product Types", CategoryID = 0, Description = "All Product Types" });
-            dgvwRecords.DataSource = listSource;
+        //public void frmLoad()
+        //{
+        //    listOfProductTypes = referenceController.SelectByCategoryId(1);
+        //    listOfProductTypes.Insert(0, new Reference { Id = 0, Name = "All Product Types", CategoryID = 0, Description = "All Product Types" });
+        //    dgvwRecords.DataSource = listSource;
 
-            RefreshGridBindings();
-        }
+        //    RefreshGridBindings();
+        //}
         private void frmInventory_Load(object sender, EventArgs e)
         {
             listOfProductTypes = referenceController.SelectByCategoryId(1);
@@ -116,7 +116,7 @@ namespace InSys
             {
                 if (list.Count(x => x.TypeID == intProductType) > 0)
                 {
-                    if (intProductType >= 10)
+                    if (intProductType <= 10)
                     {
                         listSource.DataSource = from listInventories in list
                                                 join listRefType in references
@@ -201,8 +201,12 @@ namespace InSys
             listSource.ResetBindings(false);
 
             FormatDataGridView();
+            GetInventoryTotalCost();
         }
-
+        private void GetInventoryTotalCost() {
+            inventoryController = new InventoryController();
+            lblInventoryAmount.Text = inventoryController.SelectRemainingInventoryAmount().ToString("N");
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
@@ -256,15 +260,7 @@ namespace InSys
           RefreshGridBindings();
         }
 
-        private void pnlFrame_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2ControlBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void guna2Button10_Click(object sender, EventArgs e)
         {
@@ -351,24 +347,46 @@ namespace InSys
 
         private void FormatDataGridView()
         {
+            if (dgvwRecords.Rows.Count > 0)
+            {
+                dgvwRecords.Columns["Id"].Visible = false;
+                dgvwRecords.Columns["TypeId"].Visible = false;
+                dgvwRecords.Columns["BrandId"].Visible = false;
+                dgvwRecords.Columns["DealerId"].Visible = false;
 
-            dgvwRecords.Columns["Id"].Visible = false;
-            dgvwRecords.Columns["TypeId"].Visible = false;
-            dgvwRecords.Columns["BrandId"].Visible = false;
-            dgvwRecords.Columns["DealerId"].Visible = false;
+                dgvwRecords.Columns["ProductPhoto"].HeaderText = "Product Photo";
+                dgvwRecords.Columns["BrandName"].HeaderText = "Brand";
+                dgvwRecords.Columns["TypeName"].HeaderText = "Product Type";
+                dgvwRecords.Columns["DistributorPrice"].HeaderText = "Distributor Price";
+                dgvwRecords.Columns["SuggestedRetailPrice"].HeaderText = "Selling Price";
+                dgvwRecords.Columns["DealerName"].HeaderText = "Dealer";
 
 
-            dgvwRecords.Columns["ProductPhoto"].HeaderText = "Product Photo";
-            dgvwRecords.Columns["BrandName"].HeaderText = "Brand";
-            dgvwRecords.Columns["TypeName"].HeaderText = "Product Type";
-            dgvwRecords.Columns["DistributorPrice"].HeaderText = "Distributor Price";
-            dgvwRecords.Columns["SuggestedRetailPrice"].HeaderText = "Selling Price";
-            dgvwRecords.Columns["DealerName"].HeaderText = "Dealer";
+                ((DataGridViewImageColumn)dgvwRecords.Columns["ProductPhoto"]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+                //ID = listInventories.Id,
+                //                            TypeID = listRefType.Id,
+                //                            TypeName = listRefType.Name,
+                //                            BrandID = listRefBrand.Id,
+                //                            BrandName = listRefBrand.Name,
+                //                            Model = listInventories.Model,
+                //                            Quantity = listInventories.Quantity,
+                //                            DistributorPrice = listInventories.DistributorPrice,
+                //                            SuggestedRetailPrice = listInventories.SuggestedRetailPrice,
+                //                            DealerID = listDealers.Id,
+                //                            DealerName = listDealers.Name
+
+                dgvwRecords.Columns["Quantity"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvwRecords.Columns["DistributorPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvwRecords.Columns["SuggestedRetailPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+                dgvwRecords.Columns["Model"].Width = 250;
+                dgvwRecords.Columns["DistributorPrice"].Width = 150;
+                dgvwRecords.Columns["SuggestedRetailPrice"].Width = 150;
+                dgvwRecords.Columns["DealerName"].Width = 200;
 
 
-            ((DataGridViewImageColumn)dgvwRecords.Columns["ProductPhoto"]).ImageLayout = DataGridViewImageCellLayout.Stretch;
-            
-
+            }
         }
 
         private void guna2Button11_Click(object sender, EventArgs e)

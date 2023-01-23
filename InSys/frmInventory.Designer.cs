@@ -59,6 +59,8 @@ namespace InSys
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
             this.pnlFrame = new System.Windows.Forms.Panel();
+            this.lblTotalProductCost = new System.Windows.Forms.Label();
+            this.lblInventoryAmount = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -69,19 +71,21 @@ namespace InSys
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Black;
             this.guna2Panel1.Controls.Add(this.guna2Chip1);
+            this.guna2Panel1.Controls.Add(this.gunaLinePanel1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.FillColor = System.Drawing.Color.White;
+            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(1011, 45);
+            this.guna2Panel1.Size = new System.Drawing.Size(992, 45);
             this.guna2Panel1.TabIndex = 12;
             // 
             // guna2Chip1
             // 
-            this.guna2Chip1.FillColor = System.Drawing.Color.White;
+            this.guna2Chip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2Chip1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2Chip1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Chip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2Chip1.ForeColor = System.Drawing.Color.White;
             this.guna2Chip1.Location = new System.Drawing.Point(12, 12);
             this.guna2Chip1.Name = "guna2Chip1";
             this.guna2Chip1.ShadowDecoration.Parent = this.guna2Chip1;
@@ -93,7 +97,6 @@ namespace InSys
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDelete.BorderRadius = 5;
             this.btnDelete.BorderThickness = 1;
@@ -103,7 +106,7 @@ namespace InSys
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(935, 118);
+            this.btnDelete.Location = new System.Drawing.Point(473, 134);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
             this.btnDelete.Size = new System.Drawing.Size(70, 27);
@@ -113,7 +116,6 @@ namespace InSys
             // 
             // btnEdit
             // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEdit.BorderRadius = 5;
             this.btnEdit.BorderThickness = 1;
@@ -123,7 +125,7 @@ namespace InSys
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.HoverState.Parent = this.btnEdit;
-            this.btnEdit.Location = new System.Drawing.Point(859, 118);
+            this.btnEdit.Location = new System.Drawing.Point(404, 134);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShadowDecoration.Parent = this.btnEdit;
             this.btnEdit.Size = new System.Drawing.Size(70, 27);
@@ -133,7 +135,6 @@ namespace InSys
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnAdd.BorderRadius = 5;
             this.btnAdd.BorderThickness = 1;
@@ -143,7 +144,7 @@ namespace InSys
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(783, 118);
+            this.btnAdd.Location = new System.Drawing.Point(335, 134);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(70, 27);
@@ -171,7 +172,7 @@ namespace InSys
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvwRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvwRecords.ColumnHeadersHeight = 50;
+            this.dgvwRecords.ColumnHeadersHeight = 40;
             this.dgvwRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -182,7 +183,7 @@ namespace InSys
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvwRecords.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvwRecords.EnableHeadersVisualStyles = false;
-            this.dgvwRecords.Location = new System.Drawing.Point(0, 151);
+            this.dgvwRecords.Location = new System.Drawing.Point(3, 167);
             this.dgvwRecords.Name = "dgvwRecords";
             this.dgvwRecords.ReadOnly = true;
             this.dgvwRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -199,9 +200,9 @@ namespace InSys
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvwRecords.RowTemplate.Height = 50;
+            this.dgvwRecords.RowTemplate.Height = 55;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(1005, 315);
+            this.dgvwRecords.Size = new System.Drawing.Size(986, 148);
             this.dgvwRecords.TabIndex = 24;
             // 
             // guna2Button1
@@ -216,7 +217,7 @@ namespace InSys
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(680, 82);
+            this.guna2Button1.Location = new System.Drawing.Point(659, 104);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(82, 24);
@@ -237,7 +238,7 @@ namespace InSys
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(761, 82);
+            this.guna2Button2.Location = new System.Drawing.Point(740, 104);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(82, 24);
@@ -258,7 +259,7 @@ namespace InSys
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(436, 82);
+            this.guna2Button3.Location = new System.Drawing.Point(415, 104);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(82, 24);
@@ -279,7 +280,7 @@ namespace InSys
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(355, 82);
+            this.guna2Button4.Location = new System.Drawing.Point(334, 104);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(82, 24);
@@ -300,7 +301,7 @@ namespace InSys
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(598, 82);
+            this.guna2Button5.Location = new System.Drawing.Point(577, 104);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
             this.guna2Button5.Size = new System.Drawing.Size(82, 24);
@@ -321,7 +322,7 @@ namespace InSys
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
             this.guna2Button6.HoverState.Parent = this.guna2Button6;
-            this.guna2Button6.Location = new System.Drawing.Point(517, 82);
+            this.guna2Button6.Location = new System.Drawing.Point(496, 104);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
             this.guna2Button6.Size = new System.Drawing.Size(82, 24);
@@ -342,7 +343,7 @@ namespace InSys
             this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button7.ForeColor = System.Drawing.Color.White;
             this.guna2Button7.HoverState.Parent = this.guna2Button7;
-            this.guna2Button7.Location = new System.Drawing.Point(842, 82);
+            this.guna2Button7.Location = new System.Drawing.Point(821, 104);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
             this.guna2Button7.Size = new System.Drawing.Size(82, 24);
@@ -363,7 +364,7 @@ namespace InSys
             this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button8.ForeColor = System.Drawing.Color.White;
             this.guna2Button8.HoverState.Parent = this.guna2Button8;
-            this.guna2Button8.Location = new System.Drawing.Point(274, 82);
+            this.guna2Button8.Location = new System.Drawing.Point(253, 104);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
             this.guna2Button8.Size = new System.Drawing.Size(82, 24);
@@ -384,7 +385,7 @@ namespace InSys
             this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button9.ForeColor = System.Drawing.Color.White;
             this.guna2Button9.HoverState.Parent = this.guna2Button9;
-            this.guna2Button9.Location = new System.Drawing.Point(193, 82);
+            this.guna2Button9.Location = new System.Drawing.Point(172, 104);
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
             this.guna2Button9.Size = new System.Drawing.Size(82, 24);
@@ -405,7 +406,7 @@ namespace InSys
             this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button10.ForeColor = System.Drawing.Color.White;
             this.guna2Button10.HoverState.Parent = this.guna2Button10;
-            this.guna2Button10.Location = new System.Drawing.Point(108, 82);
+            this.guna2Button10.Location = new System.Drawing.Point(87, 104);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.ShadowDecoration.Parent = this.guna2Button10;
             this.guna2Button10.Size = new System.Drawing.Size(86, 24);
@@ -426,7 +427,7 @@ namespace InSys
             this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button11.ForeColor = System.Drawing.Color.White;
             this.guna2Button11.HoverState.Parent = this.guna2Button11;
-            this.guna2Button11.Location = new System.Drawing.Point(923, 82);
+            this.guna2Button11.Location = new System.Drawing.Point(902, 104);
             this.guna2Button11.Name = "guna2Button11";
             this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
             this.guna2Button11.Size = new System.Drawing.Size(82, 24);
@@ -440,19 +441,23 @@ namespace InSys
             this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.Controls.Add(this.label3);
-            this.guna2Panel2.Location = new System.Drawing.Point(2, 45);
+            this.guna2Panel2.Controls.Add(this.lblInventoryAmount);
+            this.guna2Panel2.Controls.Add(this.lblTotalProductCost);
+            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2Panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 44);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(1009, 32);
+            this.guna2Panel2.Size = new System.Drawing.Size(992, 32);
             this.guna2Panel2.TabIndex = 45;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(21, 9);
+            this.label3.Location = new System.Drawing.Point(5, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(183, 16);
             this.label3.TabIndex = 26;
@@ -471,7 +476,7 @@ namespace InSys
             this.txtKeywordSearch.FocusedState.Parent = this.txtKeywordSearch;
             this.txtKeywordSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtKeywordSearch.HoverState.Parent = this.txtKeywordSearch;
-            this.txtKeywordSearch.Location = new System.Drawing.Point(26, 118);
+            this.txtKeywordSearch.Location = new System.Drawing.Point(5, 134);
             this.txtKeywordSearch.Name = "txtKeywordSearch";
             this.txtKeywordSearch.PasswordChar = '\0';
             this.txtKeywordSearch.PlaceholderText = "Type text to search...";
@@ -491,7 +496,7 @@ namespace InSys
             this.guna2Button12.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button12.ForeColor = System.Drawing.Color.White;
             this.guna2Button12.HoverState.Parent = this.guna2Button12;
-            this.guna2Button12.Location = new System.Drawing.Point(291, 118);
+            this.guna2Button12.Location = new System.Drawing.Point(265, 134);
             this.guna2Button12.Name = "guna2Button12";
             this.guna2Button12.ShadowDecoration.Parent = this.guna2Button12;
             this.guna2Button12.Size = new System.Drawing.Size(70, 27);
@@ -511,7 +516,7 @@ namespace InSys
             this.guna2Button13.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button13.ForeColor = System.Drawing.Color.White;
             this.guna2Button13.HoverState.Parent = this.guna2Button13;
-            this.guna2Button13.Location = new System.Drawing.Point(26, 82);
+            this.guna2Button13.Location = new System.Drawing.Point(5, 104);
             this.guna2Button13.Name = "guna2Button13";
             this.guna2Button13.ShadowDecoration.Parent = this.guna2Button13;
             this.guna2Button13.Size = new System.Drawing.Size(83, 24);
@@ -529,17 +534,17 @@ namespace InSys
             this.gunaLinePanel1.LineColor = System.Drawing.Color.Silver;
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaLinePanel1.LineTop = 100;
-            this.gunaLinePanel1.Location = new System.Drawing.Point(2, 111);
+            this.gunaLinePanel1.Location = new System.Drawing.Point(2, 42);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(1009, 1);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(990, 1);
             this.gunaLinePanel1.TabIndex = 49;
             // 
             // pnlFrame
             // 
+            this.pnlFrame.Controls.Add(this.label3);
             this.pnlFrame.Controls.Add(this.guna2Button13);
             this.pnlFrame.Controls.Add(this.dgvwRecords);
             this.pnlFrame.Controls.Add(this.guna2Button12);
-            this.pnlFrame.Controls.Add(this.gunaLinePanel1);
             this.pnlFrame.Controls.Add(this.guna2Panel1);
             this.pnlFrame.Controls.Add(this.btnAdd);
             this.pnlFrame.Controls.Add(this.txtKeywordSearch);
@@ -561,17 +566,39 @@ namespace InSys
             this.pnlFrame.Location = new System.Drawing.Point(0, 0);
             this.pnlFrame.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFrame.Name = "pnlFrame";
-            this.pnlFrame.Size = new System.Drawing.Size(1011, 469);
+            this.pnlFrame.Size = new System.Drawing.Size(992, 318);
             this.pnlFrame.TabIndex = 50;
-            this.pnlFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFrame_Paint);
+            // 
+            // lblTotalProductCost
+            // 
+            this.lblTotalProductCost.AutoSize = true;
+            this.lblTotalProductCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTotalProductCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProductCost.ForeColor = System.Drawing.Color.White;
+            this.lblTotalProductCost.Location = new System.Drawing.Point(23, 7);
+            this.lblTotalProductCost.Name = "lblTotalProductCost";
+            this.lblTotalProductCost.Size = new System.Drawing.Size(191, 16);
+            this.lblTotalProductCost.TabIndex = 50;
+            this.lblTotalProductCost.Text = "Remaining Inventory Cost :";
+            // 
+            // lblInventoryAmount
+            // 
+            this.lblInventoryAmount.AutoSize = true;
+            this.lblInventoryAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblInventoryAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInventoryAmount.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblInventoryAmount.Location = new System.Drawing.Point(220, 7);
+            this.lblInventoryAmount.Name = "lblInventoryAmount";
+            this.lblInventoryAmount.Size = new System.Drawing.Size(91, 16);
+            this.lblInventoryAmount.TabIndex = 51;
+            this.lblInventoryAmount.Text = "1,000,000.00";
             // 
             // frmInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 469);
+            this.ClientSize = new System.Drawing.Size(992, 318);
             this.Controls.Add(this.pnlFrame);
-            this.MinimumSize = new System.Drawing.Size(1024, 508);
             this.Name = "frmInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmInventory_Load);
@@ -580,6 +607,7 @@ namespace InSys
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.pnlFrame.ResumeLayout(false);
+            this.pnlFrame.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -610,5 +638,7 @@ namespace InSys
         private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
         private Label label3;
         public Panel pnlFrame;
+        private Label lblTotalProductCost;
+        private Label lblInventoryAmount;
     }
 }

@@ -5,6 +5,24 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="X2MO_InSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CapitalHistories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OldFundBalance" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TransactionDateTime" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Capitals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TransactionDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Categories">
           <Key>
             <PropertyRef Name="Id" />
@@ -43,6 +61,17 @@
           <Property Name="DistributorPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="SuggestedRetailPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="DealerID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InventoryPriceHistories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="DistributorPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SuggestedRetailPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="TransactionDateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="LuckyDrawWinners">
           <Key>
@@ -196,10 +225,13 @@
           <Property Name="UserType" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="X2MO_InSysModelStoreContainer">
+          <EntitySet Name="CapitalHistories" EntityType="Self.CapitalHistories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Capitals" EntityType="Self.Capitals" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dealers" EntityType="Self.Dealers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Inventories" EntityType="Self.Inventories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventoryPriceHistories" EntityType="Self.InventoryPriceHistories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LuckyDrawWinners" EntityType="Self.LuckyDrawWinners" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Participants" EntityType="Self.Participants" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PingPongPrizes" EntityType="Self.PingPongPrizes" Schema="dbo" store:Type="Tables" />
@@ -262,6 +294,9 @@
           </FunctionImport>
           <EntitySet Name="PingPongWinners" EntityType="X2MO_InSysModel.PingPongWinner" />
           <EntitySet Name="ProfitSharings" EntityType="X2MO_InSysModel.ProfitSharing" />
+          <EntitySet Name="InventoryPriceHistories" EntityType="X2MO_InSysModel.InventoryPriceHistory" />
+          <EntitySet Name="Capitals" EntityType="X2MO_InSysModel.Capital" />
+          <EntitySet Name="CapitalHistories" EntityType="X2MO_InSysModel.CapitalHistory" />
         </EntityContainer>
         <EntityType Name="Participant">
           <Key>
@@ -516,6 +551,35 @@
           <Property Name="SellerName" Type="String" Nullable="false" FixedLength="false" MaxLength="100" Unicode="true" />
           <Property Name="SharePercentage" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="InventoryPriceHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="DistributorPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SuggestedRetailPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="TransactionDateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Capital">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TransactionDateTime" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CapitalHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="TransactionDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OldFundBalance" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -727,6 +791,38 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="SellerName" ColumnName="SellerName" />
           <ScalarProperty Name="SharePercentage" ColumnName="SharePercentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventoryPriceHistories">
+      <EntityTypeMapping TypeName="IsTypeOf(X2MO_InSysModel.InventoryPriceHistory)">
+        <MappingFragment StoreEntitySet="InventoryPriceHistories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DistributorPrice" ColumnName="DistributorPrice" />
+          <ScalarProperty Name="SuggestedRetailPrice" ColumnName="SuggestedRetailPrice" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="TransactionDateTime" ColumnName="TransactionDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Capitals">
+      <EntityTypeMapping TypeName="IsTypeOf(X2MO_InSysModel.Capital)">
+        <MappingFragment StoreEntitySet="Capitals">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TransactionDateTime" ColumnName="TransactionDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapitalHistories">
+      <EntityTypeMapping TypeName="IsTypeOf(X2MO_InSysModel.CapitalHistory)">
+        <MappingFragment StoreEntitySet="CapitalHistories">
+          <ScalarProperty Name="OldFundBalance" ColumnName="OldFundBalance" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TransactionDateTime" ColumnName="TransactionDateTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

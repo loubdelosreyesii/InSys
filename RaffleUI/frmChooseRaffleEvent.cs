@@ -40,7 +40,6 @@ namespace RaffleUI
             if (this.cboxRaffleEvents.Items.Count <= 0)
             {
                 MessageBox.Show("No Raffle Events Record yet.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 this.Close();
             }
         }

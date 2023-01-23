@@ -71,8 +71,15 @@
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\PointOfSaleController.cs" />
     <Compile Include="Controller\ProfitSharingController.cs" />
+    <Compile Include="Controller\CapitalController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Controller\ReferenceController.cs" />
+    <Compile Include="Model\Capital.cs">
+      <DependentUpon>InSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CapitalHistory.cs">
+      <DependentUpon>InSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Category.cs">
       <DependentUpon>InSysModel.tt</DependentUpon>
     </Compile>
@@ -98,6 +105,9 @@
       <DependentUpon>InSysModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Inventory.cs">
+      <DependentUpon>InSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InventoryPriceHistory.cs">
       <DependentUpon>InSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\LuckyDrawWinner.cs">
@@ -183,8 +193,10 @@
     <Compile Include="Repository\InventoryRepository.cs" />
     <Compile Include="Repository\PointOfSaleRepository.cs" />
     <Compile Include="Repository\ProfitSharingRepository.cs" />
+    <Compile Include="Repository\CapitalRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\ReferenceRepository.cs" />
+    <Compile Include="Service\ICapital.cs" />
     <Compile Include="Service\IParticipant.cs" />
     <Compile Include="Service\ICustomer.cs" />
     <Compile Include="Service\IPointOfSaleDetail.cs" />
@@ -232,6 +244,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\Scripts\01122023 UpdateFieldPointOfSale.edmx.sql" />
+    <Content Include="Model\Scripts\01152023AddNewTableForPriceHistory.edmx.sql" />
+    <Content Include="Model\Scripts\AddNewTableCapital+History.edmx.sql" />
     <Content Include="Model\Scripts\AddNewTableProfitSharing.edmx.sql" />
     <Content Include="Model\Scripts\InSysModel.edmx.sql" />
   </ItemGroup>

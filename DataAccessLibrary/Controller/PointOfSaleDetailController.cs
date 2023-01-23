@@ -31,12 +31,16 @@ namespace DataAccessLibrary.Controller{
         }
         public Result Add() {
             IPointOfSaleDetail service = new PointOfSaleDetailRepository();
+            ICapital serviceCaptical = new CapitalRepository();
+            IInventory serviceInventory = new InventoryRepository();
+
             service.Record = record;
-            
+            var recordInventory = serviceInventory.SelectAll().First(p => p.Id == record.ProductId);
             result = new Result();
             try{
                 result = service.Add();
-               
+                serviceCaptical.Record = new Capital { Id = 1, Amount= serviceCaptical.SelectAll().First().Amount + (record.Price * record.Quantity), TransactionDateTime = DateTime.Now };
+                result = serviceCaptical.Edit(false,$"Sold Product : {recordInventory.Model}; Price: {record.Price}; Qty: {record.Quantity};");
             }
             catch (Exception ex){
                 result.Code = false;

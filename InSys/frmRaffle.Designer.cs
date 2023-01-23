@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRaffle));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
             this.dgvwRecords = new System.Windows.Forms.DataGridView();
@@ -66,7 +65,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(972, 45);
+            this.guna2Panel1.Size = new System.Drawing.Size(1022, 45);
             this.guna2Panel1.TabIndex = 25;
             // 
             // guna2Chip1
@@ -112,7 +111,7 @@
             this.dcolEntryPrice,
             this.dcolMaxEntries});
             this.dgvwRecords.EnableHeadersVisualStyles = false;
-            this.dgvwRecords.Location = new System.Drawing.Point(21, 112);
+            this.dgvwRecords.Location = new System.Drawing.Point(0, 112);
             this.dgvwRecords.Name = "dgvwRecords";
             this.dgvwRecords.ReadOnly = true;
             this.dgvwRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -130,7 +129,7 @@
             this.dgvwRecords.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvwRecords.RowTemplate.Height = 60;
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvwRecords.Size = new System.Drawing.Size(939, 255);
+            this.dgvwRecords.Size = new System.Drawing.Size(1022, 604);
             this.dgvwRecords.TabIndex = 29;
             this.dgvwRecords.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_CellClick);
             // 
@@ -193,10 +192,10 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(21, 70);
+            this.btnAdd.Location = new System.Drawing.Point(12, 80);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(70, 36);
+            this.btnAdd.Size = new System.Drawing.Size(70, 26);
             this.btnAdd.TabIndex = 26;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -211,10 +210,10 @@
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEdit.HoverState.Parent = this.btnEdit;
-            this.btnEdit.Location = new System.Drawing.Point(97, 70);
+            this.btnEdit.Location = new System.Drawing.Point(84, 80);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShadowDecoration.Parent = this.btnEdit;
-            this.btnEdit.Size = new System.Drawing.Size(70, 36);
+            this.btnEdit.Size = new System.Drawing.Size(70, 26);
             this.btnEdit.TabIndex = 27;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -229,10 +228,10 @@
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(173, 70);
+            this.btnDelete.Location = new System.Drawing.Point(156, 80);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(70, 36);
+            this.btnDelete.Size = new System.Drawing.Size(70, 26);
             this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -249,10 +248,10 @@
             this.btnManagePrizes.Font = new System.Drawing.Font("Mada", 9.75F);
             this.btnManagePrizes.ForeColor = System.Drawing.Color.White;
             this.btnManagePrizes.HoverState.Parent = this.btnManagePrizes;
-            this.btnManagePrizes.Location = new System.Drawing.Point(249, 70);
+            this.btnManagePrizes.Location = new System.Drawing.Point(228, 80);
             this.btnManagePrizes.Name = "btnManagePrizes";
             this.btnManagePrizes.ShadowDecoration.Parent = this.btnManagePrizes;
-            this.btnManagePrizes.Size = new System.Drawing.Size(169, 36);
+            this.btnManagePrizes.Size = new System.Drawing.Size(169, 26);
             this.btnManagePrizes.TabIndex = 35;
             this.btnManagePrizes.Text = "Manage Prizes";
             this.btnManagePrizes.Click += new System.EventHandler(this.btnManagePrizes_Click);
@@ -273,10 +272,10 @@
             this.btnManageParticipant.Font = new System.Drawing.Font("Mada", 9.75F);
             this.btnManageParticipant.ForeColor = System.Drawing.Color.White;
             this.btnManageParticipant.HoverState.Parent = this.btnManageParticipant;
-            this.btnManageParticipant.Location = new System.Drawing.Point(424, 70);
+            this.btnManageParticipant.Location = new System.Drawing.Point(399, 80);
             this.btnManageParticipant.Name = "btnManageParticipant";
             this.btnManageParticipant.ShadowDecoration.Parent = this.btnManageParticipant;
-            this.btnManageParticipant.Size = new System.Drawing.Size(169, 36);
+            this.btnManageParticipant.Size = new System.Drawing.Size(169, 26);
             this.btnManageParticipant.TabIndex = 36;
             this.btnManageParticipant.Text = "Manage Participants";
             this.btnManageParticipant.Click += new System.EventHandler(this.btnManageParticipant_Click);
@@ -296,7 +295,7 @@
             this.txtTotalPrizeAlloted.ForeColor = System.Drawing.Color.Black;
             this.txtTotalPrizeAlloted.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalPrizeAlloted.HoverState.Parent = this.txtTotalPrizeAlloted;
-            this.txtTotalPrizeAlloted.Location = new System.Drawing.Point(784, 70);
+            this.txtTotalPrizeAlloted.Location = new System.Drawing.Point(760, 73);
             this.txtTotalPrizeAlloted.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTotalPrizeAlloted.Name = "txtTotalPrizeAlloted";
             this.txtTotalPrizeAlloted.PasswordChar = '\0';
@@ -311,7 +310,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(782, 52);
+            this.label7.Location = new System.Drawing.Point(758, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 16);
             this.label7.TabIndex = 42;
@@ -332,7 +331,7 @@
             this.txTotalEntryAmountCollected.ForeColor = System.Drawing.Color.Black;
             this.txTotalEntryAmountCollected.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txTotalEntryAmountCollected.HoverState.Parent = this.txTotalEntryAmountCollected;
-            this.txTotalEntryAmountCollected.Location = new System.Drawing.Point(599, 70);
+            this.txTotalEntryAmountCollected.Location = new System.Drawing.Point(575, 73);
             this.txTotalEntryAmountCollected.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txTotalEntryAmountCollected.Name = "txTotalEntryAmountCollected";
             this.txTotalEntryAmountCollected.PasswordChar = '\0';
@@ -347,7 +346,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(596, 51);
+            this.label1.Location = new System.Drawing.Point(572, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 16);
             this.label1.TabIndex = 44;
@@ -357,7 +356,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 379);
+            this.ClientSize = new System.Drawing.Size(1022, 717);
             this.Controls.Add(this.txTotalEntryAmountCollected);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTotalPrizeAlloted);
@@ -370,7 +369,6 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmRaffle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
