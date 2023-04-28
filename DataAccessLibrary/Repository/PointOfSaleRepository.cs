@@ -111,7 +111,7 @@ namespace DataAccessLibrary.Repository
                                    stock.Model,
                                    ProfitPerStock = posDetails.Price - stock.DistributorPrice,
                                    TotalProfit = (posDetails.Price * posDetails.Quantity) - (stock.DistributorPrice * posDetails.Quantity),
-                                   SellerShare = sharing.SharePercentage,
+                                   SellerShare =sharing.SharePercentage,
                                    ProfitSignal =( posDetails.Price - stock.DistributorPrice)>0 ?"Green":"Red",
                                    stock.DistributorPrice,
                                    stock.SuggestedRetailPrice,
@@ -121,23 +121,24 @@ namespace DataAccessLibrary.Repository
 
                 var recordsT = records.AsEnumerable().Select(x =>new 
                 {
-                                   x.Id,
-                                   x.TransactionDateTime,
-                                   x.ReceiptNumber,
-                                   x.CustomerName,
-                                   x.SellerName,
-                                   x.ProductId,
-                                   x.Name,
-                                   x.Model,
-                                   x.ProfitPerStock,
-                                   x.TotalProfit,
-                                   x.SellerShare,
-                                   SellerProfit= x.SellerShare<=0?Convert.ToDecimal(0.00):Convert.ToDecimal(x.SellerShare/100.00)* Convert.ToDecimal(x.TotalProfit),
-                                   x.ProfitSignal,
-                                   x.DistributorPrice,
-                                   x.SuggestedRetailPrice,
-                                   x.Price,
-                                   x.Quantity
+                    x.Id,
+                    x.TransactionDateTime,
+                    x.ReceiptNumber,
+                    x.CustomerName,
+                    x.SellerName,
+                    x.ProductId,
+                    x.Name,
+                    x.Model,
+                    x.ProfitPerStock,
+                    x.TotalProfit,
+                    SellerProfit= x.SellerShare<=0?Convert.ToDecimal(0.00):Convert.ToDecimal(x.SellerShare/100.00)* Convert.ToDecimal(x.TotalProfit),
+                    NetProfit = x.TotalProfit - (x.SellerShare <= 0 ? Convert.ToDecimal(0.00) : Convert.ToDecimal(x.SellerShare / 100.00) * Convert.ToDecimal(x.TotalProfit)),
+                    x.ProfitSignal,
+                    x.SellerShare,
+                    x.DistributorPrice,
+                    x.SuggestedRetailPrice,
+                    x.Price,
+                    x.Quantity
                 }).OrderByDescending(p => p.TransactionDateTime).ThenBy(p => p.SellerName).ToList();
 
                 recordsT = recordsT.Where(p => p.TransactionDateTime >= paramDateFrom && p.TransactionDateTime <= paramDateTo).ToList();

@@ -40,6 +40,9 @@ namespace DataAccessLibrary.Controller{
             dgvDisplay.Columns["TotalProfit"].HeaderText = "Total Profit";
             dgvDisplay.Columns["SellerShare"].HeaderText = "Seller Share";
             dgvDisplay.Columns["SellerProfit"].HeaderText = "Seller Profit";
+            dgvDisplay.Columns["NetProfit"].HeaderText = "Net Profit";
+
+            dgvDisplay.Columns["NetProfit"].Width = 180;
 
             dgvDisplay.Columns["DistributorPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvDisplay.Columns["SuggestedRetailPrice"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -49,6 +52,7 @@ namespace DataAccessLibrary.Controller{
             dgvDisplay.Columns["ProfitPerStock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvDisplay.Columns["SellerShare"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvDisplay.Columns["SellerProfit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvDisplay.Columns["NetProfit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             dgvDisplay.Columns["TotalProfit"].ValueType = typeof(string);
             dgvDisplay.Columns["ProfitPerStock"].ValueType = typeof(string);
