@@ -1,15 +1,19 @@
 ﻿using DataAccessLibrary.Controller;
 using DataAccessLibrary.Model;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static InSys.GlobalVariables;
 namespace InSys.CapitalForm
 {
     public partial class frmCapital : Form
@@ -112,6 +116,93 @@ namespace InSys.CapitalForm
         {
             LoadBalance();
             LoadHistories();
+        }
+
+        private void btnGenReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strSaleReportDirectory = Path.Combine(Environment.CurrentDirectory, "Reports");
+                if (!Directory.Exists(strSaleReportDirectory))
+                    Directory.CreateDirectory(strSaleReportDirectory);
+
+                strSaleReportDirectory = Path.Combine(strSaleReportDirectory, "Capital History");
+                if (!Directory.Exists(strSaleReportDirectory))
+                    Directory.CreateDirectory(strSaleReportDirectory);
+
+                using (SpreadsheetDocument spreadsheet = SpreadsheetDocument.Create($"{strSaleReportDirectory}\\CapitalHistory_{DateTime.Now.ToString("yyyyMMddhhmmss")}.xlsx", SpreadsheetDocumentType.Workbook))
+                {
+                    // Add a WorkbookPart to the document.
+                    WorkbookPart workbookpart = spreadsheet.AddWorkbookPart();
+                    workbookpart.Workbook = new Workbook();
+
+                    // Add a WorksheetPart to the WorkbookPart.
+                    WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();
+                    worksheetPart.Worksheet = new Worksheet(new SheetData());
+
+                    // Add Sheets to the Workbook.
+                    Sheets sheets = spreadsheet.WorkbookPart.Workbook.AppendChild<Sheets>(new Sheets());
+
+                    // Append a new worksheet and associate it with the workbook.
+                    Sheet sheet = new Sheet()
+                    {
+                        Id = spreadsheet.WorkbookPart.
+                        GetIdOfPart(worksheetPart),
+                        SheetId = 1,
+                        Name = "Capital History"
+                    };
+                    sheets.Append(sheet);
+
+                    // Get the sheetData cell table.
+                    SheetData sheetData = worksheetPart.Worksheet.GetFirstChild<SheetData>();
+
+                    // Add the header row.
+                    Row row = new Row();
+                    foreach (var item in dgvwPOSTransactions.Columns.OfType<DataGridViewColumn>().OrderBy(x=>x.DisplayIndex))
+                    {
+                        if (item.Visible == false)
+                            continue;
+
+                        Cell cell = new Cell();
+                        cell.DataType = CellValues.String;
+                        cell.CellValue = new CellValue(item.HeaderText);
+                        row.AppendChild(cell);
+                    }
+                    
+                    sheetData.AppendChild(row);
+
+                    // Add the data rows.
+                    for (int i = 0; i < dgvwPOSTransactions.Rows.Count; i++)
+                    {
+                        row = new Row();
+                        foreach (var item in dgvwPOSTransactions.Columns.OfType<DataGridViewColumn>().OrderBy(x => x.DisplayIndex))
+                        {
+                            if (item.Visible == false)
+                                continue;
+
+
+                            Cell cell = new Cell();
+                            cell.DataType = CellValues.String;
+                            
+                            if(item.HeaderText== "Transaction Date/Time")
+                                cell.CellValue = new CellValue(dgvwPOSTransactions.Rows[i].Cells[2].Value.ToString());
+                            else if (item.HeaderText == "Amount")
+                                cell.CellValue = new CellValue(dgvwPOSTransactions.Rows[i].Cells[1].Value.ToString());
+                            else
+                                cell.CellValue = new CellValue(dgvwPOSTransactions.Rows[i].Cells[item.DisplayIndex].Value.ToString());
+
+                            row.AppendChild(cell);
+                        }
+                        sheetData.AppendChild(row);
+                    }
+
+                }
+                MessageBox.Show($"Successfully generated Capital HisReport.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error Encountered: {ex.ToString()}", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
