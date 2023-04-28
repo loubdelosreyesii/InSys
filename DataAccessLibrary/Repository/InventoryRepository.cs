@@ -158,11 +158,18 @@ namespace DataAccessLibrary.Repository
         public decimal SelectRemainingInventoryAmount()
         {
             decimal decAmount = 0.00m;
-
-            using (var db = new X2MO_InSysEntities()) {
-                decAmount = db.Inventories.Where(p=>p.Quantity>0).AsEnumerable().Select(x=>x.Quantity * x.DistributorPrice).Aggregate((a,b)=> a + b);
+            try
+            {
+                using (var db = new X2MO_InSysEntities())
+                {
+                    decAmount = db.Inventories.Where(p => p.Quantity > 0).AsEnumerable().Select(x => x.Quantity * x.DistributorPrice).Aggregate((a, b) => a + b);
+                }
             }
-
+            catch   (Exception)
+            {
+                decAmount = 0.00m;
+            }
+            
             return decAmount;
         }
     }

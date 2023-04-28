@@ -395,5 +395,10 @@ namespace InSys
             strKeywordSearch = string.Empty;
             RefreshGridBindings();
         }
+
+        private void dgvwRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

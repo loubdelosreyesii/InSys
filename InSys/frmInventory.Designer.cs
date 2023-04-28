@@ -37,6 +37,7 @@ namespace InSys
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Chip1 = new Guna.UI2.WinForms.Guna2Chip();
+            this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -53,14 +54,13 @@ namespace InSys
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblInventoryAmount = new System.Windows.Forms.Label();
+            this.lblTotalProductCost = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtKeywordSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
-            this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
             this.pnlFrame = new System.Windows.Forms.Panel();
-            this.lblTotalProductCost = new System.Windows.Forms.Label();
-            this.lblInventoryAmount = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwRecords)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -94,6 +94,20 @@ namespace InSys
             this.guna2Chip1.Text = "Product Inventory Management";
             this.guna2Chip1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Chip1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // gunaLinePanel1
+            // 
+            this.gunaLinePanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gunaLinePanel1.LineBottom = 100;
+            this.gunaLinePanel1.LineColor = System.Drawing.Color.Silver;
+            this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaLinePanel1.LineTop = 100;
+            this.gunaLinePanel1.Location = new System.Drawing.Point(2, 42);
+            this.gunaLinePanel1.Name = "gunaLinePanel1";
+            this.gunaLinePanel1.Size = new System.Drawing.Size(990, 1);
+            this.gunaLinePanel1.TabIndex = 49;
             // 
             // btnDelete
             // 
@@ -204,6 +218,7 @@ namespace InSys
             this.dgvwRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvwRecords.Size = new System.Drawing.Size(986, 148);
             this.dgvwRecords.TabIndex = 24;
+            this.dgvwRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvwRecords_CellContentClick);
             // 
             // guna2Button1
             // 
@@ -451,6 +466,30 @@ namespace InSys
             this.guna2Panel2.Size = new System.Drawing.Size(992, 32);
             this.guna2Panel2.TabIndex = 45;
             // 
+            // lblInventoryAmount
+            // 
+            this.lblInventoryAmount.AutoSize = true;
+            this.lblInventoryAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblInventoryAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInventoryAmount.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lblInventoryAmount.Location = new System.Drawing.Point(220, 7);
+            this.lblInventoryAmount.Name = "lblInventoryAmount";
+            this.lblInventoryAmount.Size = new System.Drawing.Size(91, 16);
+            this.lblInventoryAmount.TabIndex = 51;
+            this.lblInventoryAmount.Text = "1,000,000.00";
+            // 
+            // lblTotalProductCost
+            // 
+            this.lblTotalProductCost.AutoSize = true;
+            this.lblTotalProductCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTotalProductCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProductCost.ForeColor = System.Drawing.Color.White;
+            this.lblTotalProductCost.Location = new System.Drawing.Point(23, 7);
+            this.lblTotalProductCost.Name = "lblTotalProductCost";
+            this.lblTotalProductCost.Size = new System.Drawing.Size(191, 16);
+            this.lblTotalProductCost.TabIndex = 50;
+            this.lblTotalProductCost.Text = "Remaining Inventory Cost :";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -525,20 +564,6 @@ namespace InSys
             this.guna2Button13.Text = "All";
             this.guna2Button13.Click += new System.EventHandler(this.guna2Button13_Click);
             // 
-            // gunaLinePanel1
-            // 
-            this.gunaLinePanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLinePanel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.gunaLinePanel1.LineBottom = 100;
-            this.gunaLinePanel1.LineColor = System.Drawing.Color.Silver;
-            this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel1.LineTop = 100;
-            this.gunaLinePanel1.Location = new System.Drawing.Point(2, 42);
-            this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(990, 1);
-            this.gunaLinePanel1.TabIndex = 49;
-            // 
             // pnlFrame
             // 
             this.pnlFrame.Controls.Add(this.label3);
@@ -568,30 +593,6 @@ namespace InSys
             this.pnlFrame.Name = "pnlFrame";
             this.pnlFrame.Size = new System.Drawing.Size(992, 318);
             this.pnlFrame.TabIndex = 50;
-            // 
-            // lblTotalProductCost
-            // 
-            this.lblTotalProductCost.AutoSize = true;
-            this.lblTotalProductCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTotalProductCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalProductCost.ForeColor = System.Drawing.Color.White;
-            this.lblTotalProductCost.Location = new System.Drawing.Point(23, 7);
-            this.lblTotalProductCost.Name = "lblTotalProductCost";
-            this.lblTotalProductCost.Size = new System.Drawing.Size(191, 16);
-            this.lblTotalProductCost.TabIndex = 50;
-            this.lblTotalProductCost.Text = "Remaining Inventory Cost :";
-            // 
-            // lblInventoryAmount
-            // 
-            this.lblInventoryAmount.AutoSize = true;
-            this.lblInventoryAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblInventoryAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventoryAmount.ForeColor = System.Drawing.Color.GreenYellow;
-            this.lblInventoryAmount.Location = new System.Drawing.Point(220, 7);
-            this.lblInventoryAmount.Name = "lblInventoryAmount";
-            this.lblInventoryAmount.Size = new System.Drawing.Size(91, 16);
-            this.lblInventoryAmount.TabIndex = 51;
-            this.lblInventoryAmount.Text = "1,000,000.00";
             // 
             // frmInventory
             // 

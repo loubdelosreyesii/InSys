@@ -846,6 +846,30 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="49c23f6bbefb4ea88a973341c307af40" Name="Diagram1">
+        <EntityTypeShape EntityType="X2MO_InSysModel.Participant" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.Inventory" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.Reference" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.Category" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.Dealer" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.Raffle" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.Customer" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.PointOfSaleDetail" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.PointOfSale" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.RaffleEntry" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.User" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.RafflePrize" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.RaffleWinner" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.RaffleLuckyDrawPrize" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.LuckyDrawWinner" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.PingPongPrize" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.PingPongWinner" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.ProfitSharing" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.InventoryPriceHistory" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.Capital" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="X2MO_InSysModel.CapitalHistory" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>
