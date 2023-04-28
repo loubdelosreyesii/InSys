@@ -39,8 +39,8 @@ namespace DataAccessLibrary.Controller{
             result = new Result();
             try{
                 result = service.Add();
-                serviceCaptical.Record = new Capital { Id = 1, Amount= serviceCaptical.SelectAll().First().Amount + (record.Price * record.Quantity), TransactionDateTime = DateTime.Now };
-                result = serviceCaptical.Edit(false,$"Sold Product : {recordInventory.Model}; Price: {record.Price}; Qty: {record.Quantity};");
+                serviceCaptical.Record = new Capital { Id = 1, Amount= serviceCaptical.SelectAll().First().Amount + (recordInventory.DistributorPrice * record.Quantity), TransactionDateTime = DateTime.Now };
+                result = serviceCaptical.Edit(false,$"Sold Product : {recordInventory.Model}; Price: {recordInventory.DistributorPrice}; Qty: {record.Quantity};");
             }
             catch (Exception ex){
                 result.Code = false;
