@@ -14,6 +14,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static InSys.GlobalVariables;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using DocumentFormat.OpenXml.Wordprocessing;
+
 namespace InSys.CapitalForm
 {
     public partial class frmCapital : Form
@@ -36,26 +39,41 @@ namespace InSys.CapitalForm
             dtpFrom.Value = new DateTime(dtpFrom.Value.Year, dtpFrom.Value.Month, dtpFrom.Value.Day, 0, 0, 0);
             dtpTo.Value = new DateTime(dtpTo.Value.Year, dtpTo.Value.Month, dtpTo.Value.Day, 23, 59, 59);
 
-            dgvwPOSTransactions.DataSource = capitalController.GetCapitalHistories(dtpFrom.Value,dtpTo.Value);
+            var recordHistories = capitalController.GetCapitalHistories(dtpFrom.Value,dtpTo.Value);
+
+            var customRecordHistories = (from history in recordHistories
+                                         select new { 
+                                            Id = history.Id,
+                                            TransactionDateTime = history.TransactionDateTime,
+                                            RunningBalance = history.Amount+ history.OldFundBalance,
+                                            Amount = history.Amount,
+                                            Description = history.Description,
+                                            OldFundBalance =    history.OldFundBalance
+                                         }).ToList();
+            dgvwPOSTransactions.DataSource = customRecordHistories;
 
             dgvwPOSTransactions.Columns["Id"].Visible = false;
 
             dgvwPOSTransactions.Columns["TransactionDateTime"].HeaderText = "Transaction Date/Time";
-            dgvwPOSTransactions.Columns["OldFundBalance"].HeaderText = "Previous Fund Balance";
+            dgvwPOSTransactions.Columns["RunningBalance"].HeaderText = "Running Balance";
 
             dgvwPOSTransactions.Columns["Amount"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvwPOSTransactions.Columns["OldFundBalance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvwPOSTransactions.Columns["RunningBalance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             dgvwPOSTransactions.Columns["TransactionDateTime"].DisplayIndex = 0;
             dgvwPOSTransactions.Columns["TransactionDateTime"].Width = 200;
             dgvwPOSTransactions.Columns["Amount"].Width = 180;
             dgvwPOSTransactions.Columns["Description"].Width = 400;
             dgvwPOSTransactions.Columns["OldFundBalance"].Width = 180;
+            dgvwPOSTransactions.Columns["RunningBalance"].Width = 180;
 
             dgvwPOSTransactions.Columns["Amount"].DefaultCellStyle.Format = "c";
             dgvwPOSTransactions.Columns["Amount"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("en-PH");
             dgvwPOSTransactions.Columns["OldFundBalance"].DefaultCellStyle.Format = "c";
             dgvwPOSTransactions.Columns["OldFundBalance"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("en-PH");
+            dgvwPOSTransactions.Columns["RunningBalance"].DefaultCellStyle.Format = "c";
+            dgvwPOSTransactions.Columns["RunningBalance"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("en-PH");
 
         }
         private void btnAddFund_Click(object sender, EventArgs e)
@@ -135,7 +153,7 @@ namespace InSys.CapitalForm
                     // Add a WorkbookPart to the document.
                     WorkbookPart workbookpart = spreadsheet.AddWorkbookPart();
                     workbookpart.Workbook = new Workbook();
-
+                    
                     // Add a WorksheetPart to the WorkbookPart.
                     WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();
                     worksheetPart.Worksheet = new Worksheet(new SheetData());
@@ -170,7 +188,7 @@ namespace InSys.CapitalForm
                     }
                     
                     sheetData.AppendChild(row);
-
+                    Worksheet worksheet = spreadsheet.WorkbookPart.WorksheetParts.First().Worksheet;
                     // Add the data rows.
                     for (int i = 0; i < dgvwPOSTransactions.Rows.Count; i++)
                     {
@@ -180,16 +198,15 @@ namespace InSys.CapitalForm
                             if (item.Visible == false)
                                 continue;
 
-
                             Cell cell = new Cell();
                             cell.DataType = CellValues.String;
                             
-                            if(item.HeaderText== "Transaction Date/Time")
+                            if (item.HeaderText == "Transaction Date/Time")
                                 cell.CellValue = new CellValue(dgvwPOSTransactions.Rows[i].Cells[2].Value.ToString());
-                            else if (item.HeaderText == "Amount")
-                                cell.CellValue = new CellValue(dgvwPOSTransactions.Rows[i].Cells[1].Value.ToString());
                             else
                                 cell.CellValue = new CellValue(dgvwPOSTransactions.Rows[i].Cells[item.DisplayIndex].Value.ToString());
+
+                            var cellFormat = new CellFormat() { NumberFormatId = 164 };
 
                             row.AppendChild(cell);
                         }
@@ -197,7 +214,7 @@ namespace InSys.CapitalForm
                     }
 
                 }
-                MessageBox.Show($"Successfully generated Capital HisReport.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Successfully generated Capital History Report.", APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
